@@ -1,1 +1,1 @@
-Simple pokemon inspired Unity game!
+Simple pokemon-inspired Unity game!
