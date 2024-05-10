@@ -662,6 +662,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2125238974}
     m_Modifications:
+    - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
+      propertyPath: npc_text
+      value: 
+      objectReference: {fileID: 1224752625}
+    - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
+      propertyPath: text_displ
+      value: 
+      objectReference: {fileID: 1224752625}
     - target: {fileID: 1978757898093475400, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: m_Name
       value: NPC_Baifield
@@ -1864,6 +1872,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &806733051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
+  m_PrefabInstance: {fileID: 235995515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4a08f7db871af4fb648de34e101f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &818094382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,9 +2559,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 806733051}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: shrugNPC
+        m_MethodName: shrugText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3819,7 +3838,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -807.4384, y: -157.27051}
+  m_Offset: {x: -807.4384, y: -165.96002}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3830,7 +3849,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9071045, y: 299.66504}
+  m_Size: {x: 2.9071045, y: 317.04407}
   m_EdgeRadius: 0
 --- !u!61 &1955937843
 BoxCollider2D:
@@ -3845,7 +3864,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -699.5164, y: -317.59232}
+  m_Offset: {x: -699.5164, y: -322.9297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3856,7 +3875,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 274.6576, y: 4.4037476}
+  m_Size: {x: 274.6576, y: 1.1043701}
   m_EdgeRadius: 0
 --- !u!61 &1955937844
 BoxCollider2D:
