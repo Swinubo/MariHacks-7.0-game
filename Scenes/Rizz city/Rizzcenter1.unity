@@ -3005,6 +3005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Fox
       objectReference: {fileID: 0}
+    - target: {fileID: 4521448623950685966, guid: 0076164f207dad448a5a9d4aa610d855, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4521448623950685967, guid: 0076164f207dad448a5a9d4aa610d855, type: 3}
       propertyPath: text_displ
       value: 

@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     public static float dirY = 0;
     private SpriteRenderer sprite;
     public static float move_speed = 200f;
+    [SerializeField] private float speed_increase = 350f;
     //[SerializeField] private AudioSource jumpSoundEffect;
 
     private enum movement_state { idle, running, running_up, running_down, toBattle}
@@ -28,11 +29,17 @@ public class Player_Movement : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+    {        
         if (!use_buttons)
         {
             dirX = Input.GetAxisRaw("Horizontal");
             dirY = Input.GetAxisRaw("Vertical");
+            move_speed = 200f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                move_speed = move_speed +speed_increase;
+                Debug.Log("sprinting");
+            }
         }
         rb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
         update_animations();
