@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {        
+    {
         if (!use_buttons)
         {
             dirX = Input.GetAxisRaw("Horizontal");
@@ -38,7 +38,6 @@ public class Player_Movement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 move_speed = move_speed +speed_increase;
-                Debug.Log("sprinting");
             }
         }
         rb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
