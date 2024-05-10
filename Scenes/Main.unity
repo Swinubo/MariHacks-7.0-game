@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 32069793}
   - component: {fileID: 32069795}
   - component: {fileID: 32069794}
+  - component: {fileID: 32069796}
   m_Layer: 0
   m_Name: Gymarite1
   m_TagString: Untagged
@@ -383,6 +384,18 @@ PolygonCollider2D:
       - {x: -134.07422, y: -295.9375}
       - {x: -54.259766, y: -291.05396}
       - {x: -47.921013, y: -216.74078}
+--- !u!114 &32069796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32069792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15965e23157a4a742aea7b27b00bc385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &51338552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,6 +1728,7 @@ GameObject:
   - component: {fileID: 493780878}
   - component: {fileID: 493780880}
   - component: {fileID: 493780879}
+  - component: {fileID: 493780881}
   m_Layer: 0
   m_Name: Rizzcenter1
   m_TagString: Untagged
@@ -1789,6 +1803,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 356.7235, y: 324.6626}
   m_EdgeRadius: 0
+--- !u!114 &493780881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493780877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c16b0f9963ae045a68aba2a197e691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494231955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2315,7 @@ GameObject:
   - component: {fileID: 695829903}
   - component: {fileID: 695829905}
   - component: {fileID: 695829904}
+  - component: {fileID: 695829906}
   m_Layer: 0
   m_Name: Building2
   m_TagString: Untagged
@@ -2363,6 +2390,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 414.04358, y: 482.6516}
   m_EdgeRadius: 0
+--- !u!114 &695829906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695829902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31a54571b3167b41ae3ce453e9f3cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712856683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,6 +4525,7 @@ GameObject:
   - component: {fileID: 1200694926}
   - component: {fileID: 1200694928}
   - component: {fileID: 1200694927}
+  - component: {fileID: 1200694929}
   m_Layer: 0
   m_Name: Rizzshop1
   m_TagString: Untagged
@@ -4568,6 +4608,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 75.794556, y: 57.76538}
   m_EdgeRadius: 0
+--- !u!114 &1200694929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200694925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26cbdfa5c6515fd49a4444722de4c63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1202312633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,6 +5845,7 @@ GameObject:
   - component: {fileID: 1512531080}
   - component: {fileID: 1512531081}
   - component: {fileID: 1512531082}
+  - component: {fileID: 1512531083}
   m_Layer: 0
   m_Name: Building1
   m_TagString: Untagged
@@ -5867,6 +5920,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 116.142456, y: 26.030762}
   m_EdgeRadius: 0
+--- !u!114 &1512531083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512531079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d1eaba72fc18a40836b4d4c80aa2a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1515758225
 GameObject:
   m_ObjectHideFlags: 0
