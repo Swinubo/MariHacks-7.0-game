@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GetOutOfStart : MonoBehaviour
 {
-    public void OnStart(){
+    public static void OnStart(){
         GameObject.Find("ButtonToStart").GetComponent<Image>().enabled =false; 
         GameObject.Find("ButtonToStart").GetComponent<Button>().enabled =false; 
         GameObject.Find("TextToStart").GetComponent<Text>().enabled =false; 
