@@ -393,9 +393,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 32069792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15965e23157a4a742aea7b27b00bc385, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 8
 --- !u!1 &51338552
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,9 +778,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 72116677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b28354b0e3bb9e541ac3513dab66c9f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 3
 --- !u!1 &94240535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,9 +1819,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 493780877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c16b0f9963ae045a68aba2a197e691, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 6
 --- !u!1 &494231955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,9 +2524,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 695829902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31a54571b3167b41ae3ce453e9f3cf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 5
 --- !u!1 &712856683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4935,9 +4939,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1200694925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26cbdfa5c6515fd49a4444722de4c63b, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 7
 --- !u!1 &1202312633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6251,9 +6256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512531079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d1eaba72fc18a40836b4d4c80aa2a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c64a0f56ec5bf4982cc3deadab8db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 4
 --- !u!1 &1515758225
 GameObject:
   m_ObjectHideFlags: 0
