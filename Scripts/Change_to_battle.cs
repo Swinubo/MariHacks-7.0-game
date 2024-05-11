@@ -53,14 +53,16 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
             GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
             GameObject.Find("TapToShoot").GetComponent<Button>().enabled =true;
-           GameObject.Find("Right").GetComponent<Image>().enabled =false;
+            GameObject.Find("Right").GetComponent<Image>().enabled =false;
             GameObject.Find("Left").GetComponent<Image>().enabled =false;
             GameObject.Find("Up").GetComponent<Image>().enabled =false;
             GameObject.Find("Down").GetComponent<Image>().enabled =false;
+            GameObject.Find("Shift").GetComponent<Image>().enabled =false;
             GameObject.Find("Right").GetComponent<Button>().enabled =false;
             GameObject.Find("Left").GetComponent<Button>().enabled =false;
             GameObject.Find("Up").GetComponent<Button>().enabled =false;
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
+            GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
             randomNumber = random.Next(1, 5);
             if (randomNumber == 1)
             {

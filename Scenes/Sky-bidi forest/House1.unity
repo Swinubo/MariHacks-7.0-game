@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 1197475602}
   - component: {fileID: 1197475605}
   m_Layer: 5
-  m_Name: NPC_displ
+  m_Name: General_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1768,9 +1768,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1415362133}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: shrugNPC
+        m_MethodName: shrugText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   - component: {fileID: 1224752626}
   - component: {fileID: 1224752625}
   m_Layer: 5
-  m_Name: NPC_text
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2148,6 +2148,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e9f743e1634cae4e92092a633108566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1415362133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
+  m_PrefabInstance: {fileID: 2561523851264126425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4a08f7db871af4fb648de34e101f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1515758225
@@ -3002,6 +3013,10 @@ PrefabInstance:
       propertyPath: mumInScene
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
+      propertyPath: text_displ
+      value: 
+      objectReference: {fileID: 1224752625}
     - target: {fileID: 2561523851423413993, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
       propertyPath: m_RootOrder
       value: 0
