@@ -19,8 +19,8 @@ public class Rizkadex : MonoBehaviour
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
             GameObject.Find("Bip").GetComponent<Image>().enabled =false;
-            GameObject.Find("Blue").GetComponent<Image>().enabled =false;
-            GameObject.Find("Red").GetComponent<Image>().enabled =false;
+            GameObject.Find("Richard").GetComponent<Image>().enabled =false;
+            GameObject.Find("Punny").GetComponent<Image>().enabled =false;
             GameObject.Find("Joe").GetComponent<Image>().enabled =false;
             on_dex = false;
         }
@@ -34,11 +34,11 @@ public class Rizkadex : MonoBehaviour
             if (Collector.have_bip){
                 GameObject.Find("Bip").GetComponent<Image>().enabled =true;
             }
-            if (Collector.have_blue){
-                GameObject.Find("Blue").GetComponent<Image>().enabled =true;
+            if (Collector.have_richard){
+                GameObject.Find("Richard").GetComponent<Image>().enabled =true;
             }
-            if (Collector.have_red){
-                GameObject.Find("Red").GetComponent<Image>().enabled =true;
+            if (Collector.have_punny){
+                GameObject.Find("Punny").GetComponent<Image>().enabled =true;
             }
             if (Collector.have_joe){
                 GameObject.Find("Joe").GetComponent<Image>().enabled =true;

@@ -23,10 +23,10 @@ public class Flee : MonoBehaviour
         GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =false; 
         GameObject.Find("Bip_irnl").GetComponent<SpriteRenderer>().enabled =false;
         GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =false;
-        GameObject.Find("Blue_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-        GameObject.Find("Blue_irnl").GetComponent<BoxCollider2D>().enabled =false; 
-        GameObject.Find("Red_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-        GameObject.Find("Red_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+        GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+        GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+        GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+        GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =false; 
         GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =false; 
         GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =false;
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false;  

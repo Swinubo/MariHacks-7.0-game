@@ -44,17 +44,17 @@ public class OnCollideWithBullet : MonoBehaviour
                 GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_bip = true;
             }
-            if (Change_to_battle.rizkamon == "red")
+            if (Change_to_battle.rizkamon == "richard")
             {
-                GameObject.Find("Red_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-                GameObject.Find("Red_irnl").GetComponent<BoxCollider2D>().enabled =false; 
-                Collector.have_red = true;                   
+                GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_richard = true;                   
             }
-            if (Change_to_battle.rizkamon == "blue")
+            if (Change_to_battle.rizkamon == "punny")
             {
-                GameObject.Find("Blue_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-                GameObject.Find("Blue_irnl").GetComponent<BoxCollider2D>().enabled =false;   
-                Collector.have_blue = true;          
+                GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =false;   
+                Collector.have_punny = true;          
 
             }
             if (Change_to_battle.rizkamon == "joe")

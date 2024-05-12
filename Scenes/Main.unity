@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 20790163}
   - component: {fileID: 20790162}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Richard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,7 +1400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540629919}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &252220669
 SpriteRenderer:
@@ -2406,7 +2406,7 @@ GameObject:
   - component: {fileID: 546636529}
   - component: {fileID: 546636528}
   m_Layer: 5
-  m_Name: Red
+  m_Name: Punny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3218,6 +3218,7 @@ GameObject:
   - component: {fileID: 848048519}
   - component: {fileID: 848048521}
   - component: {fileID: 848048520}
+  - component: {fileID: 848048522}
   m_Layer: 0
   m_Name: Bip_irnl
   m_TagString: Untagged
@@ -3233,12 +3234,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848048517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 188, y: 7, z: 2.0377}
+  m_LocalPosition: {x: 255, y: 14, z: 2.0377}
   m_LocalScale: {x: 185.9296, y: 185.9296, z: 185.9296}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540629919}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &848048519
 SpriteRenderer:
@@ -3247,7 +3248,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848048517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3283,7 +3284,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1803800035, guid: bbb712fb9d0a4974ba933994a7e9e25f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
@@ -3332,6 +3333,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8900559, y: 0.8831184}
   m_EdgeRadius: 0
+--- !u!95 &848048522
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848048517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ab9a2006b5e2ad4da495ed7d565338c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &855140458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,7 +4884,7 @@ GameObject:
   - component: {fileID: 1053640880}
   - component: {fileID: 1053640879}
   m_Layer: 0
-  m_Name: Red_irnl
+  m_Name: Punny_irnl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4881,7 +4903,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540629919}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1053640878
 SpriteRenderer:
@@ -6940,10 +6962,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 252220668}
   - {fileID: 848048518}
   - {fileID: 1894786954}
   - {fileID: 1053640877}
+  - {fileID: 252220668}
   - {fileID: 114916402}
   - {fileID: 1868041881}
   m_Father: {fileID: 921145777}
@@ -8981,7 +9003,7 @@ GameObject:
   - component: {fileID: 1894786957}
   - component: {fileID: 1894786956}
   m_Layer: 0
-  m_Name: Blue_irnl
+  m_Name: Richard_irnl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9000,7 +9022,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540629919}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1894786955
 SpriteRenderer:
@@ -9118,7 +9140,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912900517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

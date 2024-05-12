@@ -63,7 +63,7 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("Up").GetComponent<Button>().enabled =false;
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
             GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
-            
+
             randomNumber = random.Next(1, 5);
             if (randomNumber == 1)
             {
@@ -73,15 +73,15 @@ public class Change_to_battle : MonoBehaviour
             }
             if (randomNumber == 2)
             {
-                rizkamon = "blue";
-                GameObject.Find("Blue_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Blue_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+                rizkamon = "richard";
+                GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+                GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
             if (randomNumber == 3)
             {
-                rizkamon = "red";
-                GameObject.Find("Red_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Red_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+                rizkamon = "punny";
+                GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+                GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
             if (randomNumber == 4)
             {

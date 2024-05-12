@@ -9,8 +9,8 @@ public class Collector : MonoBehaviour
     private Rigidbody2D rb;
 
     public static bool have_bip = false;
-    public static bool have_blue = false;
-    public static bool have_red = false;
+    public static bool have_punny = false;
+    public static bool have_richard = false;
     public static bool have_joe = false;
     public static bool have_alvin = false;
     public static bool have_whale = false;
@@ -22,7 +22,7 @@ public class Collector : MonoBehaviour
 
     private void Update()
     {
-        if (have_bip && have_blue && have_red && have_joe)
+        if (have_bip && have_punny && have_richard && have_joe)
         {
             StartCoroutine(goToEnd());
         }
