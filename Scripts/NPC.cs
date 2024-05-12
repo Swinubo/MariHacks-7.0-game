@@ -12,11 +12,12 @@ public class NPC : MonoBehaviour
     private string anderson = "Annderson: Uhhhh, what I do... I play with CR7!";
     private string baifield = "Baifield: Only 4 monsters can be found here according to a certain mad scientist!";
     private string joseph = "Joseph: Don't disturb me, I'm mewing!";
-    private string alexander = "Alexander: My uncle Robert livesin the middle east!";
+    private string alexander = "Alexander: My uncle Robert lives in the middle east!";
     private string mbappee = "Mbappee: Don't walk on grass! Catalans will attack you!";
     private string renchesse = "Renchesse: I'm a woman???";
     private string logan = "Logan: Did you know you snore at night?";
     private string mom = "Mom: Hey son! Glad to see you back! Go explore the world of Monsters of Dawn!";
+
     [SerializeField] private Text text_displ;
     [SerializeField] private bool mumInScene;
     private Rigidbody2D rb;

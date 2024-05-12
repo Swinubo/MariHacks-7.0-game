@@ -6,24 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class Collector : MonoBehaviour
 {
+    private Rigidbody2D rb;
+
     public static bool have_bip = false;
     public static bool have_blue = false;
     public static bool have_red = false;
     public static bool have_joe = false;
+    public static bool have_alvin = false;
+    public static bool have_whale = false;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
-        Debug.Log("START");
-        Debug.Log(have_bip);
-        Debug.Log(have_blue);
-        Debug.Log(have_red);
-        Debug.Log(have_joe);
         if (have_bip && have_blue && have_red && have_joe)
         {
-            Debug.Log("BOBOss");
-            SceneManager.LoadScene(1);
+            StartCoroutine(goToEnd());
         }
     }
 
-} //this program just holds the variables for the pokemons
+    private IEnumerator goToEnd()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(1);
+    }
+
+}
 

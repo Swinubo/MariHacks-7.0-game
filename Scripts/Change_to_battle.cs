@@ -63,6 +63,7 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("Up").GetComponent<Button>().enabled =false;
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
             GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
+            
             randomNumber = random.Next(1, 5);
             if (randomNumber == 1)
             {
