@@ -89,13 +89,13 @@ public class Change_to_battle : MonoBehaviour
                 GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =true; 
                 GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
-            else if (randomNumber == 5 && in_Rizz)
+            else if (randomNumber == 5 && displ_location.in_Rizz)
             {
                 rizkamon = "alvin";
                 GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =true; 
                 GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
-            else if (randomNumber == 6 && in_Skybidi)
+            else if (randomNumber == 6 && displ_location.in_Rizz)
             {
                 rizkamon = "whale";
                 GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =true; 

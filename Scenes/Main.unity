@@ -4405,6 +4405,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[0]
+      value: 
+      objectReference: {fileID: 848048517}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[1]
+      value: 
+      objectReference: {fileID: 1894786953}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[2]
+      value: 
+      objectReference: {fileID: 1053640876}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[3]
+      value: 
+      objectReference: {fileID: 252220667}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[4]
+      value: 
+      objectReference: {fileID: 114916401}
+    - target: {fileID: 1289503730356958117, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
+      propertyPath: rizkamonsSER.Array.data[5]
+      value: 
+      objectReference: {fileID: 1868041880}
     - target: {fileID: 5229580951976166854, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
       propertyPath: mainCam
       value: 

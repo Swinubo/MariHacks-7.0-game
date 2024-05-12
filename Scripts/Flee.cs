@@ -21,14 +21,11 @@ public class Flee : MonoBehaviour
         GameObject.Find("ButtonToFlee").GetComponent<Image>().enabled =false; 
         GameObject.Find("TextForFlee").GetComponent<Text>().enabled =false; 
         GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =false; 
-        GameObject.Find("Bip_irnl").GetComponent<SpriteRenderer>().enabled =false;
-        GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =false;
-        GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-        GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =false; 
-        GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-        GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =false; 
-        GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =false; 
-        GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =false;
+        foreach (var item in Collector.rizkamons)
+        {
+            GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
+            GameObject.Find(item.name).GetComponent<BoxCollider2D>().enabled =false;
+        }
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false;  
         GameObject.Find("TapToShoot").GetComponent<Button>().enabled =false;  
         if (Player_Movement.use_buttons)

@@ -15,14 +15,18 @@ public class Collector : MonoBehaviour
     public static bool have_alvin = false;
     public static bool have_whale = false;
 
+    [SerializeField] private GameObject[] rizkamonsSER;
+    public static GameObject[] rizkamons;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rizkamons = rizkamonsSER;
     }
 
     private void Update()
     {
-        if (have_bip && have_punny && have_richard && have_joe)
+        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale)
         {
             StartCoroutine(goToEnd());
         }
