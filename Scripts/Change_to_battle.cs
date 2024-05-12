@@ -64,30 +64,42 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
             GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
 
-            randomNumber = random.Next(1, 5);
+            randomNumber = random.Next(1, 7);
             if (randomNumber == 1)
             {
                 rizkamon = "bip";
                 GameObject.Find("Bip_irnl").GetComponent<SpriteRenderer>().enabled =true;
                 GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
-            if (randomNumber == 2)
+            else if (randomNumber == 2)
             {
                 rizkamon = "richard";
                 GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =true; 
                 GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
-            if (randomNumber == 3)
+            else if (randomNumber == 3)
             {
                 rizkamon = "punny";
                 GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =true; 
                 GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
-            if (randomNumber == 4)
+            else if (randomNumber == 4)
             {
                 rizkamon = "joe";
                 GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =true; 
                 GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+            }
+            else if (randomNumber == 5 && in_Rizz)
+            {
+                rizkamon = "alvin";
+                GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+                GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+            }
+            else if (randomNumber == 6 && in_Skybidi)
+            {
+                rizkamon = "whale";
+                GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+                GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =true; 
             }
         }
     }
