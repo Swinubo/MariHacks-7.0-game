@@ -64,6 +64,20 @@ public class OnCollideWithBullet : MonoBehaviour
                 Collector.have_joe = true;                  
             
             }
+            if (Change_to_battle.rizkamon == "alvin")
+            {
+                GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_alvin = true;                  
+            
+            }
+            if (Change_to_battle.rizkamon == "whale")
+            {
+                GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_whale = true;                  
+            
+            }
         }
     }
 }

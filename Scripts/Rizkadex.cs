@@ -18,10 +18,11 @@ public class Rizkadex : MonoBehaviour
         else if (on_dex)
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
-            GameObject.Find("Bip").GetComponent<Image>().enabled =false;
-            GameObject.Find("Richard").GetComponent<Image>().enabled =false;
-            GameObject.Find("Punny").GetComponent<Image>().enabled =false;
-            GameObject.Find("Joe").GetComponent<Image>().enabled =false;
+            foreach (var rizkamon in Collections.rizkamons)
+            {
+                GameObject.Find(rizkamon.Replace("_irnl", "")).GetComponent<Image>().enabled =false;
+                GameObject.Find(rizkamon.Replace("_irnl", "")).GetComponent<Text>().enabled =false;
+            }
             on_dex = false;
         }
     }
@@ -42,6 +43,12 @@ public class Rizkadex : MonoBehaviour
             }
             if (Collector.have_joe){
                 GameObject.Find("Joe").GetComponent<Image>().enabled =true;
+            }
+            if (Collector.have_alvin){
+                GameObject.Find("Alvin").GetComponent<Image>().enabled =true;
+            }
+            if (Collector.have_whale){
+                GameObject.Find("Whale").GetComponent<Image>().enabled =true;
             }
         }
     }
