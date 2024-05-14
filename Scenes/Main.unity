@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 29517987}
   - component: {fileID: 29517986}
   m_Layer: 5
-  m_Name: joe_text
+  m_Name: Joe_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 57075114}
   - component: {fileID: 57075113}
   m_Layer: 5
-  m_Name: whale_text
+  m_Name: Whale_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1727,7 +1727,7 @@ GameObject:
   - component: {fileID: 312179813}
   - component: {fileID: 312179812}
   m_Layer: 5
-  m_Name: richard_text
+  m_Name: Richard_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7846,7 +7846,7 @@ GameObject:
   - component: {fileID: 1680069213}
   - component: {fileID: 1680069212}
   m_Layer: 5
-  m_Name: bip_text
+  m_Name: Bip_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9542,7 +9542,7 @@ GameObject:
   - component: {fileID: 1946350812}
   - component: {fileID: 1946350811}
   m_Layer: 5
-  m_Name: alvin_text
+  m_Name: Alvin_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9753,7 +9753,7 @@ GameObject:
   - component: {fileID: 2025973434}
   - component: {fileID: 2025973433}
   m_Layer: 5
-  m_Name: punny_text
+  m_Name: Punny_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,10 +18,11 @@ public class Rizkadex : MonoBehaviour
         else if (on_dex)
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
-            foreach (var rizkamon in Collections.rizkamons)
+            foreach (var rizkamon in Collector.rizkamons)
             {
-                GameObject.Find(rizkamon.Replace("_irnl", "")).GetComponent<Image>().enabled =false;
-                GameObject.Find(rizkamon.Replace("_irnl", "")).GetComponent<Text>().enabled =false;
+                Debug.Log((rizkamon.name).Replace("_irnl", "_text"));
+                GameObject.Find((rizkamon.name).Replace("_irnl", "")).GetComponent<Image>().enabled =false;
+                GameObject.Find((rizkamon.name).Replace("_irnl", "_text")).GetComponent<Text>().enabled =false;
             }
             on_dex = false;
         }
