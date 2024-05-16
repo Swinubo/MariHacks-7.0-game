@@ -8,12 +8,16 @@ public class Collector : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    //general rizkamons
     public static bool have_bip = false;
     public static bool have_punny = false;
     public static bool have_richard = false;
     public static bool have_joe = false;
     public static bool have_alvin = false;
     public static bool have_whale = false;
+
+    //gymarite rizkamons
+    public static bool have_travis = false;
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;

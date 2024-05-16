@@ -44,39 +44,44 @@ public class OnCollideWithBullet : MonoBehaviour
                 GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_bip = true;
             }
-            if (Change_to_battle.rizkamon == "richard")
+            else if (Change_to_battle.rizkamon == "richard")
             {
                 GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =false; 
                 GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_richard = true;                   
             }
-            if (Change_to_battle.rizkamon == "punny")
+            else if (Change_to_battle.rizkamon == "punny")
             {
                 GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =false; 
                 GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =false;   
                 Collector.have_punny = true;          
 
             }
-            if (Change_to_battle.rizkamon == "joe")
+            else if (Change_to_battle.rizkamon == "joe")
             {
                 GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =false; 
                 GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_joe = true;                  
             
             }
-            if (Change_to_battle.rizkamon == "alvin")
+            else if (Change_to_battle.rizkamon == "alvin")
             {
                 GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =false; 
                 GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_alvin = true;                  
             
             }
-            if (Change_to_battle.rizkamon == "whale")
+            else if (Change_to_battle.rizkamon == "whale")
             {
                 GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =false; 
                 GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =false; 
-                Collector.have_whale = true;                  
-            
+                Collector.have_whale = true;                             
+            }
+            else if (Change_to_battle.rizkamon == "travis")
+            {
+                GameObject.Find("Travis_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_travis = true;                             
             }
         }
     }

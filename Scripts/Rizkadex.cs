@@ -56,6 +56,10 @@ public class Rizkadex : MonoBehaviour
                 GameObject.Find("Whale").GetComponent<Image>().enabled =true;
                 GameObject.Find("Whale_text").GetComponent<Text>().enabled =true;
             }
+            if (Collector.have_travis){
+                GameObject.Find("Travis").GetComponent<Image>().enabled =true;
+                GameObject.Find("Travis_text").GetComponent<Text>().enabled =true;
+            }
         }
     }
 }

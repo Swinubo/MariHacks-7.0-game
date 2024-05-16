@@ -22,19 +22,16 @@ public class send_to_gym_boss : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Transform player = GameObject.Find("Player").GetComponent<Transform>();          
-        Vector3 newPosition = new Vector3(change_scene.player_x, change_scene.player_y-5, player.position.z);
-        player.position = newPosition;
         deleteSumStuff();
         if (gym_leader == 0)
         {
-            Change_to_battle.rizkamon = "rizz_city_boss";
-            GameObject.Find("Rizz_city_boss_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-            GameObject.Find("Rizz_city_boss_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+            Change_to_battle.rizkamon = "travis";
+            GameObject.Find("Travis_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    } 
+    }
 
     private void deleteSumStuff()
     {

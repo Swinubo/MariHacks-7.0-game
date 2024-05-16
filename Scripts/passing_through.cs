@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class building3 : MonoBehaviour
+public class passing_through : MonoBehaviour
 {
     private int normalLayer = 1;
     private int underLayer = -2;
