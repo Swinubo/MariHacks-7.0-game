@@ -19,8 +19,7 @@ public class Rizkadex : MonoBehaviour
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
             foreach (var rizkamon in Collector.rizkamons)
-            {
-                Debug.Log((rizkamon.name).Replace("_irnl", "_text"));
+            {               
                 GameObject.Find((rizkamon.name).Replace("_irnl", "")).GetComponent<Image>().enabled =false;
                 GameObject.Find((rizkamon.name).Replace("_irnl", "_text")).GetComponent<Text>().enabled =false;
             }
@@ -35,21 +34,27 @@ public class Rizkadex : MonoBehaviour
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =true;
             if (Collector.have_bip){
                 GameObject.Find("Bip").GetComponent<Image>().enabled =true;
+                GameObject.Find("Bip_text").GetComponent<Text>().enabled =true;
             }
             if (Collector.have_richard){
                 GameObject.Find("Richard").GetComponent<Image>().enabled =true;
+                GameObject.Find("Richard_text").GetComponent<Text>().enabled =true;
             }
             if (Collector.have_punny){
                 GameObject.Find("Punny").GetComponent<Image>().enabled =true;
+                GameObject.Find("Punny_text").GetComponent<Text>().enabled =true;
             }
             if (Collector.have_joe){
                 GameObject.Find("Joe").GetComponent<Image>().enabled =true;
+                GameObject.Find("Joe_text").GetComponent<Text>().enabled =true;
             }
             if (Collector.have_alvin){
-                GameObject.Find("Alvin").GetComponent<Image>().enabled =true;
+                GameObject.Find("AlvinJR").GetComponent<Image>().enabled =true;
+                GameObject.Find("AlvinJR_text").GetComponent<Text>().enabled =true;
             }
             if (Collector.have_whale){
                 GameObject.Find("Whale").GetComponent<Image>().enabled =true;
+                GameObject.Find("Whale_text").GetComponent<Text>().enabled =true;
             }
         }
     }
