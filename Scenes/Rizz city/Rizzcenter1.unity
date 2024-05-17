@@ -3177,7 +3177,7 @@ PrefabInstance:
     - target: {fileID: 5229580951976166908, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
       propertyPath: activateButtonsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 785933169}
     - target: {fileID: 5229580953309729988, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
       propertyPath: m_Name
       value: Player
