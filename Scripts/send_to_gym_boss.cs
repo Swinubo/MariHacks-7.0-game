@@ -35,6 +35,9 @@ public class send_to_gym_boss : MonoBehaviour
 
     private void deleteSumStuff()
     {
+        Transform player = GameObject.Find("Player").GetComponent<Transform>();          
+        Vector3 newPosition = new Vector3(change_scene.player_x, change_scene.player_y-5, player.position.z);
+        player.position = newPosition;
         GameObject.Find("Battle").GetComponent<Camera>().enabled =true; 
         GameObject.Find("Main Camera").GetComponent<Camera>().enabled =false; 
         GetOutOfStart.OnStart();
