@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
     private string fox = "Fox: Aaaaaaargh! Woops, I'm just scared of my own name.";
     private string piper = "Piper: For the last time, I am NOT a Brawl Stars character!";
     private string anderson = "Annderson: Uhhhh, what I do... I play with CR7!";
-    private string baifield = "Baifield: Only 4 monsters can be found here according to a certain mad scientist!";
+    private string baifield = "Baifield: Only 7 monsters can be found here according to a certain mad scientist!";
     private string joseph = "Joseph: Don't disturb me, I'm mewing!";
     private string alexander = "Alexander: My uncle Robert lives in the middle east!";
     private string mbappee = "Mbappee: Don't walk on grass! Catalans will attack you!";
