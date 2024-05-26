@@ -995,7 +995,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 285.5047
+  orthographic size: 273.52023
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3007,8 +3007,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
       propertyPath: npc_text
-      value: 
-      objectReference: {fileID: 1224752625}
+      value: 'Mom: Hey son! Glad to see you back! Go explore the world of Monsters
+        of Dawn!'
+      objectReference: {fileID: 0}
     - target: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
       propertyPath: mumInScene
       value: 1

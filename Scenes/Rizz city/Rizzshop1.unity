@@ -1567,6 +1567,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3984958595663633850, guid: 4101225b05c043544b0824d264fa84fc, type: 3}
+      propertyPath: npc_text
+      value: 'Renchesse: I''m a woman???'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984958595663633850, guid: 4101225b05c043544b0824d264fa84fc, type: 3}
       propertyPath: text_displ
       value: 
       objectReference: {fileID: 1224752625}

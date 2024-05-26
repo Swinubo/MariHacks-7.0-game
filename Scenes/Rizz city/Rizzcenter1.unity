@@ -3278,6 +3278,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4521448623950685967, guid: 0076164f207dad448a5a9d4aa610d855, type: 3}
+      propertyPath: npc_text
+      value: 'Fox: Aaaaaaargh! Woops, I''m just scared of my own name.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521448623950685967, guid: 0076164f207dad448a5a9d4aa610d855, type: 3}
       propertyPath: text_displ
       value: 
       objectReference: {fileID: 1224752625}

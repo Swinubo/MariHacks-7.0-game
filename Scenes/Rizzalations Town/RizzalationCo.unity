@@ -580,8 +580,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: npc_text
-      value: 
-      objectReference: {fileID: 1224752625}
+      value: 'Baifield: Only 7 monsters can be found here according to a certain
+        mad scientist!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: text_displ
       value: 
@@ -1134,6 +1135,10 @@ PrefabInstance:
     - target: {fileID: 7070514594128168169, guid: 79c69f1193afa794a81185ed58a4d4d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7070514594128168170, guid: 79c69f1193afa794a81185ed58a4d4d6, type: 3}
+      propertyPath: npc_text
+      value: 'Piper: For the last time, I am NOT a Brawl Stars character!'
       objectReference: {fileID: 0}
     - target: {fileID: 7070514594128168170, guid: 79c69f1193afa794a81185ed58a4d4d6, type: 3}
       propertyPath: text_displ

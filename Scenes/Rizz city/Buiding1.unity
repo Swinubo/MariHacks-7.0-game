@@ -664,12 +664,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: npc_text
-      value: 
-      objectReference: {fileID: 1224752625}
+      value: 'Baifield: Only 7 monsters can be found here according to a certain
+        mad scientist!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: text_displ
       value: 
       objectReference: {fileID: 1224752625}
+    - target: {fileID: 1978757898093475397, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1978757898093475400, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: m_Name
       value: NPC_Baifield
