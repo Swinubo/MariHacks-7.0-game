@@ -17,55 +17,7 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
         {
             TurnOnButtonImages();
         }
-
-        #if UNITY_WEBGL && !UNITY_EDITOR
-            CheckWebGLPlatform();
-        #else
-            if (IsPC())
-            {
-                TurnOffButtonImages();
-            }
-            else if (IsMobile())
-            {
-                TurnOnButtonImages();
-            }
-            else
-            {
-                Debug.Log("Running on an unknown platform.");
-            }
-        #endif
-        
-    }
-  
-    bool IsMobile()
-    {
-        return Application.platform == RuntimePlatform.IPhonePlayer || 
-               Application.platform == RuntimePlatform.Android;
-    }
-
-    bool IsPC()
-    {
-        return Application.platform == RuntimePlatform.WindowsPlayer || 
-               Application.platform == RuntimePlatform.OSXPlayer || 
-               Application.platform == RuntimePlatform.LinuxPlayer;
-    }
-
-    #if UNITY_WEBGL && !UNITY_EDITOR
-    [DllImport("__Internal")]
-    private static extern bool IsMobile();
-
-    void CheckWebGLPlatform()
-    {
-        if (IsMobile())
-        {
-            Debug.Log("Running on a mobile device (WebGL).");
-        }
-        else
-        {
-            Debug.Log("Running on a PC (WebGL).");
-        }
-    }
-    #endif   
+    }    
 
     // Method called when button is pressed
     public void OnPointerDown(BaseEventData eventData)
