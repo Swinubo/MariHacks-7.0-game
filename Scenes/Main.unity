@@ -9801,6 +9801,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2259632327180916205, guid: 1ddbffcb8836fbe479bc78dac179e7bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2259632327180916206, guid: 1ddbffcb8836fbe479bc78dac179e7bd, type: 3}
       propertyPath: npc_text
       value: 'Worker: Sir, you wil be forced to leave. This area is still under construction.'
@@ -13341,6 +13345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1055856164}
     m_Modifications:
+    - target: {fileID: 3984958595663633845, guid: 4101225b05c043544b0824d264fa84fc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3984958595663633846, guid: 4101225b05c043544b0824d264fa84fc, type: 3}
       propertyPath: m_Name
       value: NPC_Renchesse
