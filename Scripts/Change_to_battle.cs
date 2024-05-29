@@ -64,43 +64,60 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
             GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
 
-            randomNumber = random.Next(1, 7);
-            if (randomNumber == 1)
+            if (displ_location.in_Skybidi)
             {
-                rizkamon = "bip";
-                GameObject.Find("Bip_irnl").GetComponent<SpriteRenderer>().enabled =true;
-                GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+                chooseInSkybidiForest();
             }
-            else if (randomNumber == 2)
+            else if (displ_location.in_Rizz)
             {
-                rizkamon = "richard";
-                GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+                chooseInRizzCity();
             }
-            else if (randomNumber == 3)
-            {
-                rizkamon = "punny";
-                GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =true; 
-            }
-            else if (randomNumber == 4)
-            {
-                rizkamon = "joe";
-                GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =true; 
-            }
-            else if (randomNumber == 5 && displ_location.in_Rizz)
-            {
-                rizkamon = "alvin";
-                GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =true; 
-            }
-            else if (randomNumber == 6 && displ_location.in_Rizz)
-            {
-                rizkamon = "whale";
-                GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-                GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =true; 
-            }
+        }
+    }
+
+    private void chooseInSkybidiForest()
+    {
+        randomNumber = random.Next(1, 5);
+        if (randomNumber == 1)
+        {
+            rizkamon = "bip";
+            GameObject.Find("Bip_irnl").GetComponent<SpriteRenderer>().enabled =true;
+            GameObject.Find("Bip_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 2)
+        {
+            rizkamon = "richard";
+            GameObject.Find("Richard_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Richard_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 3)
+        {
+            rizkamon = "punny";
+            GameObject.Find("Punny_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Punny_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 4)
+        {
+            rizkamon = "joe";
+            GameObject.Find("Joe_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Joe_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+    }
+
+    private void chooseInRizzCity()
+    {
+        randomNumber = random.Next(1, 3);
+        if (randomNumber == 1)
+        {
+            rizkamon = "alvin";
+            GameObject.Find("AlvinJR_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("AlvinJR_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 2)
+        {
+            rizkamon = "whale";
+            GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
     }
 }
