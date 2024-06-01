@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
     //[SerializeField] private AudioSource jumpSoundEffect;
 
     private enum movement_state { idle, running, running_up, running_down, toBattle}
-    public static bool use_buttons = false;
+    public static bool use_buttons = true;
     public static bool playToBattle = false;
 
     // Start is called before the first frame update

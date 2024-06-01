@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cave_passing : MonoBehaviour
 {
-    private int normalLayer = 1;
+    private int normalLayer = 2;
     private int underLayer = -2;
     private SpriteRenderer playerSprite;
     [SerializeField] private PolygonCollider2D edge;
