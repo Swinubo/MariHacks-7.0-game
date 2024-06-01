@@ -13,11 +13,18 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        TurnOnButtonImages();
+
         if (!Player_Movement.use_buttons)
         {
             TurnOffButtonImages();
         }
+        else
+        {
+            TurnOnButtonImages();
+        }
+
+        Player_Movement.dirX = 0;
+        Player_Movement.dirY = 0;
     }    
 
     // Method called when button is pressed
