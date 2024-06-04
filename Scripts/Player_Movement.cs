@@ -13,6 +13,7 @@ public class Player_Movement : MonoBehaviour
     public static float move_speed = 200f;
     public static float init_speed = 200f;
     public static float speed_increase = 350f;
+    public static float skate_increase = 900f;
     //[SerializeField] private AudioSource jumpSoundEffect;
 
     private enum movement_state { idle, running, running_up, running_down, toBattle}
@@ -34,11 +35,14 @@ public class Player_Movement : MonoBehaviour
         if (!use_buttons)
         {
             dirX = Input.GetAxisRaw("Horizontal");
-            dirY = Input.GetAxisRaw("Vertical");  
-            move_speed = init_speed;          
-            if (Input.GetKey(KeyCode.LeftShift))
+            dirY = Input.GetAxisRaw("Vertical");     
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                move_speed = move_speed +speed_increase;
+                move_speed += speed_increase;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                move_speed -= speed_increase;
             }
         }
         rb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
