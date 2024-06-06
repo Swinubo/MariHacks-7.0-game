@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skates : MonoBehaviour
 {
     private Transform player;
-    private bool in_ice = false;
+    public static bool in_ice = false;
     public static float player_x, player_y;
 
     private void Start()

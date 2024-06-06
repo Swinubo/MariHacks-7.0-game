@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
     public static float skate_increase = 900f;
     //[SerializeField] private AudioSource jumpSoundEffect;
 
-    private enum movement_state { idle, running, running_up, running_down, toBattle}
+    private enum movement_state { idle, running, running_up, running_down, toBattle, skating }
     public static bool use_buttons = true;
     public static bool playToBattle = false;
 
@@ -75,6 +75,10 @@ public class Player_Movement : MonoBehaviour
         else
         {
             state = movement_state.idle;
+        }
+        if (Skates.in_ice)
+        {
+            state = movement_state.skating;
         }
         if (playToBattle)
         {
