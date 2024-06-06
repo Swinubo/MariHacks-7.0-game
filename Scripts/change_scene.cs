@@ -18,8 +18,12 @@ public class change_scene : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            player_x = player.position.x;
-            player_y = player.position.y;
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                player_x = player.position.x;
+                player_y = player.position.y;                
+            }
+
             SceneManager.LoadScene(sceneNum);
         }
     }

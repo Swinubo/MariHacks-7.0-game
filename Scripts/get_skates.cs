@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class get_skates : MonoBehaviour
 {
-    public static bool have_skates = true;
+    public static bool have_skates = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
