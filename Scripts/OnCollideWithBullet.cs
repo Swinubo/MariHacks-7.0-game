@@ -83,6 +83,12 @@ public class OnCollideWithBullet : MonoBehaviour
                 GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_travis = true;                             
             }
+            else if (Change_to_battle.rizkamon == "ligma")
+            {
+                GameObject.Find("Ligma_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_ligma = true;                             
+            }
         }
     }
 }

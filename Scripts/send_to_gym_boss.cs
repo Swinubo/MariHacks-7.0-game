@@ -10,6 +10,7 @@ public class send_to_gym_boss : MonoBehaviour
     private Camera battleCam;
     [SerializeField] private int gym_leader;
     //0 = Rizz city gym leader
+    //1 = Gyatt city gym leader
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +29,12 @@ public class send_to_gym_boss : MonoBehaviour
             Change_to_battle.rizkamon = "travis";
             GameObject.Find("Travis_irnl").GetComponent<SpriteRenderer>().enabled =true; 
             GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (gym_leader == 1)
+        {
+            Change_to_battle.rizkamon = "ligma";
+            GameObject.Find("Ligma_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;

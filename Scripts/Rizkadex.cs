@@ -60,6 +60,10 @@ public class Rizkadex : MonoBehaviour
                 GameObject.Find("Travis").GetComponent<Image>().enabled =true;
                 GameObject.Find("Travis_text").GetComponent<Text>().enabled =true;
             }
+            if (Collector.have_ligma){
+                GameObject.Find("Ligma").GetComponent<Image>().enabled =true;
+                GameObject.Find("Ligma_text").GetComponent<Text>().enabled =true;
+            }
         }
     }
 }

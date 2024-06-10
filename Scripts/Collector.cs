@@ -18,6 +18,7 @@ public class Collector : MonoBehaviour
 
     //gymarite rizkamons
     public static bool have_travis = false;
+    public static bool have_ligma = false;
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;
@@ -30,7 +31,7 @@ public class Collector : MonoBehaviour
 
     private void Update()
     {
-        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale)
+        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale && have_travis && have_ligma)
         {
             StartCoroutine(goToEnd());
         }
