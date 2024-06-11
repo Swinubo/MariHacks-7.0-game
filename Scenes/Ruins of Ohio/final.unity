@@ -2450,7 +2450,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
       propertyPath: npc_text
-      value: 'Mom: What am I doing here... TAKE THESE SKATES AND SWIMMING SUIT!'
+      value: 'Mom: What am I doing here... TAKE THESE SKATES!'
       objectReference: {fileID: 0}
     - target: {fileID: 2561523851423413992, guid: a0f8e12ed5d58bd4b8cb5099ca2dea3e, type: 3}
       propertyPath: mumInScene

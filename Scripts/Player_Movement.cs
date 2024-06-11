@@ -10,13 +10,15 @@ public class Player_Movement : MonoBehaviour
     public static float dirX = 0;
     public static float dirY = 0;
     private SpriteRenderer sprite;
+
+    //Speed stuff
     public static float move_speed = 200f;
     public static float init_speed = 200f;
     public static float speed_increase = 350f;
     public static float skate_increase = 900f;
-    //[SerializeField] private AudioSource jumpSoundEffect;
+    public static float swim_decrease = -100f;
 
-    private enum movement_state { idle, running, running_up, running_down, toBattle, skating }
+    private enum movement_state { idle, running, running_up, running_down, toBattle, skating, swim }
     public static bool use_buttons = true;
     public static bool playToBattle = false;
 
@@ -79,6 +81,10 @@ public class Player_Movement : MonoBehaviour
         if (Skates.in_ice)
         {
             state = movement_state.skating;
+        }
+        if (Swim.in_water)
+        {
+            state = movement_state.swim;
         }
         if (playToBattle)
         {

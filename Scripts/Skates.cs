@@ -45,9 +45,4 @@ public class Skates : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        Debug.Log(get_skates.have_skates);
-    }
 }
