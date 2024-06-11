@@ -32,6 +32,7 @@ public class Rizkadex : MonoBehaviour
     {
         if (on_dex){
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =true;
+            
             if (Collector.have_bip){
                 GameObject.Find("Bip").GetComponent<Image>().enabled =true;
                 GameObject.Find("Bip_text").GetComponent<Text>().enabled =true;
