@@ -15,6 +15,11 @@ public class Collector : MonoBehaviour
     public static bool have_joe = false;
     public static bool have_alvin = false;
     public static bool have_whale = false;
+    public static bool have_quakor = false;
+    public static bool have_bellico = false;
+    public static bool have_beeogee = false;
+    public static bool have_terroc = false;
+    public static bool have_jo = false;
 
     //gymarite rizkamons
     public static bool have_travis = false;
@@ -31,7 +36,7 @@ public class Collector : MonoBehaviour
 
     private void Update()
     {
-        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale && have_travis && have_ligma)
+        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale && have_travis && have_ligma && have_quakor && have_beeogee && have_bellico && have_terroc && have_jo)
         {
             StartCoroutine(goToEnd());
         }

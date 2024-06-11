@@ -89,6 +89,36 @@ public class OnCollideWithBullet : MonoBehaviour
                 GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =false; 
                 Collector.have_ligma = true;                             
             }
+            else if (Change_to_battle.rizkamon == "quakor")
+            {
+                GameObject.Find("Quakor_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Quakor_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_quakor = true;                             
+            }
+            else if (Change_to_battle.rizkamon == "beeogee")
+            {
+                GameObject.Find("Beeogee_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Beeogee_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_beeogee = true;                             
+            }
+            else if (Change_to_battle.rizkamon == "bellico")
+            {
+                GameObject.Find("Bellico_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Bellico_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_bellico = true;                             
+            }
+            else if (Change_to_battle.rizkamon == "terroc")
+            {
+                GameObject.Find("Terroc_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Terroc_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_terroc = true;                             
+            }
+            else if (Change_to_battle.rizkamon == "jo")
+            {
+                GameObject.Find("Jo_irnl").GetComponent<SpriteRenderer>().enabled =false; 
+                GameObject.Find("Jo_irnl").GetComponent<BoxCollider2D>().enabled =false; 
+                Collector.have_jo = true;                             
+            }
         }
     }
 }

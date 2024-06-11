@@ -64,6 +64,26 @@ public class Rizkadex : MonoBehaviour
                 GameObject.Find("Ligma").GetComponent<Image>().enabled =true;
                 GameObject.Find("Ligma_text").GetComponent<Text>().enabled =true;
             }
+            if (Collector.have_quakor){
+                GameObject.Find("Quakor").GetComponent<Image>().enabled =true;
+                GameObject.Find("Quakor_text").GetComponent<Text>().enabled =true;
+            }
+            if (Collector.have_beeogee){
+                GameObject.Find("Beeogee").GetComponent<Image>().enabled =true;
+                GameObject.Find("Beeogee_text").GetComponent<Text>().enabled =true;
+            }
+            if (Collector.have_bellico){
+                GameObject.Find("Bellico").GetComponent<Image>().enabled =true;
+                GameObject.Find("Bellico_text").GetComponent<Text>().enabled =true;
+            }
+            if (Collector.have_terroc){
+                GameObject.Find("Terroc").GetComponent<Image>().enabled =true;
+                GameObject.Find("Terroc_text").GetComponent<Text>().enabled =true;
+            }
+            if (Collector.have_jo){
+                GameObject.Find("Jo").GetComponent<Image>().enabled =true;
+                GameObject.Find("Jo_text").GetComponent<Text>().enabled =true;
+            }
         }
     }
 }

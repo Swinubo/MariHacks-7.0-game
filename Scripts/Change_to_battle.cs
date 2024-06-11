@@ -64,13 +64,17 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("Down").GetComponent<Button>().enabled =false; 
             GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
 
-            if (displ_location.in_Skybidi)
+            if (displ_location.location_str == "Rizz city")
+            {
+                chooseInRizzCity();
+            }
+            else if (displ_location.location_str == "Sky-bidi forest")
             {
                 chooseInSkybidiForest();
             }
-            else if (displ_location.in_Rizz)
+            else if (displ_location.location_str == "Edger's mountain")
             {
-                chooseInRizzCity();
+                chooseInEdgersMountain();
             }
         }
     }
@@ -118,6 +122,41 @@ public class Change_to_battle : MonoBehaviour
             rizkamon = "whale";
             GameObject.Find("Whale_irnl").GetComponent<SpriteRenderer>().enabled =true; 
             GameObject.Find("Whale_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+    }
+
+    private void chooseInEdgersMountain()
+    {
+        randomNumber = random.Next(1, 6);
+        if (randomNumber == 1)
+        {
+            rizkamon = "quakor";
+            GameObject.Find("Quakor_irnl").GetComponent<SpriteRenderer>().enabled =true;
+            GameObject.Find("Quakor_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 2)
+        {
+            rizkamon = "beeogee";
+            GameObject.Find("Beeogee_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Beeogee_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 3)
+        {
+            rizkamon = "bellico";
+            GameObject.Find("Bellico_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Bellico_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 4)
+        {
+            rizkamon = "terroc";
+            GameObject.Find("Terroc_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Terroc_irnl").GetComponent<BoxCollider2D>().enabled =true; 
+        }
+        else if (randomNumber == 5)
+        {
+            rizkamon = "jo";
+            GameObject.Find("Jo_irnl").GetComponent<SpriteRenderer>().enabled =true; 
+            GameObject.Find("Jo_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
     }
 }

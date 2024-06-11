@@ -8,8 +8,7 @@ public class displ_location : MonoBehaviour
     private Image location;
     private Text locationText;
 
-    public static bool in_Skybidi;
-    public static bool in_Rizz;
+    public static string location_str;
 
     private void Start()
     {
@@ -30,24 +29,24 @@ public class displ_location : MonoBehaviour
         location.enabled =true;
         locationText.enabled =true;
         locationText.text = gameObject.name;
-        updateLocation();
+        location_str = locationText.text;
+        //updateLocation();
         yield return new WaitForSeconds(3);
         location.enabled =false;
         locationText.enabled =false;
     } 
 
-    private void updateLocation()
+    /*private void updateLocation()
     {
-        in_Rizz=false;
-        in_Skybidi=false;
+        location_str = "";
         
         if (gameObject.name == "Rizz city")
         {
-            in_Rizz = true;
+            location_str = "Rizz city";
         }
         else if (gameObject.name == "Sky-bidi forest")
         {
-            in_Skybidi = true;
+            location_str = "Sky-bidi forest";
         }
-    }
+    }*/
 }
