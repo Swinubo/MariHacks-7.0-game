@@ -6,7 +6,7 @@ In the future, I would like to enhance and add more complex battle mechanics as 
 # How to play
 
 Visit the region of brainrot where you can meet interesting people and places! Talk to NPCs, visit buildings and battle gym leaders!
-However, beware, as walking on tall grass is dangerous: Rizkamons may hop out the grass and attack you! There is a large variety of Rizkamons (8 as I'm writing this) who have a chance of appearing if you walk on tall grass.
+However, beware, as walking on tall grass is dangerous: Rizkamons may hop out the grass and attack you! There is a large variety of Rizkamons (13 as I'm writing this) who have a chance of appearing if you walk on tall grass.
 
 The game ends once you complete your Rizkadex and catch all Rizkamons.
 
