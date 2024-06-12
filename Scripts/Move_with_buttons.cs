@@ -27,62 +27,6 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
         Player_Movement.dirY = 0;
     }    
 
-    // Method called when button is pressed
-    public void OnPointerDown(BaseEventData eventData)
-    {
-        PointerEventData pointerEventData = eventData as PointerEventData;
-        if (pointerEventData.pointerEnter.name == "Left")
-        {
-            Player_Movement.dirX = -1;
-        }
-        else if (pointerEventData.pointerEnter.name == "Right")
-        {
-            Player_Movement.dirX = 1;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Up")
-        {
-            Player_Movement.dirY = 1;
-        }
-        else if (pointerEventData.pointerEnter.name == "Down")
-        {
-            Player_Movement.dirY = -1;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Shift")
-        {
-            Player_Movement.move_speed = Player_Movement.move_speed + Player_Movement.speed_increase;
-        } 
-    }
-
-    // Method called when button is released
-    public void OnPointerUp(BaseEventData eventData)
-    {
-        PointerEventData pointerEventData = eventData as PointerEventData;
-        if (pointerEventData.pointerEnter.name == "Left")
-        {
-            Player_Movement.dirX = 0;
-        }
-        else if (pointerEventData.pointerEnter.name == "Right")
-        {
-            Player_Movement.dirX = 0;
-        }
-        
-        if (pointerEventData.pointerEnter.name == "Up")
-        {
-            Player_Movement.dirY = 0;
-        }
-        else if (pointerEventData.pointerEnter.name == "Down")
-        {
-            Player_Movement.dirY = 0;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Shift")
-        {
-            Player_Movement.move_speed = Player_Movement.init_speed;
-        } 
-    }
-
     public void ActivateButtons()
     {
         Debug.Log("Phase 1");
