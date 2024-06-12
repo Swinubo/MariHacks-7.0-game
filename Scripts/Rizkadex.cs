@@ -18,6 +18,9 @@ public class Rizkadex : MonoBehaviour
         else if (on_dex)
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
+            GameObject.Find("Map").GetComponent<Image>().enabled =false;
+            GameObject.Find("Map").GetComponent<Button>().enabled =false;
+
             foreach (var rizkamon in Collector.rizkamons)
             {               
                 GameObject.Find((rizkamon.name).Replace("_irnl", "")).GetComponent<Image>().enabled =false;
@@ -32,6 +35,8 @@ public class Rizkadex : MonoBehaviour
     {
         if (on_dex){
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =true;
+            GameObject.Find("Map").GetComponent<Image>().enabled =true;
+            GameObject.Find("Map").GetComponent<Button>().enabled =true;
             
             if (Collector.have_bip){
                 GameObject.Find("Bip").GetComponent<Image>().enabled =true;

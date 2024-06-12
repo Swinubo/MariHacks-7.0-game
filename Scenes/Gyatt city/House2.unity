@@ -423,8 +423,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: npc_text
-      value: 'Baifield: Only 7 monsters can be found here according to a certain
-        mad scientist!'
+      value: "gaspar: man if you got this far in the game i actually repect you so
+        much and luv u for doing so \u2764\uFE0F"
       objectReference: {fileID: 0}
     - target: {fileID: 1978757898093475396, guid: 02ebe2f2796ad3e42989144f51dab94a, type: 3}
       propertyPath: text_displ
