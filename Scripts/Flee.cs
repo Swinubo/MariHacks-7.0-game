@@ -7,6 +7,12 @@ public class Flee : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera battleCam;
+    private static Image TapToShoot;
+
+    void Start()
+    {
+        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+    }
 
     public void OnFlee(){
         deleteAllBattle(mainCam, battleCam);
@@ -27,7 +33,7 @@ public class Flee : MonoBehaviour
             GameObject.Find(item.name).GetComponent<BoxCollider2D>().enabled =false;
         }
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false;  
-        GameObject.Find("TapToShoot").GetComponent<Button>().enabled =false;  
+        TapToShoot.raycastTarget = false;
         if (Player_Movement.use_buttons)
         {
             GameObject.Find("Right").GetComponent<Image>().enabled =true;

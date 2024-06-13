@@ -46,31 +46,11 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
     {
         Player_Movement.use_buttons = true;
         activateButtonsText.text = "Deactivate Buttons";
-        GameObject.Find("Right").GetComponent<Image>().enabled =true;
-        GameObject.Find("Left").GetComponent<Image>().enabled =true;
-        GameObject.Find("Up").GetComponent<Image>().enabled =true;
-        GameObject.Find("Down").GetComponent<Image>().enabled =true;
-        GameObject.Find("Shift").GetComponent<Image>().enabled =true;
-        GameObject.Find("Right").GetComponent<Button>().enabled =true;
-        GameObject.Find("Left").GetComponent<Button>().enabled =true;
-        GameObject.Find("Up").GetComponent<Button>().enabled =true;
-        GameObject.Find("Down").GetComponent<Button>().enabled =true;
-        GameObject.Find("Shift").GetComponent<Button>().enabled =true;
     }
 
     private void TurnOffButtonImages()
     {
         Player_Movement.use_buttons = false;
         activateButtonsText.text = "Activate Buttons";
-        GameObject.Find("Right").GetComponent<Image>().enabled =false;
-        GameObject.Find("Left").GetComponent<Image>().enabled =false;
-        GameObject.Find("Up").GetComponent<Image>().enabled =false;
-        GameObject.Find("Down").GetComponent<Image>().enabled =false;
-        GameObject.Find("Shift").GetComponent<Image>().enabled =false;
-        GameObject.Find("Right").GetComponent<Button>().enabled =false;
-        GameObject.Find("Left").GetComponent<Button>().enabled =false;
-        GameObject.Find("Up").GetComponent<Button>().enabled =false;
-        GameObject.Find("Down").GetComponent<Button>().enabled =false;
-        GameObject.Find("Shift").GetComponent<Button>().enabled =false;
     }
 }

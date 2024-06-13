@@ -12,11 +12,13 @@ public class Change_to_battle : MonoBehaviour
     Random random = new Random();
     private int randomNumber;
     private Rigidbody2D rb;
+    private Image TapToShoot;
     public static bool battleDisplayRan = false;
 
     private void Start()
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,16 +55,7 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
             GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
             GameObject.Find("TapToShoot").GetComponent<Button>().enabled =true;
-            GameObject.Find("Right").GetComponent<Image>().enabled =false;
-            GameObject.Find("Left").GetComponent<Image>().enabled =false;
-            GameObject.Find("Up").GetComponent<Image>().enabled =false;
-            GameObject.Find("Down").GetComponent<Image>().enabled =false;
-            GameObject.Find("Shift").GetComponent<Image>().enabled =false;
-            GameObject.Find("Right").GetComponent<Button>().enabled =false;
-            GameObject.Find("Left").GetComponent<Button>().enabled =false;
-            GameObject.Find("Up").GetComponent<Button>().enabled =false;
-            GameObject.Find("Down").GetComponent<Button>().enabled =false; 
-            GameObject.Find("Shift").GetComponent<Button>().enabled =false; 
+            TapToShoot.raycastTarget = true;
 
             if (displ_location.location_str == "Rizz city")
             {
