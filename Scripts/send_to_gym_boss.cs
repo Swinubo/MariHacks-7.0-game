@@ -12,6 +12,8 @@ public class send_to_gym_boss : MonoBehaviour
     //0 = Rizz city gym leader
     //1 = Gyatt city gym leader
 
+    private Image TapToShoot;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
@@ -54,6 +56,7 @@ public class send_to_gym_boss : MonoBehaviour
         GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =true; 
         GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
-        GameObject.Find("TapToShoot").GetComponent<Button>().enabled =true;
+        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+        TapToShoot.raycastTarget = true;
     }
 }

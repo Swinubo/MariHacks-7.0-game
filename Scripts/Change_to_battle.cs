@@ -54,7 +54,6 @@ public class Change_to_battle : MonoBehaviour
             GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =true; 
             GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
             GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
-            GameObject.Find("TapToShoot").GetComponent<Button>().enabled =true;
             TapToShoot.raycastTarget = true;
 
             if (displ_location.location_str == "Rizz city")
