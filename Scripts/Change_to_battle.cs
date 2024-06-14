@@ -152,3 +152,4 @@ public class Change_to_battle : MonoBehaviour
         }
     }
 }
+//bla bla bla
