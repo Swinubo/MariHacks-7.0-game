@@ -7,7 +7,12 @@ public class OnCollideWithBullet : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
     [SerializeField] private Camera battleCam;
+    private static Image TapToShoot;
 
+    void Start()
+    {
+        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,19 +28,10 @@ public class OnCollideWithBullet : MonoBehaviour
             GameObject.Find("TextForFlee").GetComponent<Text>().enabled =false; 
             GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =false; 
             GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false; 
-            GameObject.Find("TapToShoot").GetComponent<Button>().enabled =false; 
+            TapToShoot.raycastTarget = false;
             if (Player_Movement.use_buttons)
             {
-                GameObject.Find("Right").GetComponent<Image>().enabled =true;
-                GameObject.Find("Left").GetComponent<Image>().enabled =true;
-                GameObject.Find("Up").GetComponent<Image>().enabled =true;
-                GameObject.Find("Down").GetComponent<Image>().enabled =true;
-                GameObject.Find("Shift").GetComponent<Image>().enabled =true;
-                GameObject.Find("Right").GetComponent<Button>().enabled =true;
-                GameObject.Find("Left").GetComponent<Button>().enabled =true;
-                GameObject.Find("Up").GetComponent<Button>().enabled =true;
-                GameObject.Find("Down").GetComponent<Button>().enabled =true;
-                GameObject.Find("Shift").GetComponent<Image>().enabled =true;
+                //joystick move stuff goes ehre
             }
 
             if (Change_to_battle.rizkamon == "bip")

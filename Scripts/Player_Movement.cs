@@ -20,6 +20,7 @@ public class Player_Movement : MonoBehaviour
 
     private enum movement_state { idle, running, running_up, running_down, toBattle, skating, swim }
     public static bool use_buttons = true;
+    [SerializeField] private Joystick joystick;
     public static bool playToBattle = false;
 
     // Start is called before the first frame update
@@ -45,6 +46,25 @@ public class Player_Movement : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 move_speed -= speed_increase;
+            }
+        }
+        else
+        {
+            if (Mathf.Abs(joystick.Horizontal) >= 0.2f)
+            {
+                dirX = Mathf.Sign(joystick.Horizontal);// * move_speed;
+            }
+            else
+            {
+                dirX = 0;
+            }
+            if (Mathf.Abs(joystick.Vertical) >= 0.2f)
+            {
+                dirY = Mathf.Sign(joystick.Vertical);// * move_speed;
+            }
+            else
+            {
+                dirY = 0;
             }
         }
         rb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);

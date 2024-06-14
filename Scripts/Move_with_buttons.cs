@@ -27,62 +27,6 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
         Player_Movement.dirY = 0;
     }    
 
-    // Method called when button is pressed
-    public void OnPointerDown(BaseEventData eventData)
-    {
-        PointerEventData pointerEventData = eventData as PointerEventData;
-        if (pointerEventData.pointerEnter.name == "Left")
-        {
-            Player_Movement.dirX = -1;
-        }
-        else if (pointerEventData.pointerEnter.name == "Right")
-        {
-            Player_Movement.dirX = 1;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Up")
-        {
-            Player_Movement.dirY = 1;
-        }
-        else if (pointerEventData.pointerEnter.name == "Down")
-        {
-            Player_Movement.dirY = -1;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Shift")
-        {
-            Player_Movement.move_speed = Player_Movement.move_speed + Player_Movement.speed_increase;
-        } 
-    }
-
-    // Method called when button is released
-    public void OnPointerUp(BaseEventData eventData)
-    {
-        PointerEventData pointerEventData = eventData as PointerEventData;
-        if (pointerEventData.pointerEnter.name == "Left")
-        {
-            Player_Movement.dirX = 0;
-        }
-        else if (pointerEventData.pointerEnter.name == "Right")
-        {
-            Player_Movement.dirX = 0;
-        }
-        
-        if (pointerEventData.pointerEnter.name == "Up")
-        {
-            Player_Movement.dirY = 0;
-        }
-        else if (pointerEventData.pointerEnter.name == "Down")
-        {
-            Player_Movement.dirY = 0;
-        }
-
-        if (pointerEventData.pointerEnter.name == "Shift")
-        {
-            Player_Movement.move_speed = Player_Movement.init_speed;
-        } 
-    }
-
     public void ActivateButtons()
     {
         Debug.Log("Phase 1");
@@ -102,31 +46,11 @@ public class Move_with_buttons : MonoBehaviour//, IPointerDownHandler, IPointerU
     {
         Player_Movement.use_buttons = true;
         activateButtonsText.text = "Deactivate Buttons";
-        GameObject.Find("Right").GetComponent<Image>().enabled =true;
-        GameObject.Find("Left").GetComponent<Image>().enabled =true;
-        GameObject.Find("Up").GetComponent<Image>().enabled =true;
-        GameObject.Find("Down").GetComponent<Image>().enabled =true;
-        GameObject.Find("Shift").GetComponent<Image>().enabled =true;
-        GameObject.Find("Right").GetComponent<Button>().enabled =true;
-        GameObject.Find("Left").GetComponent<Button>().enabled =true;
-        GameObject.Find("Up").GetComponent<Button>().enabled =true;
-        GameObject.Find("Down").GetComponent<Button>().enabled =true;
-        GameObject.Find("Shift").GetComponent<Button>().enabled =true;
     }
 
     private void TurnOffButtonImages()
     {
         Player_Movement.use_buttons = false;
         activateButtonsText.text = "Activate Buttons";
-        GameObject.Find("Right").GetComponent<Image>().enabled =false;
-        GameObject.Find("Left").GetComponent<Image>().enabled =false;
-        GameObject.Find("Up").GetComponent<Image>().enabled =false;
-        GameObject.Find("Down").GetComponent<Image>().enabled =false;
-        GameObject.Find("Shift").GetComponent<Image>().enabled =false;
-        GameObject.Find("Right").GetComponent<Button>().enabled =false;
-        GameObject.Find("Left").GetComponent<Button>().enabled =false;
-        GameObject.Find("Up").GetComponent<Button>().enabled =false;
-        GameObject.Find("Down").GetComponent<Button>().enabled =false;
-        GameObject.Find("Shift").GetComponent<Button>().enabled =false;
     }
 }
