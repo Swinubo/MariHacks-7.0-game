@@ -9,6 +9,7 @@ public class Collector : MonoBehaviour
     private Rigidbody2D rb;
 
     //general rizkamons
+    /*
     public static bool have_bip = false;
     public static bool have_punny = false;
     public static bool have_richard = false;
@@ -23,7 +24,9 @@ public class Collector : MonoBehaviour
 
     //gymarite rizkamons
     public static bool have_travis = false;
-    public static bool have_ligma = false;
+    public static bool have_ligma = false;*/
+
+    public static List<string> have_rizkamons = new List<string>();
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;
@@ -36,10 +39,10 @@ public class Collector : MonoBehaviour
 
     private void Update()
     {
-        if (have_bip && have_punny && have_richard && have_joe && have_alvin && have_whale && have_travis && have_ligma && have_quakor && have_beeogee && have_bellico && have_terroc && have_jo)
+        /*if (rizkamons.Count == 13)
         {
             StartCoroutine(goToEnd());
-        }
+        }*/
     }
 
     private IEnumerator goToEnd()

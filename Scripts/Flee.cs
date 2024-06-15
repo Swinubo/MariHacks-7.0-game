@@ -34,18 +34,5 @@ public class Flee : MonoBehaviour
         }
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false;  
         TapToShoot.raycastTarget = false;
-        if (Player_Movement.use_buttons)
-        {
-            GameObject.Find("Right").GetComponent<Image>().enabled =true;
-            GameObject.Find("Left").GetComponent<Image>().enabled =true;
-            GameObject.Find("Up").GetComponent<Image>().enabled =true;
-            GameObject.Find("Down").GetComponent<Image>().enabled =true;
-            GameObject.Find("Shift").GetComponent<Image>().enabled =true;
-            GameObject.Find("Right").GetComponent<Button>().enabled =true;
-            GameObject.Find("Left").GetComponent<Button>().enabled =true;
-            GameObject.Find("Up").GetComponent<Button>().enabled =true;
-            GameObject.Find("Down").GetComponent<Button>().enabled =true;
-            GameObject.Find("Shift").GetComponent<Image>().enabled =true;
-        }
     }
 }
