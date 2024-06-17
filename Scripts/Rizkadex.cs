@@ -37,10 +37,10 @@ public class Rizkadex : MonoBehaviour
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =true;
             GameObject.Find("Map").GetComponent<Image>().enabled =true;
             GameObject.Find("Map").GetComponent<Button>().enabled =true;
-            Debug.Log(Collector.have_rizkamons);
-            foreach (var rizkamon in Collector.have_rizkamons)
+            Debug.Log("Have_rizkamons list:" + Collector.have_rizkamons);
+            foreach (string rizkamon in Collector.have_rizkamons)
             {
-                Debug.Log(rizkamon);
+                Debug.Log("Current rixkamon instance" + rizkamon);
                 GameObject.Find(rizkamon).GetComponent<Image>().enabled =true;
                 GameObject.Find(rizkamon+"_text").GetComponent<Text>().enabled =true;
             }

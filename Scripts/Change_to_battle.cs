@@ -83,7 +83,7 @@ public class Change_to_battle : MonoBehaviour
         int randomIndex = random.Next(rizkamonList.Length);
 
         // Retrieve the string at the random index
-        string rizkamon = rizkamonList[randomIndex];
+        rizkamon = rizkamonList[randomIndex];
 
         GameObject.Find(rizkamon+"_irnl").GetComponent<SpriteRenderer>().enabled =true; 
         GameObject.Find(rizkamon+"_irnl").GetComponent<BoxCollider2D>().enabled =true; 
