@@ -8,24 +8,6 @@ public class Collector : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    //general rizkamons
-    /*
-    public static bool have_bip = false;
-    public static bool have_punny = false;
-    public static bool have_richard = false;
-    public static bool have_joe = false;
-    public static bool have_alvin = false;
-    public static bool have_whale = false;
-    public static bool have_quakor = false;
-    public static bool have_bellico = false;
-    public static bool have_beeogee = false;
-    public static bool have_terroc = false;
-    public static bool have_jo = false;
-
-    //gymarite rizkamons
-    public static bool have_travis = false;
-    public static bool have_ligma = false;*/
-
     public static List<string> have_rizkamons = new List<string>();
 
     [SerializeField] private GameObject[] rizkamonsSER;

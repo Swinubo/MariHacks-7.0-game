@@ -7,7 +7,7 @@ public class StartandEnd : MonoBehaviour
 {
     public void startMenu()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(23);
     }
     
     public void exitMenu()
