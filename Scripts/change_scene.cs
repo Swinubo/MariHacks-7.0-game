@@ -11,20 +11,34 @@ public class change_scene : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>(); 
+        player = GameObject.Find("Player")?.GetComponent<Transform>();
+        if (player == null)
+        {
+            Debug.LogError("Player object not found.");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            if (SceneManager.GetActiveScene().buildIndex == 2)
+            if (SceneManager.GetActiveScene().buildIndex == 2 && player != null)
             {
                 player_x = player.position.x;
-                player_y = player.position.y;                
+                player_y = player.position.y;
             }
 
-            SceneManager.LoadScene(sceneNum);
+            StartCoroutine(LoadSceneAsync(sceneNum));
+        }
+    }
+
+    private IEnumerator LoadSceneAsync(int sceneIndex)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 }
