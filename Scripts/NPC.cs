@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
 
 public class NPC : MonoBehaviour
 {
@@ -45,12 +44,29 @@ public class NPC : MonoBehaviour
             GameObject.Find("text").GetComponent<Text>().enabled =true; 
             GameObject.Find("General_text").GetComponent<Image>().enabled =true; 
             GameObject.Find("General_text").GetComponent<Button>().enabled =true; 
-
-            text_displ.text = npc_text;
+            StartCoroutine(Typewriter());
+            //text_displ.text = npc_text;
             if (gameObject.name == "NPC_Mom")
             {
                 StartCoroutine(DisplayMomText());         
             }      
+        }
+    }
+
+    IEnumerator Typewriter()
+    {
+        foreach (char letter in npc_text)
+        {
+            text_displ.text += letter;
+
+            if (letter == ':')
+            {           
+                yield return new WaitForSeconds(0.3f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 
@@ -64,7 +80,7 @@ public class NPC : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
-    //essentials
+    //on leave events
     private void OnTriggerExit2D(Collider2D collision)
     {
         removeTextDispl();
@@ -78,6 +94,7 @@ public class NPC : MonoBehaviour
     private void removeTextDispl()
     {
         GameObject.Find("text").GetComponent<Text>().enabled =false; 
+        text_displ.text = "";
         GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
         GameObject.Find("General_text").GetComponent<Button>().enabled =false; 
     }
