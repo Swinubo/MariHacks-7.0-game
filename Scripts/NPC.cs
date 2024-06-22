@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private string npc_text;
 
     private Text text_displ;
+    private string init_text;
     [SerializeField] private bool mumInScene;
     private Rigidbody2D rb;
     private Rigidbody2D rbMum;
@@ -27,6 +28,7 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
+        init_text = npc_text;
         text_displ = GameObject.Find("text").GetComponent<Text>(); 
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -61,11 +63,11 @@ public class NPC : MonoBehaviour
 
             if (letter == ':')
             {           
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.2f);
             }
             else
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
     }
@@ -74,7 +76,7 @@ public class NPC : MonoBehaviour
     IEnumerator DisplayMomText()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         anim.SetBool("leave", true);
         rbMum.velocity = new Vector2(0, move_speed);
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -95,6 +97,7 @@ public class NPC : MonoBehaviour
     {
         GameObject.Find("text").GetComponent<Text>().enabled =false; 
         text_displ.text = "";
+        Debug.Log(npc_text);
         GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
         GameObject.Find("General_text").GetComponent<Button>().enabled =false; 
     }
