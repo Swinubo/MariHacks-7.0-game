@@ -6,8 +6,8 @@ using Random = System.Random;
 using System.Threading;
 public class Change_to_battle : MonoBehaviour
 {
-    [SerializeField] private Camera mainCam;
-    [SerializeField] private Camera battleCam;
+    private Camera mainCam;
+    private Camera battleCam;
     public static string rizkamon = "";
     Random random = new Random();
     private int randomNumber;
@@ -25,6 +25,9 @@ public class Change_to_battle : MonoBehaviour
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+
+        mainCam = GameObject.Find("Camera").GetComponent<Camera>();
+        battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +49,6 @@ public class Change_to_battle : MonoBehaviour
         }
     }
 
-    //public static void SendToBattleSetting(Camera battleCam, Camera mainCam, Random random, int randomNumber)
     private void SendToBattleSetting()
     {
         if (!battleDisplayRan)
@@ -56,10 +58,6 @@ public class Change_to_battle : MonoBehaviour
             Player_Movement.playToBattle = false;   
             battleCam.enabled = true;
             mainCam.enabled = false;
-            GameObject.Find("ButtonToFlee").GetComponent<Image>().enabled =true; 
-            GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =true; 
-            GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
-            GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
             TapToShoot.raycastTarget = true;
 
             if (displ_location.location_str == "Rizz city")

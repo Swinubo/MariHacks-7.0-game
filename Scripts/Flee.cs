@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class Flee : MonoBehaviour
 {
-    [SerializeField] private Camera mainCam;
-    [SerializeField] private Camera battleCam;
+    private Camera mainCam;
+    private Camera battleCam;
     private static Image TapToShoot;
 
     void Start()
     {
         TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+
+        mainCam = GameObject.Find("Camera").GetComponent<Camera>();
+        battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
     }
 
     public void OnFlee(){
