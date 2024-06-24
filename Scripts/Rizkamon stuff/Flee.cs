@@ -27,9 +27,6 @@ public class Flee : MonoBehaviour
         Change_to_battle.battleDisplayRan = false;
         GameObject.Find("Battle").GetComponent<AudioSource>().enabled =false; 
         GameObject.Find("Player").GetComponent<AudioSource>().enabled =true; 
-        GameObject.Find("ButtonToFlee").GetComponent<Image>().enabled =false; 
-        GameObject.Find("TextForFlee").GetComponent<Text>().enabled =false; 
-        GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =false; 
         foreach (var item in Collector.rizkamons)
         {
             GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
