@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move
+public class Move : MonoBehaviour
 {
     // Properties of the move
     public string Name { get; set; }
@@ -11,7 +11,13 @@ public class Move
     public int Heal { get; set; }
     public float AttackEnhance { get; set; }
     public float DefenceEnhance { get; set; }
-    
+
+    // Moves
+    public static Move Scratch;
+    public static Move Shout;
+    public static Move Rizz;
+    public static Move Ballz;
+
 
     // Constructor to initialize a new Move object
     public Move(string name, string type, int power, int heal, float attackEnhance, float defenceEnhance)
@@ -23,25 +29,12 @@ public class Move
         AttackEnhance = attackEnhance;
         DefenceEnhance = defenceEnhance;
     }
-}
 
-public class Creature
-{
-    // Auto-implemented properties
-    public string Name { get; set; }
-    public int HP { get; set; }
-    public int attackStat { get; set; }
-    public int defenceStat { get; set; }
-
-    // Constructor to initialize a new Move object
-    public Creature(string name, int hp, int attackStat, int defenceStat)
+    private void Start()
     {
-        Name = name;
-        HP = hp;
-        Power = power;
-        Heal = heal;
-        AttackEnhance = attackEnhance;
-        DefenceEnhance = defenceEnhance;
+        Scratch  = new Move("Scratch", "Rizz", 5,0,0,0);
+        Shout  = new Move("Shout", "Swiftie", 0,0,1.5,1.5);
+        Rizz  = new Move("Rizz", "Rizz", 0,0,3,0);
+        Ballz  = new Move("Ballz", "Aura", 0,8,0,0);
     }
-
 }

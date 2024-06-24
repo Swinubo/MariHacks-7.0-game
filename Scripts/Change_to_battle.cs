@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
 using System.Threading;
+
 public class Change_to_battle : MonoBehaviour
 {
     private Camera mainCam;
