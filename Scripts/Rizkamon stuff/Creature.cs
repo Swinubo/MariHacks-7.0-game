@@ -17,9 +17,8 @@ public class Creature : MonoBehaviour
     {
         Name = name;
         HP = hp;
-        Heal = heal;
-        AttackEnhance = attackEnhance;
-        DefenceEnhance = defenceEnhance;
+        AttackStat = attackStat;
+        DefenceStat = defenceStat;
         Move = move;
     }
 

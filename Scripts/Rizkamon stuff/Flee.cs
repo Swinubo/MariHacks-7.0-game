@@ -13,7 +13,7 @@ public class Flee : MonoBehaviour
     {
         TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
 
-        mainCam = GameObject.Find("Camera").GetComponent<Camera>();
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
     }
 
@@ -32,7 +32,6 @@ public class Flee : MonoBehaviour
             GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
             GameObject.Find(item.name).GetComponent<BoxCollider2D>().enabled =false;
         }
-        GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false;  
         TapToShoot.raycastTarget = false;
     }
 }

@@ -24,11 +24,6 @@ public class OnCollideWithBullet : MonoBehaviour
             GameObject.Find("Battle").GetComponent<AudioSource>().enabled =false; 
             GameObject.Find("Player").GetComponent<AudioSource>().enabled =true; 
             Debug.Log(Change_to_battle.rizkamon);
-            GameObject.Find("ButtonToFlee").GetComponent<Image>().enabled =false; 
-            GameObject.Find("TextForFlee").GetComponent<Text>().enabled =false; 
-            GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =false; 
-            GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =false; 
-            TapToShoot.raycastTarget = false;
 
             foreach (var item in Collector.rizkamons)
             {

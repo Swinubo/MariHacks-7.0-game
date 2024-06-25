@@ -32,9 +32,9 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
-        Scratch  = new Move("Scratch", "Rizz", 5,0,0,0);
-        Shout  = new Move("Shout", "Swiftie", 0,0,1.5,1.5);
-        Rizz  = new Move("Rizz", "Rizz", 0,0,3,0);
-        Ballz  = new Move("Ballz", "Aura", 0,8,0,0);
+        Scratch  = new Move("Scratch", "Rizz", 5,0,0f,0f);
+        Shout  = new Move("Shout", "Swiftie", 0,0,1.5f,1.5f);
+        Rizz  = new Move("Rizz", "Rizz", 0,0,3f,0f);
+        Ballz  = new Move("Ballz", "Aura", 0,8,0f,0f);
     }
 }

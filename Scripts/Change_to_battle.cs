@@ -13,7 +13,6 @@ public class Change_to_battle : MonoBehaviour
     Random random = new Random();
     private int randomNumber;
     private Rigidbody2D rb;
-    private Image TapToShoot;
     public static bool battleDisplayRan = false;
 
     //location string lists
@@ -25,9 +24,7 @@ public class Change_to_battle : MonoBehaviour
     private void Start()
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
-
-        mainCam = GameObject.Find("Camera").GetComponent<Camera>();
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
     }
 
@@ -59,7 +56,6 @@ public class Change_to_battle : MonoBehaviour
             Player_Movement.playToBattle = false;   
             battleCam.enabled = true;
             mainCam.enabled = false;
-            TapToShoot.raycastTarget = true;
 
             if (displ_location.location_str == "Rizz city")
             {
