@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class OnCollideWithBullet : MonoBehaviour
 {
-    [SerializeField] private Camera mainCam;
-    [SerializeField] private Camera battleCam;
-    private static Image TapToShoot;
+    private Camera mainCam;
+    private Camera battleCam;
 
     void Start()
     {
-        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Bullet(Clone)")
