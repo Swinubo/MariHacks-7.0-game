@@ -51,11 +51,7 @@ public class Change_to_battle : MonoBehaviour
     {
         if (!battleDisplayRan)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            battleDisplayRan = true;
-            Player_Movement.playToBattle = false;   
-            battleCam.enabled = true;
-            mainCam.enabled = false;
+            Flee.BattleActivation(mainCam, battleCam, false);
 
             if (displ_location.location_str == "Rizz city")
             {
