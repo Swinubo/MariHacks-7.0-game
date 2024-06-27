@@ -31,7 +31,7 @@ public class Flee : MonoBehaviour
     public static void BattleActivation(Camera mainCam, Camera battleCam, bool OnorOff){
         battleCam.enabled = !OnorOff;
         mainCam.enabled = OnorOff;
-        Change_to_battle.battleDisplayRan = OnorOff;
+        Change_to_battle.battleDisplayRan = !OnorOff;
         GameObject.Find("Battle").GetComponent<AudioSource>().enabled =!OnorOff; 
         GameObject.Find("Player").GetComponent<AudioSource>().enabled =OnorOff; 
         GameObject.Find("Balls").GetComponent<Image>().enabled =!OnorOff; 

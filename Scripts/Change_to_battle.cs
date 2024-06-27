@@ -52,6 +52,7 @@ public class Change_to_battle : MonoBehaviour
         if (!battleDisplayRan)
         {
             Flee.BattleActivation(mainCam, battleCam, false);
+            Player_Movement.playToBattle = false;
 
             if (displ_location.location_str == "Rizz city")
             {
