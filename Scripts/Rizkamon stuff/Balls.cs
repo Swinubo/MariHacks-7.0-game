@@ -21,34 +21,54 @@ public class Balls : MonoBehaviour
         GameObject parentObject = GameObject.Find("Balls");
         if (parentObject != null)
         {
-            // Iterate through each child transform of the parent GameObject
-            foreach (Transform child in parentObject.transform)
-            {
-                // Try to get the Image, Button and Text component from the child
-                Image imageComponent = child.GetComponent<Image>();
-                Button buttonComponent = child.GetComponent<Button>();
-                Text textComponent = child.GetComponent<Text>();
-
-                if (imageComponent != null)
-                {
-                    // Enable or disable the Image component
-                    imageComponent.enabled = OnorOff;
-                }
-                if (buttonComponent != null)
-                {
-                    // Enable or disable the Button component
-                    buttonComponent.enabled = OnorOff;
-                }
-                if (textComponent != null)
-                {
-                    // Enable or disable the Text component
-                    textComponent.enabled = OnorOff;
-                }
-            }
+            Debug.Log("Parent GameObject 'Balls' found.");
+            
+            // Call the recursive function to enable/disable components in all descendants
+            EnableOrDisableComponentsInChildren(parentObject.transform, OnorOff);
         }
         else
         {
             Debug.LogWarning("GameObject with name 'Balls' not found.");
+        }
+    }
+
+    private void EnableOrDisableComponentsInChildren(Transform parentTransform, bool OnorOff)
+    {
+        // Iterate through each child transform of the parent Transform
+        foreach (Transform child in parentTransform)
+        {
+            // Log the name of the child
+            Debug.Log("Processing child: " + child.name);
+
+            // Try to get the Image, Button and Text component from the child
+            Image imageComponent = child.GetComponent<Image>();
+            Button buttonComponent = child.GetComponent<Button>();
+            Text textComponent = child.GetComponent<Text>();
+
+            if (imageComponent != null)
+            {
+                // Enable or disable the Image component
+                imageComponent.enabled = OnorOff;
+                Debug.Log("Image component " + (OnorOff ? "enabled" : "disabled") + " for child: " + child.name);
+            }
+            if (buttonComponent != null)
+            {
+                // Enable or disable the Button component
+                buttonComponent.enabled = OnorOff;
+                Debug.Log("Button component " + (OnorOff ? "enabled" : "disabled") + " for child: " + child.name);
+            }
+            if (textComponent != null)
+            {
+                // Enable or disable the Text component
+                textComponent.enabled = OnorOff;
+                Debug.Log("Text component " + (OnorOff ? "enabled" : "disabled") + " for child: " + child.name);
+            }
+
+            // Recursively call this function for each child
+            if (child.childCount > 0)
+            {
+                EnableOrDisableComponentsInChildren(child, OnorOff);
+            }
         }
     }
 }

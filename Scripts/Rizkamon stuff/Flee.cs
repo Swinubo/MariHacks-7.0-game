@@ -46,5 +46,6 @@ public class Flee : MonoBehaviour
         GameObject.Find("Move1Text").GetComponent<Text>().enabled =!OnorOff;
         GameObject.Find("Move2Text").GetComponent<Text>().enabled =!OnorOff;
         GameObject.Find("FleeText").GetComponent<Text>().enabled =!OnorOff;
+        GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =!OnorOff;
     }
 }
