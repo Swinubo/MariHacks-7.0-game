@@ -10,6 +10,7 @@ public class Balls : MonoBehaviour
     private GameObject peasantBall;
     private GameObject goonBall;
     private GameObject mafiaBossBall;
+    private Transform shootingPoint;
 
     private void Start()
     {
@@ -18,6 +19,8 @@ public class Balls : MonoBehaviour
         peasantBall = GameObject.Find("peasantBall");
         goonBall = GameObject.Find("goonBall");
         mafiaBossBall =  GameObject.Find("mafiaBossBall");
+
+        shootingPoint = GameObject.Find("shooting point").GetComponent<Transform>();
     }
 
     public void BallsActivate()
@@ -102,7 +105,9 @@ public class Balls : MonoBehaviour
 
     private void ThrowBall(GameObject Ball)
     {
-
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, 90) * transform.rotation;
+        Instantiate(Ball, shootingPoint.position, bulletRotation);
+        anim.SetBool("throwing", true);
     }
 
 }

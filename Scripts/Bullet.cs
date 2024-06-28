@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 2000;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
