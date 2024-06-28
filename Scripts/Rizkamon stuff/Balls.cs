@@ -5,6 +5,21 @@ using UnityEngine.UI;
 
 public class Balls : MonoBehaviour
 {
+
+    private Animator anim;
+    private GameObject peasantBall;
+    private GameObject goonBall;
+    private GameObject mafiaBossBall;
+
+    private void Start()
+    {
+        anim = GameObject.Find("Arm").GetComponent<Animator>();
+
+        peasantBall = GameObject.Find("peasantBall");
+        goonBall = GameObject.Find("goonBall");
+        mafiaBossBall =  GameObject.Find("mafiaBossBall");
+    }
+
     public void BallsActivate()
     {
         BallsActivation(true);
@@ -71,4 +86,23 @@ public class Balls : MonoBehaviour
             }
         }
     }
+
+    public void ThrowPeasant()
+    {
+        ThrowBall(peasantBall);
+    }
+    public void ThrowGoon()
+    {
+        ThrowBall(goonBall);
+    }
+    public void ThrowMafiaBoss()
+    {
+        ThrowBall(mafiaBossBall);
+    }
+
+    private void ThrowBall(GameObject Ball)
+    {
+
+    }
+
 }
