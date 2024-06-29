@@ -107,7 +107,7 @@ public class Balls : MonoBehaviour
     {
         Quaternion bulletRotation = Quaternion.Euler(0, 0, 90) * transform.rotation;
         Instantiate(Ball, shootingPoint.position, bulletRotation);
-        anim.SetBool("throwing", true);
+        anim.Play("Throw");
     }
 
 }
