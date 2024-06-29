@@ -11,6 +11,7 @@ public class Balls : MonoBehaviour
     private GameObject goonBall;
     private GameObject mafiaBossBall;
     private Transform shootingPoint;
+    [SerializeField] private float angle = 20;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class Balls : MonoBehaviour
         BallsActivation(false);
     }
 
-    private void BallsActivation(bool OnorOff)
+    public void BallsActivation(bool OnorOff)
     {
         // Find the parent GameObject named "Balls"
         GameObject parentObject = GameObject.Find("Balls");
@@ -105,9 +106,10 @@ public class Balls : MonoBehaviour
 
     private void ThrowBall(GameObject Ball)
     {
-        Quaternion bulletRotation = Quaternion.Euler(0, 0, 90) * transform.rotation;
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
         Instantiate(Ball, shootingPoint.position, bulletRotation);
         anim.Play("Throw");
+        BallsDeactivate();
     }
 
 }
