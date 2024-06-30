@@ -10,7 +10,7 @@ public class OnCollideWithBullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private BoxCollider2D ballBC2D;
+    private CircleCollider2D ballCC2D;
     private Rigidbody2D ballRB2D;
 
     void Start()
@@ -25,10 +25,13 @@ public class OnCollideWithBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            ballBC2D = GameObject.Find(collision.gameObject.name).GetComponent<BoxCollider2D>();
+            ballCC2D = GameObject.Find(collision.gameObject.name).GetComponent<CircleCollider2D>();
             ballRB2D = GameObject.Find(collision.gameObject.name).GetComponent<Rigidbody2D>();
 
-            ballBC2D.isTrigger = false;
+            ballCC2D.isTrigger = false;
+            GameObject.Find(collision.gameObject.name).GetComponent<Rotate>().enabled = false;
+            ballRB2D.velocity = new Vector2(0, 500);
+            ballRB2D.gravityScale = 150;
         }
     }
 
