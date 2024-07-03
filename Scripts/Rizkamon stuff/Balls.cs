@@ -89,6 +89,8 @@ public class Balls : MonoBehaviour
                 EnableOrDisableComponentsInChildren(child, OnorOff);
             }
         }
+
+        GameObject.Find("BallsText").GetComponent<Text>().enabled = true;
     }
 
     public void ThrowPeasant()
