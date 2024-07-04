@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 188963650}
   - component: {fileID: 188963652}
   - component: {fileID: 188963651}
+  - component: {fileID: 188963653}
   m_Layer: 5
   m_Name: CoinCount
   m_TagString: Untagged
@@ -283,8 +284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230.5, y: 72.115}
-  m_SizeDelta: {x: 166.013, y: 63.195}
+  m_AnchoredPosition: {x: 234.84526, y: 76.46026}
+  m_SizeDelta: {x: 157.3225, y: 54.5045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188963651
 MonoBehaviour:
@@ -328,6 +329,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188963649}
   m_CullTransparentMesh: 1
+--- !u!114 &188963653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188963649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c323457f97a474abeb6f2963d847f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &255857233
 GameObject:
   m_ObjectHideFlags: 0

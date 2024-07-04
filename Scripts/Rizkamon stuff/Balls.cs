@@ -13,6 +13,10 @@ public class Balls : MonoBehaviour
     private Transform shootingPoint;
     [SerializeField] private float angle = 20;
 
+    public static int peasantCount;
+    public static int goonCount;
+    public static int mafiaBossCount;
+
     private void Start()
     {
         anim = GameObject.Find("Arm").GetComponent<Animator>();
@@ -22,6 +26,11 @@ public class Balls : MonoBehaviour
         mafiaBossBall =  GameObject.Find("mafiaBossBall");
 
         shootingPoint = GameObject.Find("shooting point").GetComponent<Transform>();
+    }
+
+    private void Update()
+    {
+
     }
 
     public void BallsActivate()
