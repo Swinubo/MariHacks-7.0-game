@@ -8,8 +8,6 @@ public class OnCollideWithBullet : MonoBehaviour
     private Camera mainCam;
     private Camera battleCam;
 
-    private Rigidbody2D rb;
-
     private CircleCollider2D ballCC2D;
     private Rigidbody2D ballRB2D;
 
@@ -33,8 +31,6 @@ public class OnCollideWithBullet : MonoBehaviour
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
 
-        rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-
         anim = GameObject.Find("BallCatch").GetComponent<Animator>();
         emptyAnimPlace = GameObject.Find("BallCatch");
 
@@ -53,6 +49,15 @@ public class OnCollideWithBullet : MonoBehaviour
             ball.transform.rotation = initialRotation * rotation;
             Debug.Log("Oscilating");
         }
+        if (ball != null)
+        {
+            Vector3 ballPos = ball.transform.position;
+            Vector3 animPos = emptyAnimPlace.transform.position;
+
+            animPos.y = ballPos.y + 200;
+            animPos.x = ballPos.x;
+            emptyAnimPlace.transform.position = animPos;
+        }
     }
  
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,53 +65,32 @@ public class OnCollideWithBullet : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             Debug.Log("Collided");
-            ballCC2D = GameObject.Find(collision.gameObject.name).GetComponent<CircleCollider2D>();
-            ballRB2D = GameObject.Find(collision.gameObject.name).GetComponent<Rigidbody2D>();
 
-            ballCC2D.isTrigger = false;
-            GameObject.Find(collision.gameObject.name).GetComponent<Rotate>().enabled = false;
-            ballRB2D.gravityScale = 150;
-            ballRB2D.velocity = new Vector2(0, 500);
-
-            ball = GameObject.Find(collision.gameObject.name);
-
-            ballOscilation = true;
-            StartCoroutine(WaitForOscilation());
+            StartCoroutine(WaitForOscilation(collision));
         }
     }
 
-    IEnumerator WaitForOscilation()
+    IEnumerator WaitForOscilation(Collider2D collision)
     {
+        ballCC2D = GameObject.Find(collision.gameObject.name).GetComponent<CircleCollider2D>();
+        ballRB2D = GameObject.Find(collision.gameObject.name).GetComponent<Rigidbody2D>();
+
+        ballCC2D.isTrigger = false;
+        GameObject.Find(collision.gameObject.name).GetComponent<Rotate>().enabled = false;
+        ballRB2D.gravityScale = 150;
+        ballRB2D.velocity = new Vector2(0, 500);
+
+        ball = GameObject.Find(collision.gameObject.name);
+
+        ballOscilation = true;
         yield return new WaitForSeconds(3);
         ballOscilation = false;
 
-        Vector3 ballPos = ball.transform.position;
-        Vector3 animPos = emptyAnimPlace.transform.position;
-
-        animPos.y = ballPos.y + 200;
-        animPos.x = ballPos.x;
-        emptyAnimPlace.transform.position = animPos;
-
-        anim.SetBool("IsRotating", true);
+        anim.SetBool("IsFlickering", true);
         ball.name = "";
         Debug.Log("Played");
 
     }
 
-    private void AddRizkamon()
-    {
-        Flee.BattleActivation(mainCam, battleCam, true);
-        rb.bodyType = RigidbodyType2D.Dynamic;
 
-        foreach (var item in Collector.rizkamons)
-        {
-            GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
-            GameObject.Find(item.name).GetComponent<BoxCollider2D>().enabled =false;
-        }
-
-        Collector.have_rizkamons.Add(Change_to_battle.rizkamon);
-        Debug.Log("Added rizkamon: " + Change_to_battle.rizkamon);
-
-        anim.SetBool("IsRotating", false);
-    }
 }
