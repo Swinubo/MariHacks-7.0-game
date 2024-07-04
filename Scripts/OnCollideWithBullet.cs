@@ -20,7 +20,7 @@ public class OnCollideWithBullet : MonoBehaviour
     // Axis of rotation
     public Vector3 rotationAxis = Vector3.up;
     private Quaternion initialRotation;
-    private GameObject ball;
+    public static GameObject ball;
     private bool ballOscilation;
 
     private Animator anim;
@@ -87,8 +87,6 @@ public class OnCollideWithBullet : MonoBehaviour
         ballOscilation = false;
 
         anim.SetBool("IsFlickering", true);
-        ball.name = "";
-        Debug.Log("Played");
 
     }
 

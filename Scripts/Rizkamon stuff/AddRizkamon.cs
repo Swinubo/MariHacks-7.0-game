@@ -22,6 +22,7 @@ public class AddRizkamon : MonoBehaviour
     private void AddRizkamonToDex()
     {
         anim.SetBool("IsFlickering", false);
+        Destroy(OnCollideWithBullet.ball);
         Flee.BattleActivation(mainCam, battleCam, true);
         rb.bodyType = RigidbodyType2D.Dynamic;
 
