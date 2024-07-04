@@ -13,9 +13,9 @@ public class Balls : MonoBehaviour
     private Transform shootingPoint;
     [SerializeField] private float angle = 20;
 
-    public static int peasantCount;
-    public static int goonCount;
-    public static int mafiaBossCount;
+    public static int peasantCount=0;
+    public static int goonCount=0;
+    public static int mafiaBossCount=0;
 
     private void Start()
     {
@@ -26,11 +26,6 @@ public class Balls : MonoBehaviour
         mafiaBossBall =  GameObject.Find("mafiaBossBall");
 
         shootingPoint = GameObject.Find("shooting point").GetComponent<Transform>();
-    }
-
-    private void Update()
-    {
-
     }
 
     public void BallsActivate()
@@ -100,6 +95,10 @@ public class Balls : MonoBehaviour
         }
 
         GameObject.Find("BallsText").GetComponent<Text>().enabled = true;
+
+        GameObject.Find("Peasant amount").GetComponent<Text>().text = "x" + peasantCount.ToString();
+        GameObject.Find("Goon amount").GetComponent<Text>().text = "x" + goonCount.ToString();
+        GameObject.Find("Mafia Boss amount").GetComponent<Text>().text = "x" + mafiaBossCount.ToString();
     }
 
     public void ThrowPeasant()

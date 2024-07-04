@@ -21,4 +21,5 @@ public class coinCount : MonoBehaviour
     {
         coinAmountDispl.text = coinAmount.ToString();
     }
+
 }
