@@ -9,7 +9,6 @@ public class coinCount : MonoBehaviour
     public static int coinAmount=0;
     private Text coinAmountDispl;
 
-
     // Start is called before the first frame update
     void Start()
     {
