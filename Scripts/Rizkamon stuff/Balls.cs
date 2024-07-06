@@ -28,6 +28,13 @@ public class Balls : MonoBehaviour
         shootingPoint = GameObject.Find("shooting point").GetComponent<Transform>();
     }
 
+    private void Update()
+    {
+        GameObject.Find("Peasant amount").GetComponent<Text>().text = "x" + peasantCount.ToString();
+        GameObject.Find("Goon amount").GetComponent<Text>().text = "x" + goonCount.ToString();
+        GameObject.Find("Mafia Boss amount").GetComponent<Text>().text = "x" + mafiaBossCount.ToString();
+    }
+
     public void BallsActivate()
     {
         BallsActivation(true);
@@ -95,31 +102,36 @@ public class Balls : MonoBehaviour
         }
 
         GameObject.Find("BallsText").GetComponent<Text>().enabled = true;
-
-        GameObject.Find("Peasant amount").GetComponent<Text>().text = "x" + peasantCount.ToString();
-        GameObject.Find("Goon amount").GetComponent<Text>().text = "x" + goonCount.ToString();
-        GameObject.Find("Mafia Boss amount").GetComponent<Text>().text = "x" + mafiaBossCount.ToString();
     }
 
     public void ThrowPeasant()
     {
-        ThrowBall(peasantBall);
+        peasantCount = ThrowBall(peasantBall, peasantCount);
     }
     public void ThrowGoon()
     {
-        ThrowBall(goonBall);
+        goonCount = ThrowBall(goonBall, goonCount);
     }
     public void ThrowMafiaBoss()
     {
-        ThrowBall(mafiaBossBall);
+        mafiaBossCount = ThrowBall(mafiaBossBall, mafiaBossCount);
     }
 
-    private void ThrowBall(GameObject Ball)
+    private int ThrowBall(GameObject Ball, int count)
     {
-        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
-        Instantiate(Ball, shootingPoint.position, bulletRotation);
-        anim.Play("Throw");
-        BallsDeactivate();
+        if (count != 0)
+        {
+            Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
+            Instantiate(Ball, shootingPoint.position, bulletRotation);
+            anim.Play("Throw");
+            BallsDeactivate();
+            return --count;
+        }
+        else
+        {
+            Debug.LogWarning(Ball.name + " unavailable");
+            return count;
+        }
     }
 
 }
