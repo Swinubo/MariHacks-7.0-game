@@ -82,6 +82,9 @@ public class Change_to_battle : MonoBehaviour
 
         GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+
+        GameObject.Find("Move1Text").GetComponent<Text>().text = selectedCreature.Move1.Name;
+        GameObject.Find("Move2Text").GetComponent<Text>().text = selectedCreature.Move2.Name;
     }
 
     private void chooseRizkamon(string[] rizkamonList)

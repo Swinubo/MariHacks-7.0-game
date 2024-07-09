@@ -19,7 +19,7 @@ public class Flee : MonoBehaviour
     }
 
     public void OnFlee(){
-        BattleActivation(mainCam, battleCam, true);
+        BattleActivation(mainCam, battleCam, false);
         foreach (var item in Collector.rizkamons)
         {
             GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
@@ -29,26 +29,23 @@ public class Flee : MonoBehaviour
     }
 
     public static void BattleActivation(Camera mainCam, Camera battleCam, bool OnorOff){
-        battleCam.enabled = !OnorOff;
-        mainCam.enabled = OnorOff;
-        Change_to_battle.battleDisplayRan = !OnorOff;
-        GameObject.Find("Battle").GetComponent<AudioSource>().enabled =!OnorOff; 
-        GameObject.Find("Player").GetComponent<AudioSource>().enabled =OnorOff; 
-        GameObject.Find("Balls").GetComponent<Image>().enabled =!OnorOff; 
-        GameObject.Find("Move1").GetComponent<Image>().enabled =!OnorOff;
-        GameObject.Find("Move2").GetComponent<Image>().enabled =!OnorOff;
-        GameObject.Find("Flee").GetComponent<Image>().enabled =!OnorOff;
-        GameObject.Find("Balls").GetComponent<Button>().enabled =!OnorOff; 
-        GameObject.Find("Move1").GetComponent<Button>().enabled =!OnorOff;
-        GameObject.Find("Move2").GetComponent<Button>().enabled =!OnorOff;
-        GameObject.Find("Flee").GetComponent<Button>().enabled =!OnorOff;
-        GameObject.Find("BallsText").GetComponent<Text>().enabled =!OnorOff; 
-        GameObject.Find("Move1Text").GetComponent<Text>().enabled =!OnorOff;
-        GameObject.Find("Move2Text").GetComponent<Text>().enabled =!OnorOff;
-        GameObject.Find("FleeText").GetComponent<Text>().enabled =!OnorOff;
-        GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =!OnorOff;
-
-        GameObject.Find("Move1Text").GetComponent<Text>().text = Creature.Bip.Move1.Name;
-        GameObject.Find("Move2Text").GetComponent<Text>().text = Creature.Bip.Move2.Name;
+        battleCam.enabled = OnorOff;
+        mainCam.enabled = !OnorOff;
+        Change_to_battle.battleDisplayRan = OnorOff;
+        GameObject.Find("Battle").GetComponent<AudioSource>().enabled =OnorOff; 
+        GameObject.Find("Player").GetComponent<AudioSource>().enabled =!OnorOff; 
+        GameObject.Find("Balls").GetComponent<Image>().enabled =OnorOff; 
+        GameObject.Find("Move1").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("Move2").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("Flee").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("Balls").GetComponent<Button>().enabled =OnorOff; 
+        GameObject.Find("Move1").GetComponent<Button>().enabled =OnorOff;
+        GameObject.Find("Move2").GetComponent<Button>().enabled =OnorOff;
+        GameObject.Find("Flee").GetComponent<Button>().enabled =OnorOff;
+        GameObject.Find("BallsText").GetComponent<Text>().enabled =OnorOff; 
+        GameObject.Find("Move1Text").GetComponent<Text>().enabled =OnorOff;
+        GameObject.Find("Move2Text").GetComponent<Text>().enabled =OnorOff;
+        GameObject.Find("FleeText").GetComponent<Text>().enabled =OnorOff;
+        GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =OnorOff;
     }
 }
