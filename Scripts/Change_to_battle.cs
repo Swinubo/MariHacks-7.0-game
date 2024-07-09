@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
-using System.Threading;
 
 public class Change_to_battle : MonoBehaviour
 {
@@ -16,16 +15,20 @@ public class Change_to_battle : MonoBehaviour
     public static bool battleDisplayRan = false;
 
     //location string lists
-    private string[] sky_bidi = {"Bip", "Richard", "Punny", "Joe"};
-    private string[] rizz = {"AlvinJR", "Whale"};
-    private string[] edge = {"Quakor", "Terroc", "Beeogee", "Bellico", "Jo"};
-
+    private Creature[] sky_bidi;
+    private string[] rizz;
+    private string[] edge;
 
     private void Start()
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
+
+        //location creature lists
+        sky_bidi = new Creature[] { Creature.Bip, Creature.Richard, Creature.Punny, Creature.Joe };
+        rizz = new string[] { "AlvinJR", "Whale" };
+        edge = new string[] { "Quakor", "Terroc", "Beeogee", "Bellico", "Jo" };
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,13 +37,13 @@ public class Change_to_battle : MonoBehaviour
         {
             randomNumber = random.Next(0, 3);
             if (randomNumber == 2)
-            {   
+            {
                 if (!battleDisplayRan)
                 {
-                    GameObject.Find("Battle").GetComponent<AudioSource>().enabled =true; 
-                    GameObject.Find("Player").GetComponent<AudioSource>().enabled =false; 
-                    rb.bodyType = RigidbodyType2D.Static;                   
-                    Player_Movement.playToBattle = true; 
+                    GameObject.Find("Battle").GetComponent<AudioSource>().enabled = true;
+                    GameObject.Find("Player").GetComponent<AudioSource>().enabled = false;
+                    rb.bodyType = RigidbodyType2D.Static;
+                    Player_Movement.playToBattle = true;
                     Debug.Log(battleDisplayRan);
                 }
             }
@@ -69,6 +72,18 @@ public class Change_to_battle : MonoBehaviour
         }
     }
 
+    private void chooseRizkamon(Creature[] rizkamonList)
+    {
+        // Generate a random index
+        int randomIndex = random.Next(rizkamonList.Length);
+
+        // Retrieve the creature at the random index
+        Creature selectedCreature = rizkamonList[randomIndex];
+
+        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+    }
+
     private void chooseRizkamon(string[] rizkamonList)
     {
         // Generate a random index
@@ -77,8 +92,7 @@ public class Change_to_battle : MonoBehaviour
         // Retrieve the string at the random index
         rizkamon = rizkamonList[randomIndex];
 
-        GameObject.Find(rizkamon+"_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-        GameObject.Find(rizkamon+"_irnl").GetComponent<BoxCollider2D>().enabled =true; 
-
+        GameObject.Find(rizkamon + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(rizkamon + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
     }
 }
