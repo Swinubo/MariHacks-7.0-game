@@ -23,7 +23,7 @@ public class AddRizkamon : MonoBehaviour
     {
         anim.SetBool("IsFlickering", false);
         Destroy(OnCollideWithBullet.ball);
-        Flee.BattleActivation(mainCam, battleCam, true);
+        Flee.BattleActivation(mainCam, battleCam, false);
         rb.bodyType = RigidbodyType2D.Dynamic;
 
         foreach (var item in Collector.rizkamons)
