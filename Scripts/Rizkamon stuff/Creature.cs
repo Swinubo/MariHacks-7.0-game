@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Creature : MonoBehaviour
+public class Creature
 {
-    // Auto-implemented properties
-    public string Name { get; set; }
-    public int HP { get; set; }
-    public float AttackStat { get; set; }
-    public float DefenceStat { get; set; }
-    public Move Move1 { get; set; }
-    public Move Move2 { get; set; }
+    //Properties of creature
+    public string Name { get; private set; }
+    public int Health { get; private set; }
+    public float Attack { get; private set; }
+    public float Defence { get; private set; }
+    public Move Move1 { get; private set; }
+    public Move Move2 { get; private set; }
 
     //Creatures
     public static Creature Bip;
@@ -18,22 +14,18 @@ public class Creature : MonoBehaviour
     public static Creature Punny;
     public static Creature Joe;
 
-    // Constructor to initialize a new Creature object
-    public Creature(string name, int hp, float attackStat, float defenceStat, Move move1, Move move2)
+    public Creature(string name, int health, float attack, float defence, Move move1, Move move2)
     {
         Name = name;
-        HP = hp;
-        AttackStat = attackStat;
-        DefenceStat = defenceStat;
+        Health = health;
+        Attack = attack;
+        Defence = defence;
         Move1 = move1;
         Move2 = move2;
     }
 
-    private void Start()
+    public override string ToString()
     {
-        Creature Bip = new Creature("Bip", 20, 1, 1.5f, Move.Scratch, Move.Rizz);
-        Creature Richard = new Creature("Richard", 25, 1, 1f, Move.Scratch, Move.Shout);
-        Creature Punny = new Creature("Punny", 12, 2, 1f, Move.Shout, Move.Ballz);
-        Creature Joe = new Creature("Joe", 30, 0.9f, 2f, Move.Shout, Move.Rizz);
+        return $"Creature: {Name}, Health: {Health}, Attack: {Attack}, Defence: {Defence}, Move1: {Move1.Name}, Move2: {Move2.Name}";
     }
 }

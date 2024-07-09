@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Move : MonoBehaviour
+public class Move
 {
     // Properties of the move
     public string Name { get; set; }
@@ -29,15 +25,5 @@ public class Move : MonoBehaviour
         Heal = heal;
         AttackEnhance = attackEnhance;
         DefenceEnhance = defenceEnhance;
-    }
-
-    private void Start()
-    {
-        Scratch = new Move("Scratch", "Rizz", 5, 0, 0f, 0f);
-        Shout = new Move("Shout", "Swiftie", 0, 0, 1.5f, 1.5f);
-        Rizz = new Move("Rizz", "Rizz", 0, 0, 3f, 0f);
-        Ballz = new Move("Ballz", "Aura", 0, 8, 0f, 0f);
-        Watasigma = new Move("Watasigma", "Aura", 3, 0, 0f, 2f);
-        Drop = new Move("Drop", "Swiftie", 0, 0, 0f, 5f);
     }
 }
