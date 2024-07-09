@@ -8,9 +8,12 @@ public class MoveManager : MonoBehaviour
         Move.Scratch = new Move("SCRATCH", "Rizz", 5, 0, 0f, 0f);
         Move.Shout = new Move("SHOUT", "Swiftie", 0, 0, 1.5f, 1.5f);
         Move.Rizz = new Move("RIZZ", "Rizz", 0, 0, 3f, 0f);
-        Move.Ballz = new Move("BALLZ", "Aura", 0, 8, 0f, 0f);
+        Move.Ballz = new Move("BALLZ", "Aura", 3, 3, 0f, 0f);
         Move.Watasigma = new Move("WATASIGMA", "Aura", 3, 0, 0f, 2f);
         Move.Drop = new Move("DROP", "Swiftie", 0, 0, 0f, 5f);
+        Move.ThunderRizz = new Move("THUNDER RIZZ", "Rizz", 8, 0, 0f, 0f);
+        Move.AuraHeal = new Move("AURA HEAL", "Aura", 0, 0, 8f, 5f);
+        Move.SwiftSerenade = new Move("SWIFT SERENADE", "Swiftie", 1, 2, 1.5f, 1.5f);
 
         Creature.Bip = new Creature("Bip", 20, 1, 1.5f, Move.Scratch, Move.Rizz);
         Creature.Richard = new Creature("Richard", 25, 1, 1f, Move.Scratch, Move.Shout);

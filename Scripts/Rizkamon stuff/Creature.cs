@@ -14,6 +14,15 @@ public class Creature
     public static Creature Punny;
     public static Creature Joe;
 
+    /*public static Creature AlvinJR;
+    public static Creature Whale;
+
+    public static Creature AlvinJR;
+    public static Creature Whale;
+    public static Creature AlvinJR;
+    public static Creature Whale;
+    public static Creature AlvinJR;*/
+
     public Creature(string name, int health, float attack, float defence, Move move1, Move move2)
     {
         Name = name;

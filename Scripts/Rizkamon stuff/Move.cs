@@ -15,6 +15,9 @@ public class Move
     public static Move Ballz;
     public static Move Watasigma;
     public static Move Drop;
+    public static Move ThunderRizz;
+    public static Move AuraHeal;
+    public static Move SwiftSerenade;
 
     // Constructor to initialize a new Move object
     public Move(string name, string type, int power, int heal, float attackEnhance, float defenceEnhance)

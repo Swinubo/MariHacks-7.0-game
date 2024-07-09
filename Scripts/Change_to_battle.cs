@@ -85,6 +85,8 @@ public class Change_to_battle : MonoBehaviour
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = selectedCreature.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = selectedCreature.Move2.Name;
+        GameObject.Find("My HP").GetComponent<Text>().text = selectedCreature.Health.ToString() + " HP";
+        GameObject.Find("Foe HP").GetComponent<Text>().text = selectedCreature.Health.ToString() + "HP";
     }
 
     private void chooseRizkamon(string[] rizkamonList)
