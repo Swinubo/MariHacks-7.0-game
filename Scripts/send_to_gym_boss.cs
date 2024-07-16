@@ -28,13 +28,13 @@ public class send_to_gym_boss : MonoBehaviour
         deleteSumStuff();
         if (gym_leader == 0)
         {
-            Change_to_battle.rizkamon = "travis";
+            Change_to_battle.rizkamon = Creature.Travis;
             GameObject.Find("Travis_irnl").GetComponent<SpriteRenderer>().enabled =true; 
             GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
         else if (gym_leader == 1)
         {
-            Change_to_battle.rizkamon = "ligma";
+            Change_to_battle.rizkamon = Creature.Ligma;
             GameObject.Find("Ligma_irnl").GetComponent<SpriteRenderer>().enabled =true; 
             GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }

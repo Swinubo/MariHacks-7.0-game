@@ -8,7 +8,7 @@ public class Change_to_battle : MonoBehaviour
 {
     private Camera mainCam;
     private Camera battleCam;
-    public static string rizkamon = "";
+    public static Creature rizkamon;
     Random random = new Random();
     private int randomNumber;
     private Rigidbody2D rb;
@@ -16,8 +16,8 @@ public class Change_to_battle : MonoBehaviour
 
     //location string lists
     private Creature[] sky_bidi;
-    private string[] rizz;
-    private string[] edge;
+    private Creature[] rizz;
+    private Creature[] edge;
 
     private void Start()
     {
@@ -27,8 +27,8 @@ public class Change_to_battle : MonoBehaviour
 
         //location creature lists
         sky_bidi = new Creature[] { Creature.Bip, Creature.Richard, Creature.Punny, Creature.Joe };
-        rizz = new string[] { "AlvinJR", "Whale" };
-        edge = new string[] { "Quakor", "Terroc", "Beeogee", "Bellico", "Jo" };
+        rizz = new Creature[] { Creature.AlvinJR, Creature.Whale };
+        edge = new Creature[] { Creature.Bellico, Creature.Beeogee, Creature.Terroc, Creature.Quakor, Creature.Jo };
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -87,17 +87,5 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find("Move2Text").GetComponent<Text>().text = selectedCreature.Move2.Name;
         GameObject.Find("My HP").GetComponent<Text>().text = selectedCreature.Health.ToString() + " HP";
         GameObject.Find("Foe HP").GetComponent<Text>().text = selectedCreature.Health.ToString() + "HP";
-    }
-
-    private void chooseRizkamon(string[] rizkamonList)
-    {
-        // Generate a random index
-        int randomIndex = random.Next(rizkamonList.Length);
-
-        // Retrieve the string at the random index
-        rizkamon = rizkamonList[randomIndex];
-
-        GameObject.Find(rizkamon + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find(rizkamon + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
     }
 }

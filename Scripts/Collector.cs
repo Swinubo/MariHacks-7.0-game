@@ -8,10 +8,12 @@ public class Collector : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public static List<string> have_rizkamons = new List<string>();
+    public static List<Creature> have_rizkamons = new List<Creature>();
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;
+
+    public static Creature currentRizkamon;
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class Collector : MonoBehaviour
 
     private void Update()
     {
-        /*if (rizkamons.Count == 13)
+        /*if (have_rizkamons.Count == rizkamonsSER.Length)
         {
             StartCoroutine(goToEnd());
         }*/

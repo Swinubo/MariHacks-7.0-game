@@ -41,19 +41,19 @@ public class init_sit : MonoBehaviour
 
     public void ChooseDeviousussy()
     {
-        Collector.have_rizkamons.Add("Deviousussy");
+        Collector.have_rizkamons.Add(Creature.Deviousussy);
         leave();
     }
 
     public void ChooseAurasaurus()
     {
-        Collector.have_rizkamons.Add("Aurasaurus");
+        Collector.have_rizkamons.Add(Creature.Aurasaurus);
         leave();
     }
 
     public void ChooseAnky()
     {
-        Collector.have_rizkamons.Add("Anky");
+        Collector.have_rizkamons.Add(Creature.Anky);
         leave();
     }
 

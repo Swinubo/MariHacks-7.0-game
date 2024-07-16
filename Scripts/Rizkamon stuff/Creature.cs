@@ -14,14 +14,22 @@ public class Creature
     public static Creature Punny;
     public static Creature Joe;
 
-    /*public static Creature AlvinJR;
+    public static Creature AlvinJR;
     public static Creature Whale;
 
-    public static Creature AlvinJR;
-    public static Creature Whale;
-    public static Creature AlvinJR;
-    public static Creature Whale;
-    public static Creature AlvinJR;*/
+    public static Creature Bellico;
+    public static Creature Beeogee;
+    public static Creature Quakor;
+    public static Creature Terroc;
+    public static Creature Jo;
+
+    public static Creature Aurasaurus;
+    public static Creature Deviousussy;
+    public static Creature Anky;
+
+    //gym
+    public static Creature Travis;
+    public static Creature Ligma;
 
     public Creature(string name, int health, float attack, float defence, Move move1, Move move2)
     {

@@ -26,30 +26,28 @@ public class Shop : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         openShop.enabled = false;
-        ShopActivation(false);
+        ShopActivation(false, "Shop Menu");
     }
 
     public void ShopActivate()
     {
-        Debug.Log("PRESSED");
-        ShopActivation(true);
-        Debug.Log("PRESSED2");
+        ShopActivation(true, "Shop Menu");
     }
 
     public void ShopDeactivate()
     {
-        ShopActivation(false);
+        ShopActivation(false, "Shop Menu");
     }
 
-    private void ShopActivation(bool OnorOff)
+    public static void ShopActivation(bool OnorOff, string Menu)
     {
         // Find the parent GameObject named "Balls"
-        GameObject parentObject = GameObject.Find("Shop Menu");
+        GameObject parentObject = GameObject.Find(Menu);
 
         EnableOrDisableComponentsInChildren(parentObject.transform, OnorOff);
     }
 
-    private void EnableOrDisableComponentsInChildren(Transform parentTransform, bool OnorOff)
+    private static void EnableOrDisableComponentsInChildren(Transform parentTransform, bool OnorOff)
     {
         // Iterate through each child transform of the parent Transform
         foreach (Transform child in parentTransform)
