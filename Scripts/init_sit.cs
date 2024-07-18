@@ -8,7 +8,7 @@ public class init_sit : MonoBehaviour
 {
 
     [SerializeField] private string[] DrRizzText;
-    private string[] starters = { "Aurasaurus", "Deviousussy", "Anky" };
+    private Creature[] starters = { Creature.Aurasaurus, Creature.Deviousussy , Creature.Anky };
     private Text Text;
     private int currentText = 0;
 
@@ -26,10 +26,10 @@ public class init_sit : MonoBehaviour
         }
         else
         {
-            foreach (string rizkamon in starters)
+            foreach (Creature rizkamon in starters)
             {
-                GameObject.Find(rizkamon).GetComponent<Image>().enabled = true;
-                GameObject.Find(rizkamon).GetComponent<Button>().enabled = true;
+                GameObject.Find(rizkamon.Name).GetComponent<Image>().enabled = true;
+                GameObject.Find(rizkamon.Name).GetComponent<Button>().enabled = true;
             }
         }
     }
@@ -42,18 +42,21 @@ public class init_sit : MonoBehaviour
     public void ChooseDeviousussy()
     {
         Collector.have_rizkamons.Add(Creature.Deviousussy);
+        Collector.currentRizkamon = Creature.Deviousussy;
         leave();
     }
 
     public void ChooseAurasaurus()
     {
         Collector.have_rizkamons.Add(Creature.Aurasaurus);
+        Collector.currentRizkamon = Creature.Aurasaurus;
         leave();
     }
 
     public void ChooseAnky()
     {
         Collector.have_rizkamons.Add(Creature.Anky);
+        Collector.currentRizkamon = Creature.Anky;
         leave();
     }
 

@@ -19,6 +19,8 @@ public class Change_to_battle : MonoBehaviour
     private Creature[] rizz;
     private Creature[] edge;
 
+    private Creature selectedCreature;
+
     private void Start()
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -44,7 +46,6 @@ public class Change_to_battle : MonoBehaviour
                     GameObject.Find("Player").GetComponent<AudioSource>().enabled = false;
                     rb.bodyType = RigidbodyType2D.Static;
                     Player_Movement.playToBattle = true;
-                    Debug.Log(battleDisplayRan);
                 }
             }
         }
@@ -78,10 +79,11 @@ public class Change_to_battle : MonoBehaviour
         int randomIndex = random.Next(rizkamonList.Length);
 
         // Retrieve the creature at the random index
-        Creature selectedCreature = rizkamonList[randomIndex];
+        selectedCreature = rizkamonList[randomIndex];
 
-        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+       // Debug.Log(selectedCreature.Name);
+        GameObject.Find(Creature.Bip.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(Creature.Bip.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = selectedCreature.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = selectedCreature.Move2.Name;

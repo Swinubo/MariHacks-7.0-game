@@ -41,6 +41,6 @@ public class MoveManager : MonoBehaviour
         Creature.Travis = new Creature("Travis", 30, 0.9f, 2f, Move.Drop, Move.Drop);
         Creature.Ligma = new Creature("Ligma", 30, 0.9f, 2f, Move.Shout, Move.Rizz);
 
-        Debug.Log(Creature.Bip);
+        Debug.Log("Name of Bip: " + Creature.Bip.Name);
     }
 }
