@@ -19,6 +19,8 @@ public class Collector : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rizkamons = rizkamonsSER;
+
+        currentRizkamon = Creature.Bip;
     }
 
     private void Update()

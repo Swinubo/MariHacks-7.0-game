@@ -87,8 +87,8 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
 
-        GameObject.Find(Collector.currentRizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find(Collector.currentRizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<BoxCollider2D>().enabled = true;
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;
