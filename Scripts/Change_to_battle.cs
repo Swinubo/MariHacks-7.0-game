@@ -19,8 +19,6 @@ public class Change_to_battle : MonoBehaviour
     private Creature[] rizz;
     private Creature[] edge;
 
-    private Creature selectedCreature;
-
     private void Start()
     {
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -80,19 +78,19 @@ public class Change_to_battle : MonoBehaviour
         Debug.Log(randomIndex);
 
         // Retrieve the creature at the random index
-        selectedCreature = rizkamonList[randomIndex];
-        Debug.Log(selectedCreature);
+        rizkamon = rizkamonList[randomIndex];
+        Debug.Log(rizkamon.Name);
 
-       // Debug.Log(selectedCreature.Name);
-        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find(selectedCreature.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+       // Debug.Log(rizkamon.Name);
+        GameObject.Find(rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
 
         GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
-        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<BoxCollider2D>().enabled = true;
+      //  GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<BoxCollider2D>().enabled = true;
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;
         GameObject.Find("My HP").GetComponent<Text>().text = Collector.currentRizkamon.Health.ToString() + " HP";
-        GameObject.Find("Foe HP").GetComponent<Text>().text = selectedCreature.Health.ToString() + "HP";
+        GameObject.Find("Foe HP").GetComponent<Text>().text = rizkamon.Health.ToString() + "HP";
     }
 }

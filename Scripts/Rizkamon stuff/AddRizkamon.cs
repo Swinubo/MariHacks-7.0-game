@@ -33,6 +33,6 @@ public class AddRizkamon : MonoBehaviour
         }
 
         Collector.have_rizkamons.Add(Change_to_battle.rizkamon);
-        Debug.Log("Added rizkamon: " + Change_to_battle.rizkamon);
+        Debug.Log("Added rizkamon: " + Change_to_battle.rizkamon.Name);
     }
 }

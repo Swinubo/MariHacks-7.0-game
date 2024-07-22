@@ -22,7 +22,7 @@ public class MoveManager : MonoBehaviour
         Creature.Joe = new Creature("Joe", 30, 0.9f, 2f, Move.Shout, Move.Rizz);
 
         //rizz
-        Creature.AlvinJR = new Creature("Alvin JR", 30, 0.9f, 2f, Move.Watasigma, Move.AuraHeal);
+        Creature.AlvinJR = new Creature("AlvinJR", 30, 0.9f, 2f, Move.Watasigma, Move.AuraHeal);
         Creature.Whale = new Creature("Whale", 30, 0.9f, 2f, Move.Ballz, Move.Watasigma);
 
         //edge
