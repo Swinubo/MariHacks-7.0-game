@@ -12,6 +12,12 @@ public class PC : MonoBehaviour
         PcDeactivate();
     }
 
+    private void Update()
+    {
+        GameObject.Find("currentRizkamonName").GetComponent<Text>().text = Collector.currentRizkamon.Name;
+        GameObject.Find("currentRizkamonImage").GetComponent<Image>().sprite = GameObject.Find(Collector.currentRizkamon.Name).GetComponent<Image>().sprite;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         openShop.enabled = true;

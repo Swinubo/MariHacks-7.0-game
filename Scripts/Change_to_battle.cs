@@ -13,6 +13,7 @@ public class Change_to_battle : MonoBehaviour
     private int randomNumber;
     private Rigidbody2D rb;
     public static bool battleDisplayRan = false;
+    private bool inBattle = false;
 
     //location string lists
     private Creature[] sky_bidi;
@@ -29,6 +30,16 @@ public class Change_to_battle : MonoBehaviour
         sky_bidi = new Creature[] { Creature.Bip, Creature.Richard, Creature.Punny, Creature.Joe };
         rizz = new Creature[] { Creature.AlvinJR, Creature.Whale };
         edge = new Creature[] { Creature.Bellico, Creature.Beeogee, Creature.Terroc, Creature.Quakor, Creature.Jo };
+    }
+
+    private void Update()
+    {
+        if (inBattle)
+        {
+            //update healths
+            GameObject.Find("My HP").GetComponent<Text>().text = Collector.currentRizkamon.Health.ToString() + " HP";
+            GameObject.Find("Foe HP").GetComponent<Text>().text = rizkamon.Health.ToString() + "HP";
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -90,7 +101,7 @@ public class Change_to_battle : MonoBehaviour
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;
-        GameObject.Find("My HP").GetComponent<Text>().text = Collector.currentRizkamon.Health.ToString() + " HP";
-        GameObject.Find("Foe HP").GetComponent<Text>().text = rizkamon.Health.ToString() + "HP";
+
+        inBattle = true;
     }
 }
