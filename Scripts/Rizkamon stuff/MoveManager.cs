@@ -2,12 +2,22 @@ using UnityEngine;
 
 public class MoveManager : MonoBehaviour
 {
-
+    private Camera mainCam;
+    private Camera battleCam;
+    private Rigidbody2D rb;
+    private int moveFavoured; //if =0, move 1
+    //if =1, move 2
     private void Start()
     {
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
+
+        rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+
+        //name, type, power, heal, attackenhance, defenceenhance
         Move.Scratch = new Move("SCRATCH", "Rizz", 5, 0, 0f, 0f);
         Move.Shout = new Move("SHOUT", "Swiftie", 0, 0, 1.5f, 1.5f);
-        Move.Rizz = new Move("RIZZ", "Rizz", 0, 0, 3f, 0f);
+        Move.Rizz = new Move("RIZZ", "Rizz", 0, 4, 3f, 0f);
         Move.Ballz = new Move("BALLZ", "Aura", 3, 3, 0f, 0f);
         Move.Watasigma = new Move("WATASIGMA", "Aura", 3, 0, 0f, 2f);
         Move.Drop = new Move("DROP", "Swiftie", 0, 0, 0f, 5f);
@@ -54,11 +64,44 @@ public class MoveManager : MonoBehaviour
     public void Move2Play()
     {
         movePlay(Collector.currentRizkamon.Move2);
-        Debug.Log(Collector.currentRizkamon.Move1.Name);
+        Debug.Log(Collector.currentRizkamon.Move2.Name);
     }
 
     private void movePlay(Move move)
     {
         Change_to_battle.rizkamon.Health -= move.Power;
+        Collector.currentRizkamon.Health += move.Heal;
+        if (Change_to_battle.rizkamon.Health <= 0)
+        {
+            Flee.BattleActivation(mainCam, battleCam, false);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        foePlay();
+    }
+
+    private void foePlay()
+    {
+        moveFavoured = Random.Range(0, 2);
+        if (moveFavoured == 0)
+        {
+            moveFoe(Change_to_battle.rizkamon.Move1);
+        }
+        else if (moveFavoured == 1)
+        {
+            moveFoe(Change_to_battle.rizkamon.Move2);
+        }
+    }
+
+    private void moveFoe(Move move)
+    {
+        Collector.currentRizkamon.Health -= move.Power;
+        Change_to_battle.rizkamon.Health += move.Heal;
+
+        if (Collector.currentRizkamon.Health <= 0)
+        {
+            Flee.BattleActivation(mainCam, battleCam, false);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
     }
 }
