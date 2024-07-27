@@ -16,6 +16,7 @@ public class Change_to_battle : MonoBehaviour
     private bool inBattle = false;
     private Text gen_text;
     private int messageCount;
+    private Animator anim;
 
     //location string lists
     private Creature[] sky_bidi;
@@ -29,6 +30,8 @@ public class Change_to_battle : MonoBehaviour
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
 
         gen_text = GameObject.Find("text").GetComponent<Text>();
+
+        anim = GameObject.Find("Arm").GetComponent<Animator>();
 
         //location creature lists
         sky_bidi = new Creature[] { Creature.Bip, Creature.Richard, Creature.Punny, Creature.Joe };
@@ -100,7 +103,6 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find(rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find(rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
 
-        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
       //  GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<BoxCollider2D>().enabled = true;
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
@@ -144,11 +146,20 @@ public class Change_to_battle : MonoBehaviour
         {
             StartCoroutine(BattleTypewriter("Go " + Collector.currentRizkamon.Name + "!", gen_text));
         }
-        else
+        else if (messageCount == 2)
         {
-            GameObject.Find("text").GetComponent<Text>().enabled =false; 
-            GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
-            GameObject.Find("General_text").GetComponent<Button>().enabled =false; 
+            anim.SetBool("throwing", true);
+            yield return new WaitForSeconds(0.5f);
+            displayMyRizkamon();
         }
+    }
+
+    private void displayMyRizkamon()
+    {
+        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
+
+        GameObject.Find("text").GetComponent<Text>().enabled =false; 
+        GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
+        GameObject.Find("General_text").GetComponent<Button>().enabled =false;
     }
 }

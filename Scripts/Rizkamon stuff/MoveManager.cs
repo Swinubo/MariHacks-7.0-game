@@ -80,11 +80,15 @@ public class MoveManager : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
 
-        foePlay();
+        StartCoroutine(foePlay());
     }
 
-    private void foePlay()
+    IEnumerator foePlay()
     {
+
+        yield return new WaitForSeconds(5f);
+
+
         moveFavoured = Random.Range(0, 2);
         if (moveFavoured == 0)
         {

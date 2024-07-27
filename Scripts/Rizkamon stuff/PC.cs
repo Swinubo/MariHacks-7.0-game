@@ -42,15 +42,10 @@ public class PC : MonoBehaviour
     {
         foreach (Creature rizkamon in Collector.have_rizkamons)
         {
-            Debug.Log(rizkamonName);
-            Debug.Log(rizkamon.Name);
-            Debug.Log("dd");
             if (rizkamon.Name == rizkamonName)
             {
                 Collector.currentRizkamon = rizkamon;
-                Debug.Log(Collector.currentRizkamon.Name);
             }
         }
-        Debug.Log("he;");
     }
 }

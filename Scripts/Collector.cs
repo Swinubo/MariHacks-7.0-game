@@ -14,13 +14,15 @@ public class Collector : MonoBehaviour
     public static GameObject[] rizkamons;
 
     public static Creature currentRizkamon;
+    public static Creature initcurrentRizkamon;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rizkamons = rizkamonsSER;
 
-        currentRizkamon = Creature.Bip;
+        currentRizkamon = Creature.Jo;
+        initcurrentRizkamon = currentRizkamon;
     }
 
     private void Update()
