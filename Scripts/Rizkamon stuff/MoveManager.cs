@@ -10,12 +10,15 @@ public class MoveManager : MonoBehaviour
     private Rigidbody2D rb;
     private int moveFavoured; //if =0, move 1
     //if =1, move 2
+    private Text attackStatus;
     private void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+
+        attackStatus = GameObject.Find("Attack status").GetComponent<Text>();
 
         //name, type, power, heal, attackenhance, defenceenhance
         Move.Scratch = new Move("SCRATCH", "Rizz", 5, 0, 0f, 0f);
@@ -85,23 +88,28 @@ public class MoveManager : MonoBehaviour
 
     IEnumerator foePlay()
     {
-
-        yield return new WaitForSeconds(5f);
-
-
+        Change_to_battle.trans.raycastTarget = true;
+        yield return new WaitForSeconds(3f);
+        
         moveFavoured = Random.Range(0, 2);
         if (moveFavoured == 0)
         {
-            moveFoe(Change_to_battle.rizkamon.Move1);
+            StartCoroutine(moveFoe(Change_to_battle.rizkamon.Move1));
         }
         else if (moveFavoured == 1)
         {
-            moveFoe(Change_to_battle.rizkamon.Move2);
+            StartCoroutine(moveFoe(Change_to_battle.rizkamon.Move2));
         }
     }
 
-    private void moveFoe(Move move)
+    IEnumerator moveFoe(Move move)
     {
+        attackStatus.enabled = true;
+        attackStatus.text = "Opponent used " + move.Name + "!";
+        yield return new WaitForSeconds(2f);
+        Change_to_battle.trans.raycastTarget = false;
+        attackStatus.enabled = false;
+
         Collector.currentRizkamon.Health -= move.Power;
         Change_to_battle.rizkamon.Health += move.Heal;
 

@@ -17,6 +17,7 @@ public class Change_to_battle : MonoBehaviour
     private Text gen_text;
     private int messageCount;
     private Animator anim;
+    public static Image trans;
 
     //location string lists
     private Creature[] sky_bidi;
@@ -32,6 +33,8 @@ public class Change_to_battle : MonoBehaviour
         gen_text = GameObject.Find("text").GetComponent<Text>();
 
         anim = GameObject.Find("Arm").GetComponent<Animator>();
+
+        trans = GameObject.Find("trans BGRND").GetComponent<Image>();
 
         //location creature lists
         sky_bidi = new Creature[] { Creature.Bip, Creature.Richard, Creature.Punny, Creature.Joe };
@@ -120,6 +123,7 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find("General_text").GetComponent<Button>().enabled =true; 
 
         StartCoroutine(BattleTypewriter("A wild " + rizkamon.Name + " has appeared!", gen_text));
+        trans.raycastTarget = true;
     }
 
     IEnumerator BattleTypewriter(string text, Text text_displ)
@@ -161,5 +165,7 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find("text").GetComponent<Text>().enabled =false; 
         GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
         GameObject.Find("General_text").GetComponent<Button>().enabled =false;
+
+        trans.raycastTarget = false;
     }
 }

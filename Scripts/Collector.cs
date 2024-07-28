@@ -21,7 +21,7 @@ public class Collector : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rizkamons = rizkamonsSER;
 
-        currentRizkamon = Creature.Jo;
+        currentRizkamon = Creature.Richard;
         initcurrentRizkamon = currentRizkamon;
     }
 
