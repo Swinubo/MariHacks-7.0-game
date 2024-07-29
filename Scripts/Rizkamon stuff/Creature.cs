@@ -41,6 +41,17 @@ public class Creature
         Move2 = move2;
     }
 
+    // Copy constructor
+    public Creature(Creature creatureToCopy)
+    {
+        Name = creatureToCopy.Name;
+        Health = creatureToCopy.Health;
+        Attack = creatureToCopy.Attack;
+        Defence = creatureToCopy.Defence;
+        Move1 = creatureToCopy.Move1;
+        Move2 = creatureToCopy.Move2;
+    }
+
     /*public override string ToString()
     {
         return $"Creature: {Name}, Health: {Health}, Attack: {Attack}, Defence: {Defence}, Move1: {Move1.Name}, Move2: {Move2.Name}";

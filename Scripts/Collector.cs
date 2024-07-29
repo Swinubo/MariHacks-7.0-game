@@ -15,6 +15,7 @@ public class Collector : MonoBehaviour
 
     public static Creature currentRizkamon;
     public static Creature initcurrentRizkamon;
+    public static Creature initFoeRizkamon;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class Collector : MonoBehaviour
         rizkamons = rizkamonsSER;
 
         currentRizkamon = Creature.Richard;
-        initcurrentRizkamon = currentRizkamon;
+        initcurrentRizkamon = new Creature(currentRizkamon); // Use copy constructor
     }
 
     private void Update()

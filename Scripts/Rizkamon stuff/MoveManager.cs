@@ -11,6 +11,8 @@ public class MoveManager : MonoBehaviour
     private int moveFavoured; //if =0, move 1
     //if =1, move 2
     private Text attackStatus;
+    private Slider mySlider;
+    private Slider foeSlider;
     private void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -19,6 +21,9 @@ public class MoveManager : MonoBehaviour
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 
         attackStatus = GameObject.Find("Attack status").GetComponent<Text>();
+
+        mySlider = GameObject.Find("My HP").GetComponent<Slider>();
+        foeSlider = GameObject.Find("Foe HP").GetComponent<Slider>();
 
         //name, type, power, heal, attackenhance, defenceenhance
         Move.Scratch = new Move("SCRATCH", "Rizz", 5, 0, 0f, 0f);
@@ -77,6 +82,9 @@ public class MoveManager : MonoBehaviour
     {
         Change_to_battle.rizkamon.Health -= move.Power;
         Collector.currentRizkamon.Health += move.Heal;
+        Debug.Log(Change_to_battle.rizkamon.Health / Collector.initFoeRizkamon.Health);
+        foeSlider.value = Change_to_battle.rizkamon.Health / Collector.initFoeRizkamon.Health;
+
         if (Change_to_battle.rizkamon.Health <= 0)
         {
             Flee.BattleActivation(mainCam, battleCam, false);
@@ -112,6 +120,8 @@ public class MoveManager : MonoBehaviour
 
         Collector.currentRizkamon.Health -= move.Power;
         Change_to_battle.rizkamon.Health += move.Heal;
+
+        mySlider.value = Collector.currentRizkamon.Health / Collector.initcurrentRizkamon.Health;
 
         if (Collector.currentRizkamon.Health <= 0)
         {

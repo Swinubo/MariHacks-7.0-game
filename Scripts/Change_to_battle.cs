@@ -102,6 +102,8 @@ public class Change_to_battle : MonoBehaviour
         rizkamon = rizkamonList[randomIndex];
         Debug.Log(rizkamon.Name);
 
+        Collector.initFoeRizkamon = new Creature(rizkamon);;
+
        // Debug.Log(rizkamon.Name);
         GameObject.Find(rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find(rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
