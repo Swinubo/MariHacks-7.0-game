@@ -13,9 +13,13 @@ public class Balls : MonoBehaviour
     private Transform shootingPoint;
     [SerializeField] private float angle = 20;
 
-    public static int peasantCount=0;
-    public static int goonCount=0;
-    public static int mafiaBossCount=0;
+    public static int peasantCount;
+    public static int goonCount;
+    public static int mafiaBossCount;
+    private int randomNum;
+    private int peasantPercent = 50;
+    private int goonPercent = 75;
+    private int mafiaBossPercent = 100;
 
     private void Start()
     {
@@ -106,20 +110,22 @@ public class Balls : MonoBehaviour
 
     public void ThrowPeasant()
     {
-        peasantCount = ThrowBall(peasantBall, peasantCount);
+        peasantCount = ThrowBall(peasantBall, peasantCount, peasantPercent);
     }
     public void ThrowGoon()
     {
-        goonCount = ThrowBall(goonBall, goonCount);
+        goonCount = ThrowBall(goonBall, goonCount, goonPercent);
     }
     public void ThrowMafiaBoss()
     {
-        mafiaBossCount = ThrowBall(mafiaBossBall, mafiaBossCount);
+        mafiaBossCount = ThrowBall(mafiaBossBall, mafiaBossCount, mafiaBossPercent);
     }
 
-    private int ThrowBall(GameObject Ball, int count)
+    private int ThrowBall(GameObject Ball, int count, int percent)
     {
-        if (count != 0)
+        randomNum = Random.Range(0, 101);
+
+        if (count != 0 && randomNum < percent)
         {
             Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
             Instantiate(Ball, shootingPoint.position, bulletRotation);
@@ -129,8 +135,8 @@ public class Balls : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(Ball.name + " unavailable");
-            return count;
+            Debug.LogError(Ball.name + " unavailable");
+            return --count;
         }
     }
 

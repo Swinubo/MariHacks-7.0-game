@@ -127,6 +127,8 @@ public class MoveManager : MonoBehaviour
         {
             Flee.BattleActivation(mainCam, battleCam, false);
             rb.bodyType = RigidbodyType2D.Dynamic;
+
+            
         }
     }
 
