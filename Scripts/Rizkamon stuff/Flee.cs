@@ -49,5 +49,9 @@ public class Flee : MonoBehaviour
         GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =OnorOff;
         GameObject.Find("My HP").GetComponent<Text>().enabled =OnorOff;
         GameObject.Find("Foe HP").GetComponent<Text>().enabled =OnorOff;
+        GameObject.Find("My Bar BGRND").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("My Bar").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("Foe Bar BGRND").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find("Foe Bar").GetComponent<Image>().enabled =OnorOff;
     }
 }

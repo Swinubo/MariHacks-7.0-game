@@ -82,8 +82,8 @@ public class MoveManager : MonoBehaviour
     {
         Change_to_battle.rizkamon.Health -= move.Power;
         Collector.currentRizkamon.Health += move.Heal;
-        Debug.Log(Change_to_battle.rizkamon.Health / Collector.initFoeRizkamon.Health);
-        foeSlider.value = Change_to_battle.rizkamon.Health / Collector.initFoeRizkamon.Health;
+
+        updateSliders();
 
         if (Change_to_battle.rizkamon.Health <= 0)
         {
@@ -121,12 +121,18 @@ public class MoveManager : MonoBehaviour
         Collector.currentRizkamon.Health -= move.Power;
         Change_to_battle.rizkamon.Health += move.Heal;
 
-        mySlider.value = Collector.currentRizkamon.Health / Collector.initcurrentRizkamon.Health;
+        updateSliders();
 
         if (Collector.currentRizkamon.Health <= 0)
         {
             Flee.BattleActivation(mainCam, battleCam, false);
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
+    }
+
+    private void updateSliders()
+    {
+        mySlider.value = (float) Collector.currentRizkamon.Health / (float) Collector.initcurrentRizkamon.Health;
+        foeSlider.value = (float)Change_to_battle.rizkamon.Health / (float)Collector.initFoeRizkamon.Health;
     }
 }
