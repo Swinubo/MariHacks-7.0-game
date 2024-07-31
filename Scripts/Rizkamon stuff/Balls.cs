@@ -125,18 +125,21 @@ public class Balls : MonoBehaviour
     {
         randomNum = Random.Range(0, 101);
 
-        if (count != 0 && randomNum < percent)
+        if (count != 0)
         {
-            Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
-            Instantiate(Ball, shootingPoint.position, bulletRotation);
-            anim.Play("Throw");
-            BallsDeactivate();
+            if (randomNum < percent)
+            {
+                Quaternion bulletRotation = Quaternion.Euler(0, 0, angle) * transform.rotation;
+                Instantiate(Ball, shootingPoint.position, bulletRotation);
+                anim.Play("Throw");
+                BallsDeactivate();
+            }
             return --count;
         }
         else
         {
             Debug.LogError(Ball.name + " unavailable");
-            return --count;
+            return count;
         }
     }
 

@@ -11,18 +11,14 @@ public class change_scene : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player")?.GetComponent<Transform>();
-        if (player == null)
-        {
-            Debug.LogError("Player object not found.");
-        }
+        player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            if (SceneManager.GetActiveScene().buildIndex == 2 && player != null)
+            if (SceneManager.GetActiveScene().buildIndex == 2)
             {
                 player_x = player.position.x;
                 player_y = player.position.y;

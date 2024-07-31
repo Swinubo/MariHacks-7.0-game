@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoveManager : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class MoveManager : MonoBehaviour
         Move.Watasigma = new Move("WATASIGMA", "Aura", 3, 0, 0f, 2f);
         Move.Drop = new Move("DROP", "Swiftie", 0, 0, 0f, 5f);
         Move.ThunderRizz = new Move("THUNDER RIZZ", "Rizz", 8, 0, 0f, 0f);
-        Move.AuraHeal = new Move("AURA HEAL", "Aura", 0, 0, 8f, 5f);
+        Move.AuraHeal = new Move("AURA HEAL", "Aura", 0, 8, 8f, 5f);
         Move.SwiftSerenade = new Move("SWIFT SERENADE", "Swiftie", 1, 2, 1.5f, 1.5f);
 
         //skybidi
@@ -125,10 +126,24 @@ public class MoveManager : MonoBehaviour
 
         if (Collector.currentRizkamon.Health <= 0)
         {
-            Flee.BattleActivation(mainCam, battleCam, false);
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            attackStatus.enabled = true;
+            attackStatus.text = "You died!";
+            yield return new WaitForSeconds(2f);
+            attackStatus.enabled = false;
+            //Flee.BattleActivation(mainCam, battleCam, false);
+            //rb.bodyType = RigidbodyType2D.Dynamic;  
 
-            
+            StartCoroutine(LoadRizzCenter());
+        }
+    }
+
+    private IEnumerator LoadRizzCenter()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(6);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 
