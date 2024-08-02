@@ -12,8 +12,8 @@ public class MoveManager : MonoBehaviour
     private int moveFavoured; //if =0, move 1
     //if =1, move 2
     private Text attackStatus;
-    private Slider mySlider;
-    private Slider foeSlider;
+    public static Slider mySlider;
+    public static Slider foeSlider;
     private void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();

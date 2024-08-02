@@ -45,6 +45,7 @@ public class PC : MonoBehaviour
             if (rizkamon.Name == rizkamonName)
             {
                 Collector.currentRizkamon = rizkamon;
+                Collector.initcurrentRizkamon = new Creature(rizkamon);
             }
         }
     }

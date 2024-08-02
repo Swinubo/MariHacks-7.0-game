@@ -74,7 +74,6 @@ public class Change_to_battle : MonoBehaviour
     {
         if (!battleDisplayRan)
         {
-            Flee.BattleActivation(mainCam, battleCam, true);
             Player_Movement.playToBattle = false;
 
             if (displ_location.location_str == "Rizz city")
@@ -115,6 +114,7 @@ public class Change_to_battle : MonoBehaviour
 
         inBattle = true;
 
+        Flee.BattleActivation(mainCam, battleCam, true);
         displ_texts();
     }
 
@@ -169,5 +169,7 @@ public class Change_to_battle : MonoBehaviour
         GameObject.Find("General_text").GetComponent<Button>().enabled =false;
 
         trans.raycastTarget = false;
+
+        messageCount = 0;
     }
 }

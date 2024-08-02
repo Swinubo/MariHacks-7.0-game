@@ -20,7 +20,7 @@ public class Door : MonoBehaviour
         Transform rizzSpawn = GameObject.Find("SpawnPos Rizz").GetComponent<Transform>();
         Transform gyattSpawn = GameObject.Find("SpawnPos Gyatt").GetComponent<Transform>();
 
-        if (displ_location.city_str == "Rizz city")
+        if (displ_location.city_str == "Rizz city" || displ_location.city_str == null)
         {
             player.position = new Vector3(rizzSpawn.position.x, rizzSpawn.position.y, rizzSpawn.position.z);
         }
