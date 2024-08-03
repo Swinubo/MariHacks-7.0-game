@@ -32,6 +32,7 @@ public class Flee : MonoBehaviour
         battleCam.enabled = OnorOff;
         mainCam.enabled = !OnorOff;
         Change_to_battle.battleDisplayRan = OnorOff;
+        GetOutOfStart.OnStart();
         GameObject.Find("Battle").GetComponent<AudioSource>().enabled =OnorOff; 
         GameObject.Find("Player").GetComponent<AudioSource>().enabled =!OnorOff; 
         GameObject.Find("Balls").GetComponent<Image>().enabled =OnorOff; 
@@ -53,6 +54,9 @@ public class Flee : MonoBehaviour
         GameObject.Find("My Bar").GetComponent<Image>().enabled =OnorOff;
         GameObject.Find("Foe Bar BGRND").GetComponent<Image>().enabled =OnorOff;
         GameObject.Find("Foe Bar").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find(Change_to_battle.rizkamon + "_irnl").GetComponent<Image>().enabled =OnorOff;
+        GameObject.Find(Change_to_battle.rizkamon + "_irnl").GetComponent<BoxCollider2D>().enabled =OnorOff;
+        GameObject.Find(Collector.currentRizkamon + "_irnly").GetComponent<Image>().enabled =OnorOff;
         Change_to_battle.rizkamon = new Creature(Change_to_battle.rizkamon);
         MoveManager.mySlider.value = 1;
         MoveManager.foeSlider.value = 1;

@@ -13,7 +13,7 @@ public class Change_to_battle : MonoBehaviour
     private int randomNumber;
     private Rigidbody2D rb;
     public static bool battleDisplayRan = false;
-    private bool inBattle = false;
+    public static bool inBattle = false;
     private Text gen_text;
     private int messageCount;
     private Animator anim;
@@ -101,7 +101,7 @@ public class Change_to_battle : MonoBehaviour
         rizkamon = rizkamonList[randomIndex];
         Debug.Log(rizkamon.Name);
 
-        Collector.initFoeRizkamon = new Creature(rizkamon);;
+        Collector.initFoeRizkamon = new Creature(rizkamon);
 
        // Debug.Log(rizkamon.Name);
         GameObject.Find(rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;

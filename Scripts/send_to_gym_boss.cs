@@ -11,8 +11,11 @@ public class send_to_gym_boss : MonoBehaviour
     [SerializeField] private int gym_leader;
     //0 = Rizz city gym leader
     //1 = Gyatt city gym leader
-
-    private Image TapToShoot;
+    public static bool inBattle = false;
+    private Text gen_text;
+    private int messageCount;
+    private Animator anim;
+    public static Image trans;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,9 +26,22 @@ public class send_to_gym_boss : MonoBehaviour
         }
     }
 
+    private void StartInNewScene()
+    {
+        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
+
+        gen_text = GameObject.Find("text").GetComponent<Text>();
+
+        anim = GameObject.Find("Arm").GetComponent<Animator>();
+
+        trans = GameObject.Find("trans BGRND").GetComponent<Image>();
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        deleteSumStuff();
+        StartInNewScene();
+        updatePos();
         if (gym_leader == 0)
         {
             Change_to_battle.rizkamon = Creature.Travis;
@@ -38,25 +54,88 @@ public class send_to_gym_boss : MonoBehaviour
             GameObject.Find("Ligma_irnl").GetComponent<SpriteRenderer>().enabled =true; 
             GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
+        sendBattle();
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void deleteSumStuff()
+    private void updatePos()
     {
         Transform player = GameObject.Find("Player").GetComponent<Transform>();          
         Vector3 newPosition = new Vector3(change_scene.player_x, change_scene.player_y-5, player.position.z);
         player.position = newPosition;
-        GameObject.Find("Battle").GetComponent<Camera>().enabled =true; 
-        GameObject.Find("Main Camera").GetComponent<Camera>().enabled =false; 
-        GetOutOfStart.OnStart();
-        GameObject.Find("Battle").GetComponent<AudioSource>().enabled =true; 
-        GameObject.Find("Player").GetComponent<AudioSource>().enabled =false; 
-        GameObject.Find("ButtonToFlee").GetComponent<Image>().enabled =true; 
-        GameObject.Find("ButtonToFlee").GetComponent<Button>().enabled =true; 
-        GameObject.Find("TextForFlee").GetComponent<Text>().enabled =true; 
-        GameObject.Find("PressSPCBAR").GetComponent<Text>().enabled =true;
-        TapToShoot = GameObject.Find("TapToShoot").GetComponent<Image>();
-        TapToShoot.raycastTarget = true;
+    }
+
+    private void sendBattle()
+    {
+        GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
+
+        Flee.BattleActivation(mainCam, battleCam, true);
+
+        GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
+        GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;
+
+        inBattle = true;
+
+        
+        //displ_texts();
+        anim.SetBool("throwing", true);
+        displayMyRizkamon();
+    }
+
+    private void displ_texts()
+    {          
+        GameObject.Find("text").GetComponent<Text>().enabled =true; 
+        GameObject.Find("General_text").GetComponent<Image>().enabled =true; 
+        GameObject.Find("General_text").GetComponent<Button>().enabled =true; 
+
+        //StartCoroutine(BattleTypewriter("A wild " + Change_to_battle.rizkamon.Name + " has appeared!", gen_text));
+        trans.raycastTarget = true;
+    }
+
+    IEnumerator BattleTypewriter(string text, Text text_displ)
+    {
+        text_displ.text = "";
+
+        foreach (char letter in text)
+        {
+            text_displ.text += letter;
+
+            if (letter == '!')
+            {           
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+
+        ++messageCount;
+
+        if (messageCount == 1)
+        {
+            StartCoroutine(BattleTypewriter("Go " + Collector.currentRizkamon.Name + "!", gen_text));
+        }
+        else if (messageCount == 2)
+        {
+            anim.SetBool("throwing", true);
+            yield return new WaitForSeconds(0.5f);
+            displayMyRizkamon();
+        }
+    }
+
+    private void displayMyRizkamon()
+    {
+        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
+
+        GameObject.Find("text").GetComponent<Text>().enabled =false; 
+        GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
+        GameObject.Find("General_text").GetComponent<Button>().enabled =false;
+
+        trans.raycastTarget = false;
+
+        messageCount = 0;
     }
 }
