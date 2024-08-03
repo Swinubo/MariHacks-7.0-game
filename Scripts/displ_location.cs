@@ -9,6 +9,7 @@ public class displ_location : MonoBehaviour
     private Text locationText;
 
     public static string location_str;
+    public static string city_str;
 
     private void Start()
     {
@@ -30,23 +31,17 @@ public class displ_location : MonoBehaviour
         locationText.enabled =true;
         locationText.text = gameObject.name;
         location_str = locationText.text;
-        //updateLocation();
+        updateCity();
         yield return new WaitForSeconds(3);
         location.enabled =false;
         locationText.enabled =false;
     } 
 
-    /*private void updateLocation()
+    private void updateCity()
     {
-        location_str = "";
-        
-        if (gameObject.name == "Rizz city")
+        if (location_str == "Rizz city" || location_str == "Gyatt city")
         {
-            location_str = "Rizz city";
+            city_str = location_str;
         }
-        else if (gameObject.name == "Sky-bidi forest")
-        {
-            location_str = "Sky-bidi forest";
-        }
-    }*/
+    }
 }

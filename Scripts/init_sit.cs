@@ -8,13 +8,14 @@ public class init_sit : MonoBehaviour
 {
 
     [SerializeField] private string[] DrRizzText;
-    private string[] starters = { "Aurasaurus", "Deviousussy", "Anky" };
+    private Creature[] starters;
     private Text Text;
     private int currentText = 0;
 
     private void Start()
     {
         Text = GameObject.Find("Text").GetComponent<Text>();
+        starters = new Creature[] { Creature.Aurasaurus, Creature.Deviousussy , Creature.Anky };
     }
 
     private void Update()
@@ -26,10 +27,11 @@ public class init_sit : MonoBehaviour
         }
         else
         {
-            foreach (string rizkamon in starters)
+            foreach (Creature rizkamon in starters)
             {
-                GameObject.Find(rizkamon).GetComponent<Image>().enabled = true;
-                GameObject.Find(rizkamon).GetComponent<Button>().enabled = true;
+                GameObject.Find(rizkamon.Name).GetComponent<Image>().enabled = true;
+                GameObject.Find(rizkamon.Name).GetComponent<Button>().enabled = true;
+                GameObject.Find(rizkamon.Name + "_text").GetComponent<Text>().enabled = true;
             }
         }
     }
@@ -41,19 +43,23 @@ public class init_sit : MonoBehaviour
 
     public void ChooseDeviousussy()
     {
-        Collector.have_rizkamons.Add("Deviousussy");
-        leave();
+        ChooseRizkamon(Creature.Deviousussy);
     }
 
     public void ChooseAurasaurus()
     {
-        Collector.have_rizkamons.Add("Aurasaurus");
-        leave();
+        ChooseRizkamon(Creature.Aurasaurus);
     }
 
     public void ChooseAnky()
     {
-        Collector.have_rizkamons.Add("Anky");
+        ChooseRizkamon(Creature.Anky);
+    }
+
+    private void ChooseRizkamon(Creature rizkamon)
+    {
+        Collector.have_rizkamons.Add(rizkamon);
+        Collector.currentRizkamon = rizkamon;
         leave();
     }
 

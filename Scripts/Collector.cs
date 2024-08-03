@@ -8,20 +8,27 @@ public class Collector : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public static List<string> have_rizkamons = new List<string>();
+    public static List<Creature> have_rizkamons = new List<Creature>();
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;
+
+    public static Creature currentRizkamon;
+    public static Creature initcurrentRizkamon;
+    public static Creature initFoeRizkamon;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rizkamons = rizkamonsSER;
+
+        currentRizkamon = Creature.Richard;
+        initcurrentRizkamon = new Creature(currentRizkamon); // Use copy constructor
     }
 
     private void Update()
     {
-        /*if (rizkamons.Count == 13)
+        /*if (have_rizkamons.Count == rizkamonsSER.Length)
         {
             StartCoroutine(goToEnd());
         }*/
