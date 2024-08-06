@@ -54,10 +54,14 @@ public class Flee : MonoBehaviour
         GameObject.Find("My Bar").GetComponent<Image>().enabled =OnorOff;
         GameObject.Find("Foe Bar BGRND").GetComponent<Image>().enabled =OnorOff;
         GameObject.Find("Foe Bar").GetComponent<Image>().enabled =OnorOff;
-        Debug.Log(Change_to_battle.rizkamon.Name + "_irnl");
-        GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<Image>().enabled =OnorOff;
-        GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled =OnorOff;
-        GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<Image>().enabled =OnorOff;
+        
+        if (OnorOff == false)
+        {
+            GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled =OnorOff;
+            GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled =OnorOff;
+            GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled =OnorOff;
+        }
+
         Change_to_battle.rizkamon = new Creature(Change_to_battle.rizkamon);
         MoveManager.mySlider.value = 1;
         MoveManager.foeSlider.value = 1;

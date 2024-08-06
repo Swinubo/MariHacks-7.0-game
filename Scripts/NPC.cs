@@ -16,10 +16,9 @@ public class NPC : MonoBehaviour
     private string renchesse = "Renchesse: I'm a woman???";
     private string logan = "Logan: Did you know you snore at night?";
     private string mom = "Mom: Hey son! Glad to see you back! Go explore the world of Monsters of Dawn!";*/
-    [SerializeField] private string npc_text;
+    [SerializeField] private string[] npc_text;
 
     private Text text_displ;
-    private string init_text;
     [SerializeField] private bool mumInScene;
     private Rigidbody2D rb;
     private Rigidbody2D rbMum;
@@ -28,7 +27,6 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-        init_text = npc_text;
         text_displ = GameObject.Find("text").GetComponent<Text>(); 
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -43,9 +41,7 @@ public class NPC : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            GameObject.Find("text").GetComponent<Text>().enabled =true; 
-            GameObject.Find("General_text").GetComponent<Image>().enabled =true; 
-            GameObject.Find("General_text").GetComponent<Button>().enabled =true; 
+            ActivateTextDispl(true);
             StartCoroutine(Typewriter());
             //text_displ.text = npc_text;
             if (gameObject.name == "NPC_Mom")
@@ -57,26 +53,37 @@ public class NPC : MonoBehaviour
 
     IEnumerator Typewriter()
     {
-        foreach (char letter in npc_text)
+        text_displ.text = "";
+        foreach (string text in npc_text)
         {
-            text_displ.text += letter;
-
-            if (letter == ':')
-            {           
-                yield return new WaitForSeconds(0.2f);
-            }
-            else
+            foreach (char letter in text)
             {
-                yield return new WaitForSeconds(0.05f);
+                text_displ.text += letter;
+
+                if (letter == ':')
+                {           
+                    yield return new WaitForSeconds(0.2f);
+                }
+                else
+                {
+                    yield return new WaitForSeconds(0.05f);
+                }
+
             }
+            
+            yield return new WaitForSeconds(0.5f);
+            text_displ.text = "";
         }
+
+        ActivateTextDispl(false);
+
     }
 
     //mom
     IEnumerator DisplayMomText()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         anim.SetBool("leave", true);
         rbMum.velocity = new Vector2(0, move_speed);
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -85,20 +92,19 @@ public class NPC : MonoBehaviour
     //on leave events
     private void OnTriggerExit2D(Collider2D collision)
     {
-        removeTextDispl();
+        ActivateTextDispl(false);
     }
 
     public void shrugText()
     {
-        removeTextDispl();
+        ActivateTextDispl(false);
     }
 
-    private void removeTextDispl()
+    private void ActivateTextDispl(bool OnOrOff)
     {
-        GameObject.Find("text").GetComponent<Text>().enabled =false; 
         text_displ.text = "";
-        Debug.Log(npc_text);
-        GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
-        GameObject.Find("General_text").GetComponent<Button>().enabled =false; 
+        GameObject.Find("text").GetComponent<Text>().enabled =OnOrOff; 
+        GameObject.Find("General_text").GetComponent<Image>().enabled =OnOrOff; 
+        GameObject.Find("General_text").GetComponent<Button>().enabled =OnOrOff; 
     }
 }

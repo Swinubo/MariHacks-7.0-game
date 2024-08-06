@@ -65,6 +65,6 @@ public class init_sit : MonoBehaviour
 
     private void leave()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

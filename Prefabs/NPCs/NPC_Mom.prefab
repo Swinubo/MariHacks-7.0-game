@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a08f7db871af4fb648de34e101f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc_text: 
-  mumInScene: 0
+  npc_text: []
+  mumInScene: 1
 --- !u!95 &2561523851423413997
 Animator:
   serializedVersion: 5
