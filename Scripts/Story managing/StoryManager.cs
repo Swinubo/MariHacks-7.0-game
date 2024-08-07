@@ -10,6 +10,8 @@ public class StoryManager : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private int Event;
 
+    private bool triggered = false;
+
     //0 = initially getting out of bed
 
     private void Start()
@@ -26,11 +28,15 @@ public class StoryManager : MonoBehaviour
             Debug.Log("Player detetcted!");
             if (Event == 0)
             {
-                Debug.Log("Event detetcted!");
-                rb.bodyType = RigidbodyType2D.Static;
-                ActivateTextDispl(true);
-                StartCoroutine(Typewriter());
-                Debug.Log("hey");
+                if (!triggered)
+                {
+                    triggered = true;
+                    Debug.Log("Event detetcted!");
+                    rb.bodyType = RigidbodyType2D.Static;
+                    ActivateTextDispl(true);
+                    StartCoroutine(Typewriter());
+                    Debug.Log("hey");
+                }
             }
         }
     }
