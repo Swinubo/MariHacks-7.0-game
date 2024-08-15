@@ -27,7 +27,7 @@ public class init_sit : MonoBehaviour
         }
         else
         {
-            foreach (Creature rizkamon in starters)
+            foreach (rizkamon in starters)
             {
                 GameObject.Find(rizkamon.Name).GetComponent<Image>().enabled = true;
                 GameObject.Find(rizkamon.Name).GetComponent<Button>().enabled = true;

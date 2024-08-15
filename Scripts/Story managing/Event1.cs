@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoryManager : MonoBehaviour
+public class Event1 : MonoBehaviour
 {
     private Text text_displ;
     [SerializeField] private string[] my_text;
     private Rigidbody2D rb;
-    [SerializeField] private int Event;
 
     private bool triggered = false;
 
     //0 = initially getting out of bed
+    //1 = trying to leave the house but then mom calls
 
     private void Start()
     {
@@ -22,27 +22,20 @@ public class StoryManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger detected");
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Player detetcted!");
-            if (Event == 0)
+            if (!triggered)
             {
-                if (!triggered)
-                {
-                    triggered = true;
-                    Debug.Log("Event detetcted!");
-                    rb.bodyType = RigidbodyType2D.Static;
-                    ActivateTextDispl(true);
-                    StartCoroutine(Typewriter());
-                    Debug.Log("hey");
-                }
+                triggered = true;
+                rb.bodyType = RigidbodyType2D.Static;
+                StartCoroutine(Typewriter());
             }
         }
     }
 
     IEnumerator Typewriter()
     {
+        ActivateTextDispl(true);
         text_displ.text = "";
         foreach (string text in my_text)
         {

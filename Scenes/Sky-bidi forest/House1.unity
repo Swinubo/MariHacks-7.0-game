@@ -931,7 +931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 866360716}
   - component: {fileID: 866360715}
-  - component: {fileID: 866360714}
+  - component: {fileID: 866360717}
   m_Layer: 0
   m_Name: StoryManager
   m_TagString: Untagged
@@ -939,23 +939,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &866360714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866360713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bcd84b2cb95d3540aac82b89c1f8003, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  my_text:
-  - Yipeeee! Today is my 12th Birthday!
-  - I can finally go outside and touch grass!
-  - p.s. if you are on PC deactivate buttons or else activate buttons.
-  Event: 0
 --- !u!61 &866360715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -997,6 +980,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &866360717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866360713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159065e21428a89488632882cabd825b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_text:
+  - Yipeeee! Today is my 12th Birthday!
+  - I can finally go outside and touch grass!
+  - p.s. if you are on PC deactivate buttons or else activate buttons.
 --- !u!4 &1002676315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5229580953309729990, guid: f0e35bcedd5404640a4f813c1c4dbc31, type: 3}
