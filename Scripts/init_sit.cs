@@ -20,15 +20,16 @@ public class init_sit : MonoBehaviour
 
     private void Update()
     {
-        if (currentText != 8)
+        if (currentText <= 7)
         {
             Text.text = DrRizzText[currentText];
             Debug.Log(currentText);
         }
         else
         {
-            foreach (rizkamon in starters)
+            foreach (Creature rizkamon in starters)
             {
+                Debug.Log(rizkamon.Name);
                 GameObject.Find(rizkamon.Name).GetComponent<Image>().enabled = true;
                 GameObject.Find(rizkamon.Name).GetComponent<Button>().enabled = true;
                 GameObject.Find(rizkamon.Name + "_text").GetComponent<Text>().enabled = true;

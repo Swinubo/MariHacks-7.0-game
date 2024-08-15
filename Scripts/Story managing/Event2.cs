@@ -13,7 +13,7 @@ public class Event2 : MonoBehaviour
     private Rigidbody2D MomRb;
     private NPC MomNPC;
     private enum movement_state { idle, up, down, running }
-    private bool triggered = false;
+    private static bool triggered = false;
     public static Animator anim;
     private SpriteRenderer sprite;
 
@@ -36,7 +36,7 @@ public class Event2 : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
+        MomRb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
         update_animations();
     }
 
@@ -81,10 +81,14 @@ public class Event2 : MonoBehaviour
             if (currentText == when_move)
             {
                 dirY = -1;
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(1f);
                 dirY = 0;
             }
         }
+
+        dirY = 1;
+        yield return new WaitForSeconds(1f);
+        dirY = 0;
 
         ActivateTextDispl(false);
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -104,17 +108,7 @@ public class Event2 : MonoBehaviour
     {
         movement_state state;
 
-        if (dirX > 0f)
-        {
-            state = movement_state.running;
-            sprite.flipX = true;
-        }
-        else if (dirX < 0f)
-        {
-            state = movement_state.running;
-            sprite.flipX = false;
-        }
-        else if (dirY > 0f)
+        if (dirY > 0f)
         {
             state = movement_state.up;
         }

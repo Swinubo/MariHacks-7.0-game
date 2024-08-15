@@ -9,7 +9,7 @@ public class Event1 : MonoBehaviour
     [SerializeField] private string[] my_text;
     private Rigidbody2D rb;
 
-    private bool triggered = false;
+    private static bool triggered = false;
 
     //0 = initially getting out of bed
     //1 = trying to leave the house but then mom calls
