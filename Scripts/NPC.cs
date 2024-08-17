@@ -19,22 +19,13 @@ public class NPC : MonoBehaviour
     [SerializeField] private string[] npc_text;
 
     private Text text_displ;
-    [SerializeField] private bool mumInScene;
     private Rigidbody2D rb;
-    private Rigidbody2D rbMum;
-    private Animator anim;
-    private float move_speed = 300f;
 
     private void Start()
     {
         text_displ = GameObject.Find("text").GetComponent<Text>(); 
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        if (mumInScene)
-        {
-            rbMum = GameObject.Find("NPC_Mom").GetComponent<Rigidbody2D>();
-            anim = GameObject.Find("NPC_Mom").GetComponent<Animator>();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,11 +34,7 @@ public class NPC : MonoBehaviour
         {
             ActivateTextDispl(true);
             StartCoroutine(Typewriter());
-            //text_displ.text = npc_text;
-            if (gameObject.name == "NPC_Mom")
-            {
-                StartCoroutine(DisplayMomText());         
-            }      
+            //text_displ.text = npc_text; 
         }
     }
 
@@ -77,16 +64,6 @@ public class NPC : MonoBehaviour
 
         ActivateTextDispl(false);
 
-    }
-
-    //mom
-    IEnumerator DisplayMomText()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
-        yield return new WaitForSeconds(10);
-        anim.SetBool("leave", true);
-        rbMum.velocity = new Vector2(0, move_speed);
-        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     //on leave events

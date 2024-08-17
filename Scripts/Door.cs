@@ -19,6 +19,7 @@ public class Door : MonoBehaviour
         Transform player = GameObject.Find("Player").GetComponent<Transform>();
         Transform rizzSpawn = GameObject.Find("SpawnPos Rizz").GetComponent<Transform>();
         Transform gyattSpawn = GameObject.Find("SpawnPos Gyatt").GetComponent<Transform>();
+        Transform skibidiSpawn = GameObject.Find("SpawnPos Skibidi").GetComponent<Transform>();
 
         if (displ_location.city_str == "Rizz city" || displ_location.city_str == null)
         {
@@ -27,6 +28,11 @@ public class Door : MonoBehaviour
         else if (displ_location.city_str == "Gyatt city")
         {
             player.position = new Vector3(gyattSpawn.position.x, gyattSpawn.position.y, gyattSpawn.position.z);
+        }
+        else if (displ_location.city_str == null || displ_location.city_str == "Sky-bidi forest")
+        {
+            Debug.Log("watasigma");
+            player.position = new Vector3(skibidiSpawn.position.x, skibidiSpawn.position.y, skibidiSpawn.position.z);
         }
         else
         {

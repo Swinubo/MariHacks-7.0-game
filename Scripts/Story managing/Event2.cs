@@ -81,13 +81,14 @@ public class Event2 : MonoBehaviour
             if (currentText == when_move)
             {
                 dirY = -1;
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1.3f);
                 dirY = 0;
+                ActivateTextDispl(true);
             }
         }
 
         dirY = 1;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.3f);
         dirY = 0;
 
         ActivateTextDispl(false);
@@ -110,11 +111,11 @@ public class Event2 : MonoBehaviour
 
         if (dirY > 0f)
         {
-            state = movement_state.up;
+            state = movement_state.down;
         }
         else if (dirY < 0f)
         {
-            state = movement_state.down;
+            state = movement_state.up;
         }
         else
         {
