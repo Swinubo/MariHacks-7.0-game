@@ -111,11 +111,11 @@ public class Event2 : MonoBehaviour
 
         if (dirY > 0f)
         {
-            state = movement_state.down;
+            state = movement_state.up;
         }
         else if (dirY < 0f)
         {
-            state = movement_state.up;
+            state = movement_state.down;
         }
         else
         {

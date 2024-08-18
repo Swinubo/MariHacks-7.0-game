@@ -12,21 +12,26 @@ public class Event4 : MonoBehaviour
     [SerializeField] private string[] my_text;
     private Rigidbody2D rb;
     private Rigidbody2D dRrb;
+    private Animator anim;
 
     private float dirX=0;
     private float dirY=0;
     [SerializeField] private float move_speed=200f;
 
+    private enum movement_state { idle, up, down, running }
+
     private void Start()
     {
         text_displ = GameObject.Find("text").GetComponent<Text>(); 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        dRrb = GameObject.Find("Dr Shaboinky").GetComponent<Rigidbody2D>();
+        dRrb = GameObject.Find("Dr Rizz").GetComponent<Rigidbody2D>();
+        anim = GameObject.Find("Dr Rizz").GetComponent<Animator>();
     }
 
     private void Update()
     {
         dRrb.velocity = new Vector2(dirX * move_speed, dirY * move_speed);
+        update_animations();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -85,5 +90,25 @@ public class Event4 : MonoBehaviour
         GameObject.Find("text").GetComponent<Text>().enabled =OnOrOff; 
         GameObject.Find("General_text").GetComponent<Image>().enabled =OnOrOff; 
         GameObject.Find("General_text").GetComponent<Button>().enabled =OnOrOff; 
+    }
+
+    private void update_animations()
+    {
+        movement_state state;
+
+        if (dirY > 0f)
+        {
+            state = movement_state.up;
+        }
+        else if (dirY < 0f)
+        {
+            state = movement_state.down;
+        }
+        else
+        {
+            state = movement_state.idle;
+        }
+
+        anim.SetInteger("state", (int)state);
     }
 }
