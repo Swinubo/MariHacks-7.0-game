@@ -20,19 +20,24 @@ public class Door : MonoBehaviour
         Transform rizzSpawn = GameObject.Find("SpawnPos Rizz").GetComponent<Transform>();
         Transform gyattSpawn = GameObject.Find("SpawnPos Gyatt").GetComponent<Transform>();
         Transform skibidiSpawn = GameObject.Find("SpawnPos Skibidi").GetComponent<Transform>();
+        Transform rizzalationsSpawn = GameObject.Find("SpawnPos Rizzalations").GetComponent<Transform>();
 
-        if (displ_location.city_str == "Rizz city" || displ_location.city_str == null)
+        if (displ_location.location_str == null || displ_location.location_str == "Sky-bidi forest")
+        {
+            Debug.Log("watasigma");
+            player.position = new Vector3(skibidiSpawn.position.x, skibidiSpawn.position.y, skibidiSpawn.position.z);
+        }
+        else if (displ_location.location_str == "Rizzalations town")
+        {
+            player.position = new Vector3(rizzalationsSpawn.position.x, rizzalationsSpawn.position.y, rizzalationsSpawn.position.z);
+        }
+        else if (displ_location.city_str == "Rizz city" || displ_location.city_str == null)
         {
             player.position = new Vector3(rizzSpawn.position.x, rizzSpawn.position.y, rizzSpawn.position.z);
         }
         else if (displ_location.city_str == "Gyatt city")
         {
             player.position = new Vector3(gyattSpawn.position.x, gyattSpawn.position.y, gyattSpawn.position.z);
-        }
-        else if (displ_location.city_str == null || displ_location.city_str == "Sky-bidi forest")
-        {
-            Debug.Log("watasigma");
-            player.position = new Vector3(skibidiSpawn.position.x, skibidiSpawn.position.y, skibidiSpawn.position.z);
         }
         else
         {

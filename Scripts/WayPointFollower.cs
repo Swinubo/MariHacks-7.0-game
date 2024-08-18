@@ -7,7 +7,8 @@ public class WayPointFollower : MonoBehaviour
 
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 2000f;
+    [SerializeField] private GameObject explosion;
 
     void Update()
     {
@@ -20,5 +21,13 @@ public class WayPointFollower : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player" && gameObject.tag == "Skibidi")
+        {
+            Instantiate(explosion, collision.gameObject.transform.position, Quaternion.identity);
+        }
     }
 }
