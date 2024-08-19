@@ -62,21 +62,16 @@ public class MoveManager : MonoBehaviour
         //gym
         Creature.Travis = new Creature("Travis", 33, 0.9f, 2.5f, Move.Drop, Move.Drop); // Balanced health, moderate speed
         Creature.Ligma = new Creature("Ligma", 29, 1, 2f, Move.Shout, Move.Rizz); // Moderate health and speed
-
-        Debug.Log("Name of Bip: " + Creature.Bip.Name);
-
     }
 
     public void Move1Play()
     {
         movePlay(Collector.currentRizkamon.Move1);
-        Debug.Log(Collector.currentRizkamon.Move1.Name);
     }
 
     public void Move2Play()
     {
         movePlay(Collector.currentRizkamon.Move2);
-        Debug.Log(Collector.currentRizkamon.Move2.Name);
     }
 
     private void movePlay(Move move)
@@ -87,7 +82,10 @@ public class MoveManager : MonoBehaviour
         updateSliders();
 
         if (Change_to_battle.rizkamon.Health <= 0)
-        {
+        {   
+            checkGym();
+            /*attackStatus.text = "You won!";
+            yield return new WaitForSeconds(2f);*/
             Flee.BattleActivation(mainCam, battleCam, false);
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
@@ -151,5 +149,23 @@ public class MoveManager : MonoBehaviour
     {
         mySlider.value = (float) Collector.currentRizkamon.Health / (float) Collector.initcurrentRizkamon.Health;
         foeSlider.value = (float)Change_to_battle.rizkamon.Health / (float)Collector.initFoeRizkamon.Health;
+    }
+
+    private void checkGym()
+    {
+        //checks if it is a win vs a gym pokemon
+        if (send_to_gym_boss.gymBoi != null)
+        {
+            if (send_to_gym_boss.gymBoi == Creature.Travis)
+            {
+                Destroy(GameObject.Find("NPC_Gartner asi asi asi gana madrid siuuuu"));
+                Collector.have_gymRizkamons.Add(Creature.Travis);
+            }
+            else if (send_to_gym_boss.gymBoi == Creature.Ligma)
+            {
+                Collector.have_gymRizkamons.Add(Creature.Ligma);
+            }
+            send_to_gym_boss.gymBoi = null;
+        }
     }
 }

@@ -11,11 +11,12 @@ public class send_to_gym_boss : MonoBehaviour
     [SerializeField] private int gym_leader;
     //0 = Rizz city gym leader
     //1 = Gyatt city gym leader
-    public static bool inBattle = false;
+
     private Text gen_text;
     private int messageCount;
     private Animator anim;
     public static Image trans;
+    public static Creature gymBoi;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,15 +46,14 @@ public class send_to_gym_boss : MonoBehaviour
         if (gym_leader == 0)
         {
             Change_to_battle.rizkamon = Creature.Travis;
-            GameObject.Find("Travis_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-            GameObject.Find("Travis_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
         else if (gym_leader == 1)
         {
             Change_to_battle.rizkamon = Creature.Ligma;
-            GameObject.Find("Ligma_irnl").GetComponent<SpriteRenderer>().enabled =true; 
-            GameObject.Find("Ligma_irnl").GetComponent<BoxCollider2D>().enabled =true; 
         }
+
+        gymBoi =Change_to_battle.rizkamon;
+
         sendBattle();
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -76,66 +76,11 @@ public class send_to_gym_boss : MonoBehaviour
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;
 
-        inBattle = true;
+        Change_to_battle.inBattle = true;
 
-        
-        //displ_texts();
-        anim.SetBool("throwing", true);
-        displayMyRizkamon();
-    }
-
-    private void displ_texts()
-    {          
-        GameObject.Find("text").GetComponent<Text>().enabled =true; 
-        GameObject.Find("General_text").GetComponent<Image>().enabled =true; 
-        GameObject.Find("General_text").GetComponent<Button>().enabled =true; 
-
-        //StartCoroutine(BattleTypewriter("A wild " + Change_to_battle.rizkamon.Name + " has appeared!", gen_text));
-        trans.raycastTarget = true;
-    }
-
-    IEnumerator BattleTypewriter(string text, Text text_displ)
-    {
-        text_displ.text = "";
-
-        foreach (char letter in text)
-        {
-            text_displ.text += letter;
-
-            if (letter == '!')
-            {           
-                yield return new WaitForSeconds(0.5f);
-            }
-            else
-            {
-                yield return new WaitForSeconds(0.05f);
-            }
-        }
-
-        ++messageCount;
-
-        if (messageCount == 1)
-        {
-            StartCoroutine(BattleTypewriter("Go " + Collector.currentRizkamon.Name + "!", gen_text));
-        }
-        else if (messageCount == 2)
-        {
-            anim.SetBool("throwing", true);
-            yield return new WaitForSeconds(0.5f);
-            displayMyRizkamon();
-        }
-    }
-
-    private void displayMyRizkamon()
-    {
         GameObject.Find(Collector.currentRizkamon.Name + "_irnly").GetComponent<SpriteRenderer>().enabled = true;
 
-        GameObject.Find("text").GetComponent<Text>().enabled =false; 
-        GameObject.Find("General_text").GetComponent<Image>().enabled =false; 
-        GameObject.Find("General_text").GetComponent<Button>().enabled =false;
+        Collector.initFoeRizkamon = new Creature(Change_to_battle.rizkamon);
 
-        trans.raycastTarget = false;
-
-        messageCount = 0;
     }
 }

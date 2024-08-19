@@ -43,7 +43,7 @@ public class NPC : MonoBehaviour
     {
         if (statisize)
         {
-            rb.rb.bodyType = RigidbodyType2D.Static;
+            rb.bodyType = RigidbodyType2D.Static;
         }
         text_displ.text = "";
         foreach (string text in npc_text)

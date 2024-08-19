@@ -12,6 +12,7 @@ public class Event3 : MonoBehaviour
     [SerializeField] private string[] my_text;
     [SerializeField] private int when_move;
     [SerializeField] private GameObject[] skibidis;
+    [SerializeField] private GameObject myEvent;
     private Rigidbody2D rb;
     private int currentText = 0;
 
@@ -75,6 +76,7 @@ public class Event3 : MonoBehaviour
         youDied(true);
         yield return new WaitForSeconds(5f);
         youDied(false);
+        Destroy(myEvent);
         displ_location.location_str = "Rizzalations town";
         SceneManager.LoadScene(9);
     }

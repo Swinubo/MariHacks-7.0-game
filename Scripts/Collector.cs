@@ -9,6 +9,7 @@ public class Collector : MonoBehaviour
     private Rigidbody2D rb;
 
     public static List<Creature> have_rizkamons = new List<Creature>();
+    public static List<Creature> have_gymRizkamons = new List<Creature>();
 
     [SerializeField] private GameObject[] rizkamonsSER;
     public static GameObject[] rizkamons;
