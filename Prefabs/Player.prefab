@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5229580951976166854}
   - component: {fileID: 5229580951976166908}
   - component: {fileID: 1289503730356958117}
+  - component: {fileID: 2720006492853771162}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -307,3 +308,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rizkamonsSER: []
+--- !u!114 &2720006492853771162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5229580953309729988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c1883f6458684469cca7ecf2aedbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 3784430533045467981, guid: b3db40a0447863c4586f66ee2ae6e3d3, type: 3}
+  myPosition: {x: 150, y: 580, z: 0}

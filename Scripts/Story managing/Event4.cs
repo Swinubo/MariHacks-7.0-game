@@ -20,6 +20,8 @@ public class Event4 : MonoBehaviour
 
     private enum movement_state { idle, up, down, running }
 
+    public static bool addTimer = false;
+
     private void Start()
     {
         text_displ = GameObject.Find("text").GetComponent<Text>(); 
@@ -78,6 +80,8 @@ public class Event4 : MonoBehaviour
 
         ActivateTextDispl(false);
         rb.bodyType = RigidbodyType2D.Dynamic;
+
+        addTimer = true;
 
         dirY = 1;
         yield return new WaitForSeconds(2.5f);

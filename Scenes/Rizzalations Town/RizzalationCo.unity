@@ -936,12 +936,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_text:
-  - KIddo! You finally woke up!
+  - Kiddo! You finally woke up!
   - Those skibidi toilets got you good...
-  - You're healthy... however...
-  - 'You got a skibidi disease that could only be cured by defeating the two gym
-    bosses of Brainrotland: Nemona and Santi.'
-  - I wish i could help you more but I cannot at the moment.
+  - You're healthy, however...
+  - 'You got a skibidi disease that could only be cured by defeating '
+  - 'the two gym bosses of Brainrotland: Nemona and Santi.'
+  - I wish I could help you more but I cannot at the moment.
+  - A timer until your death is seen up there in green, good luck surviving!
   - BYEEEEEEEE
   move_speed: 200
 --- !u!212 &658139799

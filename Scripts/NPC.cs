@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     private string logan = "Logan: Did you know you snore at night?";
     private string mom = "Mom: Hey son! Glad to see you back! Go explore the world of Monsters of Dawn!";*/
     [SerializeField] private string[] npc_text;
+    [SerializeField] private bool statisize;
 
     private Text text_displ;
     private Rigidbody2D rb;
@@ -40,6 +41,10 @@ public class NPC : MonoBehaviour
 
     IEnumerator Typewriter()
     {
+        if (statisize)
+        {
+            rb.rb.bodyType = RigidbodyType2D.Static;
+        }
         text_displ.text = "";
         foreach (string text in npc_text)
         {
@@ -63,6 +68,7 @@ public class NPC : MonoBehaviour
         }
 
         ActivateTextDispl(false);
+        rb.bodyType = RigidbodyType2D.Dynamic;
 
     }
 
