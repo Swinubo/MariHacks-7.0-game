@@ -14,12 +14,15 @@ public class MoveManager : MonoBehaviour
     private Text attackStatus;
     public static Slider mySlider;
     public static Slider foeSlider;
+    private Transform player;
+
     private void Start()
     {
         mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         battleCam = GameObject.Find("Battle Camera").GetComponent<Camera>();
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player").GetComponent<Transform>();
 
         attackStatus = GameObject.Find("Attack status").GetComponent<Text>();
 
@@ -138,6 +141,7 @@ public class MoveManager : MonoBehaviour
     private IEnumerator LoadRizzCenter()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(6);
+        Door.whereSpawn = displ_location.city_str;
 
         while (!asyncLoad.isDone)
         {
@@ -164,6 +168,7 @@ public class MoveManager : MonoBehaviour
             else if (send_to_gym_boss.gymBoi == Creature.Ligma)
             {
                 Collector.have_gymRizkamons.Add(Creature.Ligma);
+                StartCoroutine(Timer.liveOrDie("live", player.transform));
             }
             send_to_gym_boss.gymBoi = null;
         }

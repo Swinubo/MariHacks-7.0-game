@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    public static string whereSpawn;
+    private Transform player;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
@@ -16,28 +19,27 @@ public class Door : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Transform player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Player").GetComponent<Transform>();
         Transform rizzSpawn = GameObject.Find("SpawnPos Rizz").GetComponent<Transform>();
         Transform gyattSpawn = GameObject.Find("SpawnPos Gyatt").GetComponent<Transform>();
         Transform skibidiSpawn = GameObject.Find("SpawnPos Skibidi").GetComponent<Transform>();
         Transform rizzalationsSpawn = GameObject.Find("SpawnPos Rizzalations").GetComponent<Transform>();
 
-        if (displ_location.location_str == null || displ_location.location_str == "Sky-bidi forest")
+        if (whereSpawn == "Sky-bidi forest")
         {
-            Debug.Log("watasigma");
-            player.position = new Vector3(skibidiSpawn.position.x, skibidiSpawn.position.y, skibidiSpawn.position.z);
+            updatePos(skibidiSpawn);
         }
-        else if (displ_location.location_str == "Rizzalations town")
+        else if (whereSpawn == "Rizzalations town")
         {
-            player.position = new Vector3(rizzalationsSpawn.position.x, rizzalationsSpawn.position.y, rizzalationsSpawn.position.z);
+            updatePos(rizzalationsSpawn);
         }
-        else if (displ_location.city_str == "Rizz city" || displ_location.city_str == null)
+        else if (whereSpawn == "Rizz city")
         {
-            player.position = new Vector3(rizzSpawn.position.x, rizzSpawn.position.y, rizzSpawn.position.z);
+            updatePos(rizzSpawn);
         }
-        else if (displ_location.city_str == "Gyatt city")
+        else if (whereSpawn == "Gyatt city")
         {
-            player.position = new Vector3(gyattSpawn.position.x, gyattSpawn.position.y, gyattSpawn.position.z);
+            updatePos(gyattSpawn);
         }
         else
         {
@@ -49,5 +51,11 @@ public class Door : MonoBehaviour
 
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void updatePos(Transform Spawn)
+    {
+        player.position = new Vector3(Spawn.position.x, Spawn.position.y, Spawn.position.z);
+        whereSpawn = null;
     }
 }

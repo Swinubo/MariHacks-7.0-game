@@ -321,4 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 3784430533045467981, guid: b3db40a0447863c4586f66ee2ae6e3d3, type: 3}
-  myPosition: {x: 150, y: 580, z: 0}
+  timerPosition: {x: 150, y: 580, z: 0}
+  explosion: {fileID: 8104217150902657963, guid: d9296b14998d0d74a82a7762d83035f9, type: 3}
+  youDied: {fileID: 2249741615182788046, guid: d095386db8ee26f4c9ff8c83a4f503d2, type: 3}
+  deathPosition: {x: 567, y: 233, z: 0}

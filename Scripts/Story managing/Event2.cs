@@ -94,6 +94,7 @@ public class Event2 : MonoBehaviour
         ActivateTextDispl(false);
         rb.bodyType = RigidbodyType2D.Dynamic;
         MomNPC.enabled = true;
+        Door.whereSpawn = "Sky-bidi forest";
 
     }
 

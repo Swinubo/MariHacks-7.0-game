@@ -77,7 +77,7 @@ public class Event3 : MonoBehaviour
         yield return new WaitForSeconds(5f);
         youDied(false);
         Destroy(myEvent);
-        displ_location.location_str = "Rizzalations town";
+        Door.whereSpawn = "Rizzalations town";
         SceneManager.LoadScene(9);
     }
 
