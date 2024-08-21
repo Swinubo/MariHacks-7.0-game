@@ -12,11 +12,11 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject timer;
     private static int time = 600;
     private bool timerAdded = false;
-    private static GameObject canvas;
+    private GameObject canvas;
     [SerializeField] private Vector3 timerPosition;
-    [SerializeField] private static GameObject explosion;
-    [SerializeField] private static GameObject youDied;
-    [SerializeField] private static Vector3 deathPosition;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject youDied;
+    [SerializeField] private Vector3 deathPosition;
     private static Rigidbody2D rb;
 
     private void Start()
@@ -51,17 +51,16 @@ public class Timer : MonoBehaviour
             time -= 1;
             timerText.text = time.ToString();
             yield return new WaitForSeconds(1f);
-        }
-        StartCoroutine(liveOrDie("die", transform));
+        }        StartCoroutine(liveOrDie("die", transform));
     }
 
-    public static IEnumerator liveOrDie(string liveOrDie, Transform playerPos)
+    IEnumerator liveOrDie(string liveOrDie, Transform playerPos)
     {
         rb.bodyType = RigidbodyType2D.Static;
         Instantiate(explosion, playerPos.position, Quaternion.identity);
         yield return new WaitForSeconds(1f);
         GameObject youDiedText = Instantiate(youDied, deathPosition, Quaternion.identity, canvas.transform);
-        youDiedText.GetComponent<Text>().text = "you " + liveOrDie + " lol";
+        GameObject.Find("you died text").GetComponent<Text>().text = "you " + liveOrDie + " lol";
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(1);
     }

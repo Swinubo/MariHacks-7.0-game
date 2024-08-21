@@ -54,6 +54,8 @@ public class send_to_gym_boss : MonoBehaviour
 
         gymBoi =Change_to_battle.rizkamon;
 
+        Debug.Log(gymBoi.Name);
+
         sendBattle();
         // Unsubscribe from the event to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;

@@ -26,6 +26,10 @@ public class Rizkadex : MonoBehaviour
                 GameObject.Find((rizkamon.name).Replace("_irnl", "")).GetComponent<Image>().enabled =false;
                 GameObject.Find((rizkamon.name).Replace("_irnl", "_text")).GetComponent<Text>().enabled =false;
             }
+            foreach (var badge in Collector.have_gymRizkamons)
+            {               
+                GameObject.Find(badge.Name + " Badge").GetComponent<Image>().enabled =false;
+            }
             on_dex = false;
         }
     }
@@ -42,6 +46,10 @@ public class Rizkadex : MonoBehaviour
                 Debug.Log("Current rixkamon instance" + rizkamon.Name);
                 GameObject.Find(rizkamon.Name).GetComponent<Image>().enabled =true;
                 GameObject.Find(rizkamon.Name+"_text").GetComponent<Text>().enabled =true;
+            }
+            foreach (var badge in Collector.have_gymRizkamons)
+            {               
+                GameObject.Find(badge + " Badge").GetComponent<Image>().enabled =false;
             }
 
         }

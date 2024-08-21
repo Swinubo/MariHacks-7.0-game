@@ -15,6 +15,10 @@ public class MoveManager : MonoBehaviour
     public static Slider mySlider;
     public static Slider foeSlider;
     private Transform player;
+    private GameObject canvas;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject youDied;
+    [SerializeField] private Vector3 deathPosition;
 
     private void Start()
     {
@@ -28,6 +32,8 @@ public class MoveManager : MonoBehaviour
 
         mySlider = GameObject.Find("My HP").GetComponent<Slider>();
         foeSlider = GameObject.Find("Foe HP").GetComponent<Slider>();
+
+        canvas = GameObject.Find("Canvas");
 
         //name, type, power, heal, attackenhance, defenceenhance
         Move.Scratch = new Move("SCRATCH", "Rizz", 5, 0, 0f, 0f);
@@ -157,20 +163,34 @@ public class MoveManager : MonoBehaviour
 
     private void checkGym()
     {
+        Debug.Log(send_to_gym_boss.gymBoi.Name);
         //checks if it is a win vs a gym pokemon
         if (send_to_gym_boss.gymBoi != null)
         {
-            if (send_to_gym_boss.gymBoi == Creature.Travis)
+            Debug.Log(send_to_gym_boss.gymBoi.Name);
+            if (send_to_gym_boss.gymBoi.Name == Creature.Travis.Name)
             {
                 Destroy(GameObject.Find("NPC_Gartner asi asi asi gana madrid siuuuu"));
                 Collector.have_gymRizkamons.Add(Creature.Travis);
             }
-            else if (send_to_gym_boss.gymBoi == Creature.Ligma)
+            else if (send_to_gym_boss.gymBoi.Name == Creature.Ligma.Name)
             {
+                Debug.Log("Ligma defeat detected!");
                 Collector.have_gymRizkamons.Add(Creature.Ligma);
-                StartCoroutine(Timer.liveOrDie("live", player.transform));
+                StartCoroutine(liveOrDie("live", player));
             }
             send_to_gym_boss.gymBoi = null;
+        }
+
+        IEnumerator liveOrDie(string liveOrDie, Transform playerPos)
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+            Instantiate(explosion, playerPos.position, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+            Instantiate(youDied, deathPosition, Quaternion.identity, canvas.transform);
+            GameObject.Find("you died text").GetComponent<Text>().text = "you " + liveOrDie + " lol";
+            yield return new WaitForSeconds(10f);
+            SceneManager.LoadScene(1);
         }
     }
 }
