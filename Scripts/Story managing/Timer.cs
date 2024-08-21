@@ -51,16 +51,15 @@ public class Timer : MonoBehaviour
             time -= 1;
             timerText.text = time.ToString();
             yield return new WaitForSeconds(1f);
-        }        StartCoroutine(liveOrDie("die", transform));
+        }        StartCoroutine(die());
     }
 
-    IEnumerator liveOrDie(string liveOrDie, Transform playerPos)
+    IEnumerator die()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        Instantiate(explosion, playerPos.position, Quaternion.identity);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1f);
         GameObject youDiedText = Instantiate(youDied, deathPosition, Quaternion.identity, canvas.transform);
-        GameObject.Find("you died text").GetComponent<Text>().text = "you " + liveOrDie + " lol";
         yield return new WaitForSeconds(10f);
         SceneManager.LoadScene(1);
     }

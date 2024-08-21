@@ -8,7 +8,7 @@ public class displ_location : MonoBehaviour
     private Image location;
     private Text locationText;
 
-    public static string location_str;
+    public static string location_str = "Sky-bidi forest";
     public static string city_str;
 
     private void Start()

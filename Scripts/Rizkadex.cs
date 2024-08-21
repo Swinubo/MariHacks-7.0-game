@@ -7,7 +7,12 @@ public class Rizkadex : MonoBehaviour
 {
 
     private bool on_dex = false;
+    private Image map;
 
+    private void Start()
+    {
+        map = GameObject.Find("Map").GetComponent<Image>();
+    }
     // Start is called before the first frame update
     public void rizkadex_displ()
     {
@@ -18,8 +23,8 @@ public class Rizkadex : MonoBehaviour
         else if (on_dex)
         {
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =false;
-            GameObject.Find("Map").GetComponent<Image>().enabled =false;
-            GameObject.Find("Map").GetComponent<Button>().enabled =false;
+            /*GameObject.Find("Map").GetComponent<Image>().enabled =false;
+            GameObject.Find("Map").GetComponent<Button>().enabled =false;*/
 
             foreach (var rizkamon in Collector.rizkamons)
             {               
@@ -39,8 +44,8 @@ public class Rizkadex : MonoBehaviour
     {
         if (on_dex){
             GameObject.Find("BGRND_riz").GetComponent<Image>().enabled =true;
-            GameObject.Find("Map").GetComponent<Image>().enabled =true;
-            GameObject.Find("Map").GetComponent<Button>().enabled =true;
+            /*GameObject.Find("Badges").GetComponent<Image>().enabled =true;
+            GameObject.Find("Map").GetComponent<Button>().enabled =true;*/
             foreach (Creature rizkamon in Collector.have_rizkamons)
             {
                 Debug.Log("Current rixkamon instance" + rizkamon.Name);
@@ -49,7 +54,7 @@ public class Rizkadex : MonoBehaviour
             }
             foreach (var badge in Collector.have_gymRizkamons)
             {               
-                GameObject.Find(badge + " Badge").GetComponent<Image>().enabled =false;
+                GameObject.Find(badge.Name + " Badge").GetComponent<Image>().enabled =true;
             }
 
         }

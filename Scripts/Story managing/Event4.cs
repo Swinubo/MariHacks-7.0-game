@@ -80,6 +80,7 @@ public class Event4 : MonoBehaviour
 
         ActivateTextDispl(false);
         rb.bodyType = RigidbodyType2D.Dynamic;
+        Door.whereSpawn = "Rizzalations town";
 
         addTimer = true;
 

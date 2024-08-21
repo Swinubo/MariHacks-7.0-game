@@ -61,11 +61,16 @@ public class init_sit : MonoBehaviour
     {
         Collector.have_rizkamons.Add(rizkamon);
         Collector.currentRizkamon = rizkamon;
-        leave();
+        StartCoroutine(LoadSceneAsync());
     }
 
-    private void leave()
+    private IEnumerator LoadSceneAsync()
     {
-        SceneManager.LoadScene(3);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(3);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
