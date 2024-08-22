@@ -20,6 +20,7 @@ public class MoveManager : MonoBehaviour
     [SerializeField] private GameObject youLived;
     [SerializeField] private Vector3 deathPosition;
     private Timer timer;
+    private AudioSource victorySFX;
 
     private void Start()
     {
@@ -38,6 +39,8 @@ public class MoveManager : MonoBehaviour
             foeSlider = GameObject.Find("Foe HP").GetComponent<Slider>();
 
             canvas = GameObject.Find("Canvas");
+
+            victorySFX = GameObject.Find("Victory!").GetComponent<AudioSource>();
         }
 
 
@@ -98,11 +101,13 @@ public class MoveManager : MonoBehaviour
 
         if (Change_to_battle.rizkamon.Health <= 0)
         {   
+            victorySFX.Play();
             checkGym();
             /*attackStatus.text = "You won!";
             yield return new WaitForSeconds(2f);*/
             Flee.BattleActivation(mainCam, battleCam, false);
             rb.bodyType = RigidbodyType2D.Dynamic;
+            coinCount.coinAmount += 200;
         }
 
         StartCoroutine(foePlay());
@@ -174,6 +179,7 @@ public class MoveManager : MonoBehaviour
         if (send_to_gym_boss.gymBoi != null)
         {
             Debug.Log(send_to_gym_boss.gymBoi.Name);
+            coinCount.coinAmount += 1000;
             if (send_to_gym_boss.gymBoi.Name == Creature.Travis.Name)
             {
                 Destroy(GameObject.Find("NPC_Gartner asi asi asi gana madrid siuuuu"));

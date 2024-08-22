@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class coinCount : MonoBehaviour
 {
 
-    public static float coinAmount=100000000000000000f;
+    public static float coinAmount=100;
     private Text coinAmountDispl;
     private Text peasantAmountDispl;
     private Text goonAmountDispl;

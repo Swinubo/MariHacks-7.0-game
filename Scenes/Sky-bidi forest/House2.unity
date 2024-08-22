@@ -957,9 +957,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   my_text:
   - Hey son happy birthday!
-  - Were you about to leave without saying anything?!
+  - Here are 100 fanum credit for your birthday!
+  - You can use them to buy rizkaballs at rizzshops located in cities, etc.
+  - You can get more fanum credit by catching rizkamons, defeating them or even defeating
+    gym leaders!
+  - Also, were you about to leave without saying anything?!
   - Anyways, can you please go outside and pick your gift, it is outside!
-  - BE CAREFUL! DO NOT GO ON TALL GRASS AS IT IS DANGEROUS!
+  - BUT BE CAREFUL! DO NOT GO ON TALL GRASS AS IT IS DANGEROUS!
   when_move: 2
   move_speed: 200
 --- !u!61 &913949412
@@ -1714,7 +1718,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0

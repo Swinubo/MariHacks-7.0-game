@@ -7,8 +7,9 @@ public class AddRizkamon : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-        private Camera mainCam;
+    private Camera mainCam;
     private Camera battleCam;
+    private AudioSource catchSFX;
 
     void Start()
     {
@@ -17,10 +18,20 @@ public class AddRizkamon : MonoBehaviour
 
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         anim = GameObject.Find("BallCatch").GetComponent<Animator>();
+        
+        //sounds
+        catchSFX = GameObject.Find("Catch!").GetComponent<AudioSource>();
     }
 
     private void AddRizkamonToDex()
     {
+        StartCoroutine(addRizkamonCoroutine());
+    }
+
+    IEnumerator addRizkamonCoroutine()
+    {
+        catchSFX.Play();
+        yield return new WaitForSeconds(2f);
         anim.SetBool("IsFlickering", false);
         Destroy(OnCollideWithBullet.ball);
         Flee.BattleActivation(mainCam, battleCam, false);
@@ -34,5 +45,7 @@ public class AddRizkamon : MonoBehaviour
 
         Collector.have_rizkamons.Add(Change_to_battle.rizkamon);
         Debug.Log("Added rizkamon: " + Change_to_battle.rizkamon.Name);
+
+        coinCount.coinAmount += 300;
     }
 }
