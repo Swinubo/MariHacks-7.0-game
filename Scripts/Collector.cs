@@ -23,7 +23,7 @@ public class Collector : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rizkamons = rizkamonsSER;
 
-        //currentRizkamon = Creature.Richard;
+        //currentRizkamon = Creature.Beeogee;
         initcurrentRizkamon = new Creature(currentRizkamon); // Use copy constructor
     }
 

@@ -73,7 +73,7 @@ public class send_to_gym_boss : MonoBehaviour
         GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<SpriteRenderer>().enabled = true;
         GameObject.Find(Change_to_battle.rizkamon.Name + "_irnl").GetComponent<BoxCollider2D>().enabled = true;
 
-        Flee.BattleActivation(mainCam, battleCam, true);
+        Flee.BattleActivation(mainCam, battleCam, true, null, this);
 
         GameObject.Find("Move1Text").GetComponent<Text>().text = Collector.currentRizkamon.Move1.Name;
         GameObject.Find("Move2Text").GetComponent<Text>().text = Collector.currentRizkamon.Move2.Name;

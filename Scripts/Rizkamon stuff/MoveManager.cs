@@ -101,11 +101,10 @@ public class MoveManager : MonoBehaviour
 
         if (Change_to_battle.rizkamon.Health <= 0)
         {   
-            victorySFX.Play();
             checkGym();
             /*attackStatus.text = "You won!";
             yield return new WaitForSeconds(2f);*/
-            Flee.BattleActivation(mainCam, battleCam, false);
+            Flee.BattleActivation(mainCam, battleCam, false, victorySFX, this);
             rb.bodyType = RigidbodyType2D.Dynamic;
             coinCount.coinAmount += 200;
         }
@@ -174,7 +173,7 @@ public class MoveManager : MonoBehaviour
 
     private void checkGym()
     {
-        Debug.Log(send_to_gym_boss.gymBoi.Name);
+        //Debug.Log(send_to_gym_boss.gymBoi.Name);
         //checks if it is a win vs a gym pokemon
         if (send_to_gym_boss.gymBoi != null)
         {
@@ -193,16 +192,16 @@ public class MoveManager : MonoBehaviour
             }
             send_to_gym_boss.gymBoi = null;
         }
+    }
 
-        IEnumerator live()
-        {
-            timer.enabled = false;
-            rb.bodyType = RigidbodyType2D.Static;
-            Instantiate(explosion, player.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
-            Instantiate(youLived, deathPosition, Quaternion.identity, canvas.transform);
-            yield return new WaitForSeconds(10f);
-            SceneManager.LoadScene(1);
-        }
+    public IEnumerator live()
+    {
+        timer.enabled = false;
+        rb.bodyType = RigidbodyType2D.Static;
+        Instantiate(explosion, player.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        Instantiate(youLived, deathPosition, Quaternion.identity, canvas.transform);
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene(1);
     }
 }

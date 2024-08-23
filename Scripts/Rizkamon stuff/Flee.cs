@@ -19,7 +19,7 @@ public class Flee : MonoBehaviour
     }
 
     public void OnFlee(){
-        BattleActivation(mainCam, battleCam, false);
+        BattleActivation(mainCam, battleCam, false, null, this);
         foreach (var item in Collector.rizkamons)
         {
             GameObject.Find(item.name).GetComponent<SpriteRenderer>().enabled =false;
@@ -28,13 +28,14 @@ public class Flee : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
-    public static void BattleActivation(Camera mainCam, Camera battleCam, bool OnorOff){
+    public static void BattleActivation(Camera mainCam, Camera battleCam, bool OnorOff, AudioSource SFX, MonoBehaviour monoBehaviour){
         battleCam.enabled = OnorOff;
         mainCam.enabled = !OnorOff;
         Change_to_battle.battleDisplayRan = OnorOff;
         GetOutOfStart.OnStart();
-        GameObject.Find("Battle").GetComponent<AudioSource>().enabled =OnorOff; 
-        GameObject.Find("Player").GetComponent<AudioSource>().enabled =!OnorOff; 
+        /*GameObject.Find("Battle").GetComponent<AudioSource>().enabled =OnorOff; 
+        GameObject.Find("Player").GetComponent<AudioSource>().enabled =!OnorOff; */
+        monoBehaviour.StartCoroutine(switchAudio(SFX, OnorOff));
         GameObject.Find("Balls").GetComponent<Image>().enabled =OnorOff; 
         GameObject.Find("Move1").GetComponent<Image>().enabled =OnorOff;
         GameObject.Find("Move2").GetComponent<Image>().enabled =OnorOff;
@@ -65,5 +66,16 @@ public class Flee : MonoBehaviour
         Change_to_battle.rizkamon = new Creature(Change_to_battle.rizkamon);
         MoveManager.mySlider.value = 1;
         MoveManager.foeSlider.value = 1;
+    }
+
+    static IEnumerator switchAudio(AudioSource SFX, bool OnorOff)
+    { 
+        GameObject.Find("Battle").GetComponent<AudioSource>().enabled =OnorOff;
+        if (SFX != null)
+        {   
+            SFX.Play();
+            yield return new WaitForSeconds(5.3f);
+        }
+        GameObject.Find("Player").GetComponent<AudioSource>().enabled =!OnorOff;
     }
 }

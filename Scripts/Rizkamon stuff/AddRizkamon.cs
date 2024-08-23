@@ -34,7 +34,7 @@ public class AddRizkamon : MonoBehaviour
         yield return new WaitForSeconds(2f);
         anim.SetBool("IsFlickering", false);
         Destroy(OnCollideWithBullet.ball);
-        Flee.BattleActivation(mainCam, battleCam, false);
+        Flee.BattleActivation(mainCam, battleCam, false, catchSFX, this);
         rb.bodyType = RigidbodyType2D.Dynamic;
 
         foreach (var item in Collector.rizkamons)

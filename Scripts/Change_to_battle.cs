@@ -114,7 +114,7 @@ public class Change_to_battle : MonoBehaviour
 
         inBattle = true;
 
-        Flee.BattleActivation(mainCam, battleCam, true);
+        Flee.BattleActivation(mainCam, battleCam, true, null, this);
         displ_texts();
     }
 
